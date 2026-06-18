@@ -18,27 +18,43 @@ SECTIONS
 
     main_ROM_START = __romPos;
     main_VRAM = ADDR(.main);
-    .main 0x80010000 : AT(main_ROM_START) SUBALIGN(16)
+    .main 0x80010000 : AT(main_ROM_START) SUBALIGN(4)
     {
         FILL(0x00000000);
         main_TEXT_START = .;
-        build/asm/SCES_008.68/main_raw.s.o(.text);
+        build/asm/SCES_008.68/before_start.s.o(.text);
+        build/asm/SCES_008.68/start.s.o(.text);
+        build/asm/SCES_008.68/before_main.s.o(.text);
+        build/asm/SCES_008.68/main.s.o(.text);
+        build/asm/SCES_008.68/after_main.s.o(.text);
         . = ALIGN(., 16);
         main_TEXT_END = .;
         main_TEXT_SIZE = ABSOLUTE(main_TEXT_END - main_TEXT_START);
         main_DATA_START = .;
-        build/asm/SCES_008.68/main_raw.s.o(.data);
+        build/asm/SCES_008.68/before_start.s.o(.data);
+        build/asm/SCES_008.68/start.s.o(.data);
+        build/asm/SCES_008.68/before_main.s.o(.data);
+        build/asm/SCES_008.68/main.s.o(.data);
+        build/asm/SCES_008.68/after_main.s.o(.data);
         build/assets/SCES_008.68/main_data.bin.o(.data);
         . = ALIGN(., 16);
         main_DATA_END = .;
         main_DATA_SIZE = ABSOLUTE(main_DATA_END - main_DATA_START);
         main_RODATA_START = .;
-        build/asm/SCES_008.68/main_raw.s.o(.rodata);
+        build/asm/SCES_008.68/before_start.s.o(.rodata);
+        build/asm/SCES_008.68/start.s.o(.rodata);
+        build/asm/SCES_008.68/before_main.s.o(.rodata);
+        build/asm/SCES_008.68/main.s.o(.rodata);
+        build/asm/SCES_008.68/after_main.s.o(.rodata);
         . = ALIGN(., 16);
         main_RODATA_END = .;
         main_RODATA_SIZE = ABSOLUTE(main_RODATA_END - main_RODATA_START);
         main_BSS_START = .;
-        build/asm/SCES_008.68/main_raw.s.o(.bss);
+        build/asm/SCES_008.68/before_start.s.o(.bss);
+        build/asm/SCES_008.68/start.s.o(.bss);
+        build/asm/SCES_008.68/before_main.s.o(.bss);
+        build/asm/SCES_008.68/main.s.o(.bss);
+        build/asm/SCES_008.68/after_main.s.o(.bss);
         . = ALIGN(., 16);
         main_BSS_END = .;
         main_BSS_SIZE = ABSOLUTE(main_BSS_END - main_BSS_START);

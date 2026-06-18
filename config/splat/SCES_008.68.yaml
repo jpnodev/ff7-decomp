@@ -50,7 +50,12 @@ segments:
     type: code
     start: 0x800
     vram: 0x80010000
+    subalign: 4
     subsegments:
-      - [0x800, asm, main_raw]
+      - [0x800, asm, before_start]
+      - [0x18C0, hasm, start]
+      - [0x197C, asm, before_main]
+      - [0x2438, asm, main]
+      - [0x305C, asm, after_main]
       - [0x3B890, bin, main_data]
   - [0x61000]
