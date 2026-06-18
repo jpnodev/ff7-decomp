@@ -40,13 +40,17 @@ Ce document synthétise la boucle de travail itérative pour décompiler le jeu 
 4. Écris le code C.
 5. Compile et compare (Phase C). Ajuste ton code C, les types, et les variables globales jusqu'à ce que les instructions CPU générées soient 100% identiques au binaire original.
 
-## Phase E : Exécution et Tests en Jeu
-**Objectif :** S'assurer que le jeu fonctionne correctement avec les modifications.
+## Phase E : Test de non-régression en émulateur
+**Objectif :** vérifier qu'une ISO reconstruite à partir du binaire matching démarre et se comporte comme l'original.
+
+Cette phase ne remplace pas le matching byte-to-byte. Elle sert seulement à détecter des problèmes de packaging ISO, de header PS-X EXE, de reconstruction de disque ou de chargement runtime.
+
 1. Reconstruis l'ISO complète :
    ```bash
    ./scripts/build_iso.zsh
    ```
-2. Charge le fichier `.cue` généré dans `DuckStation` et teste la fonction modifiée.
+2. Charge le fichier `.cue` généré dans `DuckStation` et teste que le jeu tourne.
+
 
 ## Phase F : Overlays
 **Objectif :** Reproduire le processus pour les autres exécutables.

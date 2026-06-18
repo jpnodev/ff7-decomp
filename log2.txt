@@ -1,0 +1,800 @@
+[   27.3501] I/System: Boot Path: C:\Users\clive\PSX Roms\ff7-disc1\ff7_custom.cue
+[   27.3506] I/System: Loading CD image 'ff7_custom.cue'...
+[   27.3506] I/System: Auto-detected console PAL region for 'C:\Users\clive\PSX Roms\ff7-disc1\ff7_custom.cue' (region PAL)
+[   27.3511] D/System: Executable path: 'SCES_008.68'
+[   27.3512] D/System: Hash for 'SCES_008.68' - 08DADC186C02EA21
+[   27.3604] I/System: No game settings found (tried 'SCES-00868.ini')
+[   27.3606] D/System: Applying settings...
+[   27.3606] W(LogUnsafeSettingsToConsole):  • CD-ROM read/seek speedup is enabled. This may crash games.
+ • Frame rate is not set to automatic. Games may run at incorrect speeds.
+[   27.3608] I/ImGuiManager: OSD [UnsafeCfgWarn]: One or more unsafe settings is enabled.
+ • CD-ROM read/seek speedup is enabled. This may crash games.
+ • Frame rate is not set to automatic. Games may run at incorrect speeds.
+[   27.3609] D/VideoThread: Setting run idle reason 'OSDMessagesActive' to true
+[   27.3610] I/GameDatabase: GameDB: Display active start offset set to -44.
+[   27.3610] I/System: Game: Final Fantasy VII (Disc 1) | SCES-00868 | HASH-08DADC186C02EA21
+[   27.3621] W(OnSystemStarting): Not logged in on game booting, trying again.
+[   27.3623] D/System: Executable path: 'SCES_008.68'
+[   27.3624] I/Achievements: RA Hash for 'SCES_008.68': 764eb9f954aead44d77203f0fd44925b (397312 bytes hashed)
+[   27.3625] D/Achievements: Load failed (-28): Login required
+[   27.3625] I/System: Console Region: PAL (Europe, Australia)
+[   27.3626] D/BIOS: Hash for BIOS 'Sony PlayStation SCPH-7502 BIOS v4.1 (1997-12-16)(Sony)(EU).bin': b9d9a0286c33dc6b7237bb13cd46fdee
+[   27.3627] I/System: Using BIOS: SCPH-7002, 7502, 9002 (v4.1 12-16-97 E)
+[   27.3628] I/CDROMAsyncReader: Read thread started with readahead of 8 sectors
+[   27.3628] I/CDROM: Inserting new media, disc region: PAL, console region: PAL
+[   27.3628] D/CDROMAsyncReader: Cancelling readahead
+[   27.3629] D/CDROM: Starting motor
+[   27.3629] V/System: Video frame rate changed from 60.00 to 49.75 fps
+[   27.3629] D/CPU: GTE aspect ratio correction is disabled.
+[   27.3630] I/VideoThread: Reconfiguring video thread.
+[   27.3630] D/VideoThread: Updating game info on GPU thread: SCES-00868/Final Fantasy VII (Disc 1)
+[   27.3631] I/VideoThread: Trying to create a D3D11 GPU device...
+[   27.3632] D/Host: acquireRenderWindow() fullscreen=false exclusive_fullscreen=false, render_to_main=true
+[   27.3825] I/Host: Window size: 1600x1218 (Qt 800x609), scale: 2, refresh rate 90.001434 hz
+[   27.3934] I/GPUDevice: Main render window is 1600x1218.
+[   27.4295] I/GPUDevice: Intel GPU detected.
+[   27.4299] I/GPUDevice: D3D Adapter: Intel(R) Iris(R) Xe Graphics
+[   27.4309] I/GPUDevice: Max device feature level: D3D_FEATURE_LEVEL_12_1
+[   27.4392] I/GPUDevice: Driver type set to IntelProprietary.
+[   27.4403] V/GPUDevice: Creating a 1600x1218 flip-discard windowed swap chain
+[   27.4411] V/GPUDevice: Swap chain buffer size: 1600x1218
+[   27.4419] I/GPUDevice: Render API: D3D11 Version 1110
+[   27.4426] I/GPUDevice: Graphics Driver Info:
+D3D_FEATURE_LEVEL_11_1 (Shader Model 50)
+VID: 0x8086 PID: 0x46A6
+Intel(R) Iris(R) Xe Graphics
+Driver Version: 31.0.101.4255
+[   27.4435] D/GPUDevice: Read 41 entries from 'd3d11_shaders.idx'
+[   27.4666] D/ImGuiManager: Loading font data took 25.5123 ms
+[   27.4791] D/ImGuiManager: Creating font atlas took 4.1564 ms
+[   27.4806] D/FullscreenUI: Uploaded texture resource 'images/placeholder.png' (487x354)
+[   27.4820] D/VideoThread: GPU thread now running idle
+[   27.4830] I/VideoThread: GPU device created in 115.56ms
+[   27.4840] V/GPU: Presentation format is RGBA8
+[   27.4847] I/GPU_SW: Using SIMD software rasterizer implementation.
+[   27.4855] I/GPU_HW: Resolution Scale: 1 (1024x512), maximum 16
+[   27.4863] I/GPU_HW: Multisampling: 1x
+[   27.4872] I/GPU_HW: Dithering: True Color
+[   27.4880] I/GPU_HW: Deinterlacing: Progressive (Optimal)
+[   27.4889] I/GPU_HW: Force round texture coordinates: Disabled
+[   27.4898] I/GPU_HW: Texture Filtering: Nearest-Neighbor/Nearest-Neighbor
+[   27.4909] I/GPU_HW: Dual-source blending: Supported
+[   27.4918] I/GPU_HW: Clamping UVs: NO
+[   27.4929] I/GPU_HW: Depth buffer: NO
+[   27.4939] I/GPU_HW: Downsampling: Disabled
+[   27.4948] I/GPU_HW: Wireframe rendering: Disabled
+[   27.4955] I/GPU_HW: Line detection: Disabled
+[   27.4963] I/GPU_HW: Using software renderer for readbacks: NO
+[   27.4971] I/GPU_HW: Separate sprite shaders: NO
+[   27.4980] I/GPU_HW: Shader blending allowed: NO
+[   27.4988] I/GPU_HW: Shader blending preferred: NO
+[   27.4997] I/GPU_HW: Use ROV for shader blending: NO
+[   27.5006] I/GPU_HW: Write mask as depth: YES
+[   27.5014] I/GPU_HW: Depth buffer is needed in D16.
+[   27.5020] I/GPU_HW: Using ROV depth: NO
+[   27.5026] I/GPU_HW: Using real depth buffer: YES
+[   27.5032] I/GPU_HW: Using feedback loops: NO
+[   27.5043] I/GPU_HW: Compiling 3 vertex shaders, 200 fragment shaders, and 414 pipelines.
+[   27.5054] I/GPU_HW: Compiling resolution dependent pipelines took 0.62 ms.
+[   27.5062] I/GPU_HW: Pipeline creation took 11.47 ms.
+[   27.5067] I/GPU_HW: Created HW framebuffer of 1024x512
+[   27.5072] D/VideoThread: Setting run idle reason 'NoGPUBackend' to false
+[   27.5076] D/VideoThread: GPU thread now NOT running idle
+[   27.5080] I/VideoThread: GPU backend created in 16.20ms
+[   27.5086] I/SPU: Creating 'Cubeb' audio stream, sample rate = 44100, buffer = 50, latency = 20, stretching = TimeStretch
+[   27.5091] D/AudioStream: Allocated buffer of 35328 frames for buffer of 50 ms [stretch TimeStretch, target size 2240].
+[   27.5098] I/AudioStream: Creating Cubeb context with default driver...
+[   27.5183] D/AudioStream: cubeb_wasapi.cpp:2034:default device period: 120000, minimum device period: 120000
+[   27.5192] D/AudioStream: cubeb_wasapi.cpp:2038:Minimum latency in frames: 530
+[   27.5199] D/AudioStream: Output latency: 20 ms (896 audio frames)
+[   27.5206] D/AudioStream: cubeb_wasapi.cpp:2806:(000002483DC2CA10) Setup render: device=0000000000000000
+[   27.5222] D/AudioStream: cubeb_wasapi.cpp:2523:Setup requested=[f=0 r=44100 c=2 l=3] mix=[f=0 r=96000 c=2 l=3]
+[   27.5330] D/AudioStream: cubeb_wasapi.cpp:2290:Got shared mode engine period: default=1152 fundamental=1152 min=1152 max=1152
+[   27.5340] D/AudioStream: cubeb_wasapi.cpp:2305:Requested latency 1951 was adjusted to 1152
+[   27.5350] D/AudioStream: cubeb_wasapi.cpp:2319:Got AUDCLNT_E_INVALID_STREAM_FLAG, removing some flags
+[   27.6195] D/AudioStream: cubeb_wasapi.cpp:2601:Initialized with IAudioClient3
+[   27.6213] D/AudioStream: cubeb_wasapi.cpp:2620:Buffer size is: 2534 for render
+
+[   27.6318] D/AudioStream: cubeb_wasapi.cpp:2873:Target sample rate: 44100
+[   27.6330] D/AudioStream: cubeb_resampler_internal.h:615:Resampling output (96000Hz) to target and input rate of 44100Hz
+[   27.6341] D/AudioStream: cubeb_wasapi.cpp:3075:Follow the system default input or/and output devices
+[   27.6351] D/AudioStream: cubeb_wasapi.cpp:3102:Stream init successful (000002483DC2CA10)
+[   27.6453] D/CPU: GTE aspect ratio correction is disabled.
+[   27.6468] I/System: Memory Card 1: C:\Users\clive\AppData\Local\DuckStation\memcards\Final Fantasy VII (France)_1.mcd
+[   27.6480] I/Pad: Memory card slot 0: C:\Users\clive\AppData\Local\DuckStation\memcards\Final Fantasy VII (France)_1.mcd
+[   27.6489] I/Pad: Memory card slot 1: <unplugged>
+[   27.6500] I/Pad: Memory card slot 2: <unplugged>
+[   27.6508] I/Pad: Memory card slot 3: <unplugged>
+[   27.6517] I/Pad: Memory card slot 4: <unplugged>
+[   27.6525] I/Pad: Memory card slot 5: <unplugged>
+[   27.6534] I/Pad: Memory card slot 6: <unplugged>
+[   27.6543] I/Pad: Memory card slot 7: <unplugged>
+[   27.6553] W(SetTaint): Setting system taint: ForceFrameTimings
+[   27.6664] D/CPU: GTE aspect ratio correction is disabled.
+[   27.6675] D/Achievements: Reset client
+[   27.6683] D/Host: Stopping background controller polling timer
+[   27.6724] V/System: Target speed: 100%
+[   27.6734] V/System: Preset timing: consistent
+[   27.6740] V/System: VSync: Disabled
+[   27.6744] V/System: Present Skip: Disabled
+[   27.6748] I/System: System booted in 318.72ms
+[   27.6752] D/Bus: Cache control <- 0x00000804
+[   27.6755] D/Bus: Cache control <- 0x00000800
+[   27.6759] D/Bus: Cache control <- 0x0001E988
+[   27.6763] V/AudioStream: ___ Stretcher is being reset.
+[   27.6769] D/Bus: BIOS POST status: 0F
+[   27.6775] D/Bus: BIOS POST status: 0E
+[   27.6780] D/Bus: BIOS POST status: 01
+[   27.6785] D/Bus: BIOS POST status: 02
+[   27.6790] D/ImGuiManager: Create 512x128 ImGui texture
+[   27.7077] V/AudioStream: Underrun compensation done (128 frames buffered)
+[   27.7220] D/Bus: BIOS POST status: 03
+[   27.7239] D/CodeCache: Ignoring fault due to RAM write @ 0x00000200
+[   27.7250] D/CodeCache: Ignoring fault due to RAM write @ 0x00000200
+[   27.7259] D/CodeCache: Ignoring fault due to RAM write @ 0x00000204
+[   27.7265] D/CodeCache: Ignoring fault due to RAM write @ 0x00000208
+[   27.7271] D/CodeCache: Ignoring fault due to RAM write @ 0x0000020C
+[   27.7277] D/CodeCache: 5 invalidations in 4 frames to page 0 [0x00000000 -> 0x00001000], switching to manual protection
+[   27.7283] D/Bus: Cache control <- 0x00000804
+[   27.7289] D/Bus: Cache control <- 0x00000800
+[   27.7371] D/Bus: Cache control <- 0x0001E988
+[   27.7380] D/Bus: BIOS POST status: 04
+[   27.7388] D/Bus: BIOS POST status: 01
+[   27.7393] D/Bus: BIOS POST status: 03
+[   27.7397] D/Bus: BIOS POST status: 04
+[   27.7402] D/CodeCache: Ignoring fault due to RAM write @ 0x00006EE0
+[   27.7407] D/Bus: Cache control <- 0x00000804
+[   27.7411] D/Bus: Cache control <- 0x00000800
+[   27.7417] D/Bus: Cache control <- 0x0001E988
+[   27.7424] D/Bus: BIOS POST status: 05
+[   27.7432] D/Bus: BIOS POST status: 06
+[   27.7439] D/Bus: BIOS POST status: 02
+[   27.7446] D/CodeCache: Ignoring fault due to RAM write @ 0x00006F30
+[   27.7452] D/Bus: Cache control <- 0x00000804
+[   27.7459] D/Bus: Cache control <- 0x00000800
+[   27.7467] D/Bus: Cache control <- 0x0001E988
+[   27.7477] D/CodeCache: Ignoring fault due to RAM write @ 0x00006F80
+[   27.7484] D/Bus: Cache control <- 0x00000804
+[   27.7491] D/Bus: Cache control <- 0x00000800
+[   27.7499] D/Bus: Cache control <- 0x0001E988
+[   27.7507] D/Bus: BIOS POST status: 05
+[   27.7515] I/TTY: PS-X Realtime Kernel Ver.2.5
+[   27.7523] I/TTY: Copyright 1993,1994 (C) Sony Computer Entertainment Inc. 
+[   27.7530] D/Bus: BIOS POST status: 06
+[   27.7537] I/TTY: KERNEL SETUP!
+[   27.7546] D/CodeCache: Ignoring fault due to RAM write @ 0x00006D30
+[   27.7553] I/TTY: Configuration : EvCB	0x10		TCB	0x04
+[   27.7560] D/Bus: BIOS POST status: 07
+[   27.7566] I/Bus: Kernel initialized.
+[   28.5256] V/AudioStream: === Stretcher is now inactive.
+[   28.6678] V/PerfMon: FPS: 0.00 VPS: 49.76 CPU: 3.20 RNDR: 4.44 GPU: 0.00 Avg: 20.09ms Min: 19.56ms Max: 20.63ms
+[   28.9692] V/AudioStream: ~~~ Stretcher is now active @ tempo 0.83269316.
+[   29.1690] V/AudioStream: === Stretcher is now inactive.
+[   29.6715] V/PerfMon: FPS: 0.00 VPS: 49.75 CPU: 2.16 RNDR: 3.06 GPU: 0.00 Avg: 20.10ms Min: 19.76ms Max: 20.54ms
+[   29.6918] D/Bus: Cache control <- 0x00000804
+[   29.6929] D/Bus: Cache control <- 0x00000800
+[   29.6937] D/Bus: Cache control <- 0x0001E988
+[   29.7127] D/Bus: Cache control <- 0x00000804
+[   29.7137] D/Bus: Cache control <- 0x00000800
+[   29.7146] D/Bus: Cache control <- 0x0001E988
+[   29.7157] D/CodeCache: Ignoring fault due to RAM write @ 0x80030000
+[   29.8526] V/AudioStream: ~~~ Stretcher is now active @ tempo 1.2012246.
+[   29.9335] D/CodeCache: Ignoring fault due to RAM write @ 0x801C0000
+[   29.9353] D/CodeCache: Ignoring fault due to RAM write @ 0x801C0004
+[   29.9362] D/CodeCache: Ignoring fault due to RAM write @ 0x801C0008
+[   29.9370] D/CodeCache: Ignoring fault due to RAM write @ 0x801C000C
+[   29.9378] D/CodeCache: Ignoring fault due to RAM write @ 0x801C0010
+[   29.9385] D/CodeCache: 5 invalidations in 0 frames to page 448 [0x001C0000 -> 0x001C1000], switching to manual protection
+[   29.9443] D/Bus: Cache control <- 0x00000804
+[   29.9451] D/Bus: Cache control <- 0x00000800
+[   29.9458] D/Bus: Cache control <- 0x0001E988
+[   29.9464] D/CodeCache: Ignoring fault due to RAM write @ 0x80068A98
+[   29.9468] I/TTY: System ROM Version 4.1 12/16/97 E
+[   29.9473] I/TTY: Copyright 1993-1997 (C) Sony Computer Entertainment Inc.
+[   30.2154] V/AudioStream: === Stretcher is now inactive.
+[   30.6768] V/PerfMon: FPS: 0.00 VPS: 49.74 CPU: 3.17 RNDR: 2.69 GPU: 0.00 Avg: 20.11ms Min: 19.65ms Max: 20.69ms
+[   31.1009] I/TTY: ResetCallback: _96_remove ..
+[   31.1029] D/CodeCache: Page fault handler invoked at PC=0x7ff6252e602f Address=0x2486d601814 (read), fastmem offset 1F801814
+[   31.1040] D/CodeCache: Backpatching load at 0x7ff6252e602f[5] (pc BFC04148 addr 1F801814): Bitmask 000010C0 Addr 6 Data 12 Size 4 Signed 00
+[   31.1050] D/CodeCache: Queuing block BFC04138 for recompilation due to backpatch
+[   31.1128] D/CodeCache: Page fault handler invoked at PC=0x7ff6252e6254 Address=0x2486d601810 (write), fastmem offset 1F801810
+[   31.1135] D/CodeCache: Backpatching store at 0x7ff6252e6254[5] (pc BFC03FCC addr 1F801810): Bitmask 000000C0 Addr 6 Data 7 Size 4 Signed 00
+[   31.1140] D/CodeCache: Queuing block BFC03FBC for recompilation due to backpatch
+[   31.1148] D/CPU: GTE aspect ratio correction is disabled.
+[   31.1153] D/CodeCache: Breaking block 0x8005EFE8 at 0x8005F000 due to page crossing
+[   31.1158] D/CodeCache: Block 0x8005CFC8 has branch delay slot crossing page at 0x8005D000, forcing manual protection
+[   31.1162] D/CPU: GTE aspect ratio correction is disabled.
+[   31.3819] D/CodeCache: Ignoring fault due to RAM write @ 0x80068A9C
+[   31.4009] D/CodeCache: Ignoring fault due to RAM write @ 0x80068A9C
+[   31.4204] D/CodeCache: Ignoring fault due to RAM write @ 0x80068A9C
+[   31.4409] D/CodeCache: Ignoring fault due to RAM write @ 0x80068A9C
+[   31.4608] D/CodeCache: Ignoring fault due to RAM write @ 0x80068A9C
+[   31.4624] D/CodeCache: 5 invalidations in 4 frames to page 104 [0x00068000 -> 0x00069000], switching to manual protection
+[   31.6819] V/PerfMon: FPS: 15.92 VPS: 49.76 CPU: 3.89 RNDR: 3.02 GPU: 0.00 Avg: 20.10ms Min: 19.68ms Max: 20.47ms
+[   32.4291] D/CodeCache: Block 0x8004EFF8 has branch delay slot crossing page at 0x8004F000, forcing manual protection
+[   32.6868] V/PerfMon: FPS: 49.75 VPS: 49.75 CPU: 3.02 RNDR: 2.80 GPU: 0.00 Avg: 20.10ms Min: 19.45ms Max: 20.61ms
+[   33.6917] V/PerfMon: FPS: 49.75 VPS: 49.75 CPU: 3.08 RNDR: 2.63 GPU: 0.00 Avg: 20.10ms Min: 19.03ms Max: 20.95ms
+[   34.6968] V/PerfMon: FPS: 49.75 VPS: 49.75 CPU: 3.32 RNDR: 2.57 GPU: 0.00 Avg: 20.10ms Min: 19.25ms Max: 20.93ms
+[   35.4405] D/Bus: BIOS POST status: 00
+[   35.4617] D/CodeCache: Breaking block 0x80065FF4 at 0x80066000 due to page crossing
+[   35.4707] D/Bus: BIOS POST status: 01
+[   35.5015] D/CodeCache: Breaking block 0x80035FD8 at 0x80036000 due to page crossing
+[   35.5030] I/TTY: System Controller ROM Version 95/05/16 c1
+[   35.5042] D/Bus: BIOS POST status: 02
+[   35.5140] D/CDROM: Getstat    Stat=0x02
+[   35.5416] D/CDROM: GetID
+[   35.5816] D/CDROM: Getstat    Stat=0x02
+[   35.6217] D/CDROM: GetID
+[   35.6833] D/Bus: BIOS POST status: 00
+[   35.6843] D/CDROM: Setloc     00:02:04
+[   35.6850] D/CDROM: SeekL      00:02:04
+[   35.6857] D/CDROM: Seek time for 00:00:01->00:02:04 (153 LBA): 1721932 (50.841 ms) (2N forward)
+[   35.7022] V/PerfMon: FPS: 37.81 VPS: 49.75 CPU: 4.00 RNDR: 2.79 GPU: 0.00 Avg: 20.10ms Min: 19.59ms Max: 20.55ms
+[   35.7225] D/CDROM: Logical seek to [00:02:04] complete
+[   35.7239] D/CDROM: Setmode    0x80
+[   35.7252] D/CDROM: Drive is idle, speed change takes 20321280 ticks
+[   35.7269] D/CodeCache: Breaking block 0x80066FFC at 0x80067000 due to page crossing
+[   35.7279] D/CDROM: ReadN      00:02:04
+[   35.7291] D/CDROM: Seek time for 00:02:02->00:02:04 (2 LBA): 20778075 (613.487 ms) (20295666 for speed change/init) (forward)
+[   36.3452] D/CDROM: DataSector 00:02:04 LBA=154 Mode=2 Submode=0x08 Buffer=1
+[   36.3475] D/CDROM: Pause                  0.89ms
+[   36.3484] D/CDROM: Setloc     00:02:05
+[   36.3545] D/CDROM: SeekL      00:02:05
+[   36.3555] D/CDROM: Seek time for 00:01:71->00:02:05 (9 LBA): 1715288 (50.645 ms) (2N forward)
+[   36.4068] D/CDROM: Logical seek to [00:02:05] complete
+[   36.4079] D/CDROM: Setmode    0x80
+[   36.4087] D/CDROM: ReadN      00:02:05
+[   36.4092] D/CDROM: Seek time for 00:02:03->00:02:05 (2 LBA): 472828 (13.961 ms) (forward)
+[   36.4259] D/CDROM: DataSector 00:02:05 LBA=155 Mode=2 Submode=0x08 Buffer=1
+[   36.4274] D/CDROM: DataSector 00:02:06 LBA=156 Mode=2 Submode=0x08 Buffer=2
+[   36.4285] D/CDROM: DataSector 00:02:07 LBA=157 Mode=2 Submode=0x08 Buffer=3
+[   36.4297] D/CDROM: DataSector 00:02:08 LBA=158 Mode=2 Submode=0x08 Buffer=4
+[   36.4307] D/CDROM: DataSector 00:02:09 LBA=159 Mode=2 Submode=0x08 Buffer=5
+[   36.4313] D/CDROM: DataSector 00:02:10 LBA=160 Mode=2 Submode=0x08 Buffer=6
+[   36.4321] D/CDROM: DataSector 00:02:11 LBA=161 Mode=2 Submode=0x08 Buffer=7
+[   36.4330] D/CDROM: Pause                  0.89ms
+[   36.4336] D/CDROM: GetID
+[   36.6070] D/CodeCache: Page fault handler invoked at PC=0x7ff6252e3786 Address=0x2490da034b4 (read), fastmem offset BFC034B4
+[   36.6088] D/CodeCache: Backpatching load at 0x7ff6252e3786[5] (pc 00000CCC addr BFC034B4): Bitmask 00000040 Addr 1 Data 6 Size 4 Signed 00
+[   36.6102] D/CodeCache: Queuing block 00000CCC for recompilation due to backpatch
+[   36.6274] D/CodeCache: Page fault handler invoked at PC=0x7ff625312033 Address=0x2490da66000 (read), fastmem offset BFC66000
+[   36.6285] D/CodeCache: Backpatching load at 0x7ff625312033[5] (pc 800509C8 addr BFC66000): Bitmask 00000040 Addr 1 Data 6 Size 1 Signed 01
+[   36.6294] D/CodeCache: Queuing block 800509C8 for recompilation due to backpatch
+[   36.6303] D/CodeCache: Breaking block 0x80050E90 at 0x80051000 due to page crossing
+[   36.6309] D/CodeCache: Breaking block 0x80050F64 at 0x80051000 due to page crossing
+[   36.7073] V/PerfMon: FPS: 0.00 VPS: 49.75 CPU: 3.78 RNDR: 3.02 GPU: 0.00 Avg: 20.10ms Min: 19.73ms Max: 20.50ms
+[   37.2103] I/TTY: SetGraphDebug:level:1,type:0 reverse:0
+[   37.6724] D/VideoThread: Setting run idle reason 'OSDMessagesActive' to false
+[   37.7125] V/PerfMon: FPS: 23.88 VPS: 49.74 CPU: 3.63 RNDR: 3.10 GPU: 0.00 Avg: 20.10ms Min: 19.71ms Max: 20.61ms
+[   38.0959] D/CodeCache: Breaking block 0x8004CFF4 at 0x8004D000 due to page crossing
+[   38.7173] V/PerfMon: FPS: 49.75 VPS: 49.75 CPU: 3.88 RNDR: 2.79 GPU: 0.00 Avg: 20.10ms Min: 19.80ms Max: 20.43ms
+[   38.9591] D/Bus: BIOS POST status: 05
+[   38.9608] D/Bus: BIOS POST status: 08
+[   38.9705] D/CodeCache: Page fault handler invoked at PC=0x7ff62531f664 Address=0x2486d601074 (read), fastmem offset 1F801074
+[   38.9712] D/CodeCache: Backpatching load at 0x7ff62531f664[5] (pc BFC04FCC addr 1F801074): Bitmask 000010C0 Addr 1 Data 12 Size 4 Signed 00
+[   38.9718] D/CodeCache: Queuing block BFC04FBC for recompilation due to backpatch
+[   38.9723] D/CodeCache: Page fault handler invoked at PC=0x7ff62531f7e4 Address=0x2486d601074 (read), fastmem offset 1F801074
+[   38.9728] D/CodeCache: Backpatching load at 0x7ff62531f7e4[5] (pc BFC04DFC addr 1F801074): Bitmask 000010C0 Addr 1 Data 12 Size 4 Signed 00
+[   38.9732] D/CodeCache: Queuing block BFC04DEC for recompilation due to backpatch
+[   38.9737] D/CodeCache: Page fault handler invoked at PC=0x7ff62531fd1b Address=0x2486d601074 (read), fastmem offset 1F801074
+[   38.9741] D/CodeCache: Backpatching load at 0x7ff62531fd1b[5] (pc BFC04940 addr 1F801074): Bitmask 000000C0 Addr 1 Data 7 Size 4 Signed 00
+[   38.9745] D/CodeCache: Queuing block BFC04934 for recompilation due to backpatch
+[   38.9753] D/CodeCache: Page fault handler invoked at PC=0x7ff62531fd3c Address=0x2486d601074 (write), fastmem offset 1F801074
+[   38.9762] D/CodeCache: Backpatching store at 0x7ff62531fd3c[5] (pc BFC04950 addr 1F801074): Bitmask 000010C0 Addr 1 Data 7 Size 4 Signed 00
+[   38.9773] D/CodeCache: Queuing block BFC04934 for recompilation due to backpatch
+[   38.9783] D/CodeCache: Page fault handler invoked at PC=0x7ff62531fd46 Address=0x2486d601074 (read), fastmem offset 1F801074
+[   38.9796] D/CodeCache: Backpatching load at 0x7ff62531fd46[5] (pc BFC04954 addr 1F801074): Bitmask 000030C0 Addr 1 Data 13 Size 4 Signed 00
+[   38.9806] D/CodeCache: Queuing block BFC04934 for recompilation due to backpatch
+[   38.9817] D/CodeCache: Page fault handler invoked at PC=0x7ff62531fd58 Address=0x2486d601074 (write), fastmem offset 1F801074
+[   38.9824] D/CodeCache: Backpatching store at 0x7ff62531fd58[5] (pc BFC04960 addr 1F801074): Bitmask 000030C0 Addr 1 Data 13 Size 4 Signed 00
+[   38.9829] D/CodeCache: Queuing block BFC04934 for recompilation due to backpatch
+[   38.9832] D/CodeCache: Page fault handler invoked at PC=0x7ff62531fd62 Address=0x2486d601070 (write), fastmem offset 1F801070
+[   38.9837] D/CodeCache: Backpatching store at 0x7ff62531fd62[5] (pc BFC04964 addr 1F801070): Bitmask 000030C0 Addr 6 Data 2 Size 4 Signed 00
+[   38.9841] D/CodeCache: Queuing block BFC04934 for recompilation due to backpatch
+[   38.9844] D/CodeCache: Page fault handler invoked at PC=0x7ff62531fd6c Address=0x2486d601070 (write), fastmem offset 1F801070
+[   38.9849] D/CodeCache: Backpatching store at 0x7ff62531fd6c[5] (pc BFC04970 addr 1F801070): Bitmask 000030C0 Addr 6 Data 2 Size 4 Signed 00
+[   38.9853] D/CodeCache: Queuing block BFC04934 for recompilation due to backpatch
+[   38.9856] D/CodeCache: Page fault handler invoked at PC=0x7ff62531fda5 Address=0x2486d6010f0 (write), fastmem offset 1F8010F0
+[   38.9861] D/CodeCache: Backpatching store at 0x7ff62531fda5[5] (pc BFC04990 addr 1F8010F0): Bitmask 000070C0 Addr 14 Data 2 Size 4 Signed 00
+[   38.9867] D/CodeCache: Queuing block BFC04934 for recompilation due to backpatch
+[   38.9873] D/CodeCache: Page fault handler invoked at PC=0x7ff62531fdaa Address=0x2486d6010f4 (read), fastmem offset 1F8010F4
+[   38.9885] D/CodeCache: Backpatching load at 0x7ff62531fdaa[5] (pc BFC04994 addr 1F8010F4): Bitmask 0000F0C0 Addr 12 Data 15 Size 4 Signed 00
+[   38.9893] D/CodeCache: Queuing block BFC04934 for recompilation due to backpatch
+[   38.9902] D/CodeCache: Page fault handler invoked at PC=0x7ff62531fdbd Address=0x2486d6010f4 (write), fastmem offset 1F8010F4
+[   38.9908] D/CodeCache: Backpatching store at 0x7ff62531fdbd[5] (pc BFC049B4 addr 1F8010F4): Bitmask 0000F0C0 Addr 12 Data 15 Size 4 Signed 00
+[   38.9914] D/CodeCache: Queuing block BFC04934 for recompilation due to backpatch
+[   38.9920] D/CodeCache: Page fault handler invoked at PC=0x7ff62531febb Address=0x2486d601800 (write), fastmem offset 1F801800
+[   38.9928] D/CodeCache: Backpatching store at 0x7ff62531febb[5] (pc BFC05130 addr 1F801800): Bitmask 00000040 Addr 6 Data 2 Size 1 Signed 00
+[   38.9933] D/CodeCache: Queuing block BFC05120 for recompilation due to backpatch
+[   38.9938] D/CodeCache: Page fault handler invoked at PC=0x7ff62531fee0 Address=0x2486d601803 (write), fastmem offset 1F801803
+[   38.9942] D/CodeCache: Backpatching store at 0x7ff62531fee0[5] (pc BFC05140 addr 1F801803): Bitmask 000010C0 Addr 7 Data 2 Size 1 Signed 00
+[   38.9946] D/CodeCache: Queuing block BFC05120 for recompilation due to backpatch
+[   38.9950] D/CodeCache: Page fault handler invoked at PC=0x7ff62532028b Address=0x2486d601800 (write), fastmem offset 1F801800
+[   38.9954] D/CodeCache: Backpatching store at 0x7ff62532028b[5] (pc BFC0510C addr 1F801800): Bitmask 00000040 Addr 6 Data 2 Size 1 Signed 00
+[   38.9958] D/CodeCache: Queuing block BFC050FC for recompilation due to backpatch
+[   38.9961] D/CodeCache: Page fault handler invoked at PC=0x7ff6253202b3 Address=0x2486d601802 (write), fastmem offset 1F801802
+[   38.9965] D/CodeCache: Backpatching store at 0x7ff6253202b3[5] (pc BFC0511C addr 1F801802): Bitmask 000010C0 Addr 7 Data 2 Size 1 Signed 00
+[   38.9969] D/CodeCache: Queuing block BFC050FC for recompilation due to backpatch
+[   38.9973] D/CodeCache: Page fault handler invoked at PC=0x7ff62532032b Address=0x2486d601070 (write), fastmem offset 1F801070
+[   38.9977] D/CodeCache: Backpatching store at 0x7ff62532032b[5] (pc BFC049F8 addr 1F801070): Bitmask 00000040 Addr 6 Data 2 Size 4 Signed 00
+[   38.9984] D/CodeCache: Queuing block BFC049EC for recompilation due to backpatch
+[   38.9997] D/CodeCache: Page fault handler invoked at PC=0x7ff625320335 Address=0x2486d601074 (read), fastmem offset 1F801074
+[   39.0008] D/CodeCache: Backpatching load at 0x7ff625320335[5] (pc BFC049FC addr 1F801074): Bitmask 000000C0 Addr 1 Data 7 Size 4 Signed 00
+[   39.0017] D/CodeCache: Queuing block BFC049EC for recompilation due to backpatch
+[   39.0025] D/CodeCache: Page fault handler invoked at PC=0x7ff625320345 Address=0x2486d601074 (write), fastmem offset 1F801074
+[   39.0031] D/CodeCache: Backpatching store at 0x7ff625320345[5] (pc BFC04A08 addr 1F801074): Bitmask 000000C0 Addr 1 Data 7 Size 4 Signed 00
+[   39.0037] D/CodeCache: Queuing block BFC049EC for recompilation due to backpatch
+[   39.0041] D/CodeCache: Page fault handler invoked at PC=0x7ff62532034f Address=0x2486d601074 (read), fastmem offset 1F801074
+[   39.0045] D/CodeCache: Backpatching load at 0x7ff62532034f[5] (pc BFC04A0C addr 1F801074): Bitmask 000010C0 Addr 1 Data 12 Size 4 Signed 00
+[   39.0049] D/CodeCache: Queuing block BFC049EC for recompilation due to backpatch
+[   39.0055] D/CodeCache: Page fault handler invoked at PC=0x7ff625320361 Address=0x2486d601074 (write), fastmem offset 1F801074
+[   39.0059] D/CodeCache: Backpatching store at 0x7ff625320361[5] (pc BFC04A1C addr 1F801074): Bitmask 000010C0 Addr 1 Data 12 Size 4 Signed 00
+[   39.0065] D/CodeCache: Queuing block BFC049EC for recompilation due to backpatch
+[   39.0069] D/CodeCache: Page fault handler invoked at PC=0x7ff6253205c8 Address=0x2486d601800 (write), fastmem offset 1F801800
+[   39.0072] D/CodeCache: Backpatching store at 0x7ff6253205c8[5] (pc BFC04A2C addr 1F801800): Bitmask 00000040 Addr 6 Data 2 Size 1 Signed 00
+[   39.0077] D/CodeCache: Queuing block BFC04A20 for recompilation due to backpatch
+[   39.0080] D/CodeCache: Page fault handler invoked at PC=0x7ff6253205e2 Address=0x2486d601801 (write), fastmem offset 1F801801
+[   39.0084] D/CodeCache: Backpatching store at 0x7ff6253205e2[5] (pc BFC04A44 addr 1F801801): Bitmask 000000C0 Addr 7 Data 2 Size 1 Signed 00
+[   39.0088] D/CodeCache: Queuing block BFC04A20 for recompilation due to backpatch
+[   39.0094] D/CDROM: Init
+[   39.0102] D/CDROM: Seek time for 00:02:08->00:00:00 (158 LBA): 1712543 (50.564 ms) (2N backward)
+[   39.0109] D/CDROM: CDROM init total disc ticks = 25420703 (speed change = 23708160, seek = 1712543)
+[   39.0115] D/CodeCache: Page fault handler invoked at PC=0x7ff62532088a Address=0x2486d601800 (write), fastmem offset 1F801800
+[   39.0121] D/CodeCache: Backpatching store at 0x7ff62532088a[5] (pc BFC04E48 addr 1F801800): Bitmask 000000C0 Addr 7 Data 2 Size 1 Signed 00
+[   39.0128] D/CodeCache: Queuing block BFC04E34 for recompilation due to backpatch
+[   39.0133] D/CodeCache: Page fault handler invoked at PC=0x7ff62532088f Address=0x2486d601803 (read), fastmem offset 1F801803
+[   39.0138] D/CodeCache: Backpatching load at 0x7ff62532088f[5] (pc BFC04E4C addr 1F801803): Bitmask 000010C0 Addr 6 Data 12 Size 1 Signed 00
+[   39.0142] D/CodeCache: Queuing block BFC04E34 for recompilation due to backpatch
+[   39.0146] D/CodeCache: Page fault handler invoked at PC=0x7ff625320e16 Address=0x2486d601801 (read), fastmem offset 1F801801
+[   39.0150] D/CodeCache: Backpatching load at 0x7ff625320e16[5] (pc BFC051E4 addr 1F801801): Bitmask 000000C0 Addr 6 Data 7 Size 1 Signed 00
+[   39.0154] D/CodeCache: Queuing block BFC051D8 for recompilation due to backpatch
+[   39.0158] D/CodeCache: Page fault handler invoked at PC=0x7ff6253215fb Address=0x2486d601070 (write), fastmem offset 1F801070
+[   39.0162] D/CodeCache: Backpatching store at 0x7ff6253215fb[5] (pc BFC05090 addr 1F801070): Bitmask 00000040 Addr 6 Data 2 Size 4 Signed 00
+[   39.0166] D/CodeCache: Queuing block BFC05080 for recompilation due to backpatch
+[   39.3809] D/CDROM: Init
+[   39.7025] D/CodeCache: Page fault handler invoked at PC=0x7ff625321f59 Address=0x2486d601801 (read), fastmem offset 1F801801
+[   39.7043] D/CodeCache: Backpatching load at 0x7ff625321f59[5] (pc BFC05574 addr 1F801801): Bitmask 000010C0 Addr 6 Data 0 Size 1 Signed 00
+[   39.7053] D/CodeCache: Queuing block BFC05558 for recompilation due to backpatch
+[   39.7225] V/PerfMon: FPS: 0.00 VPS: 49.75 CPU: 3.63 RNDR: 2.74 GPU: 0.00 Avg: 20.10ms Min: 19.75ms Max: 20.60ms
+[   40.2653] D/CodeCache: Page fault handler invoked at PC=0x7ff625322f46 Address=0x2486d601800 (read), fastmem offset 1F801800
+[   40.2777] D/CodeCache: Backpatching load at 0x7ff625322f46[5] (pc BFC04B20 addr 1F801800): Bitmask 000000C0 Addr 6 Data 7 Size 1 Signed 00
+[   40.2788] D/CodeCache: Queuing block BFC04B14 for recompilation due to backpatch
+[   40.2800] D/CodeCache: Page fault handler invoked at PC=0x7ff625323838 Address=0x2486d601800 (write), fastmem offset 1F801800
+[   40.2810] D/CodeCache: Backpatching store at 0x7ff625323838[5] (pc BFC04B78 addr 1F801800): Bitmask 000000C0 Addr 6 Data 2 Size 1 Signed 00
+[   40.2819] D/CodeCache: Queuing block BFC04B68 for recompilation due to backpatch
+[   40.2826] D/CodeCache: Page fault handler invoked at PC=0x7ff625323845 Address=0x2486d601802 (write), fastmem offset 1F801802
+[   40.2835] D/CodeCache: Backpatching store at 0x7ff625323845[5] (pc BFC04B84 addr 1F801802): Bitmask 000010C0 Addr 7 Data 12 Size 1 Signed 00
+[   40.2841] D/CodeCache: Queuing block BFC04B68 for recompilation due to backpatch
+[   40.2846] D/CodeCache: Page fault handler invoked at PC=0x7ff625323855 Address=0x2486d601802 (write), fastmem offset 1F801802
+[   40.2852] D/CodeCache: Backpatching store at 0x7ff625323855[5] (pc BFC04B90 addr 1F801802): Bitmask 000030C0 Addr 7 Data 13 Size 1 Signed 00
+[   40.2861] D/CodeCache: Queuing block BFC04B68 for recompilation due to backpatch
+[   40.2867] D/CodeCache: Page fault handler invoked at PC=0x7ff625323865 Address=0x2486d601802 (write), fastmem offset 1F801802
+[   40.2877] D/CodeCache: Backpatching store at 0x7ff625323865[5] (pc BFC04B9C addr 1F801802): Bitmask 000070C0 Addr 7 Data 14 Size 1 Signed 00
+[   40.2889] D/CodeCache: Queuing block BFC04B68 for recompilation due to backpatch
+[   40.2897] D/CodeCache: Page fault handler invoked at PC=0x7ff625323880 Address=0x2486d601801 (write), fastmem offset 1F801801
+[   40.2907] D/CodeCache: Backpatching store at 0x7ff625323880[5] (pc BFC04BA8 addr 1F801801): Bitmask 0000F0C0 Addr 15 Data 2 Size 1 Signed 00
+[   40.2918] D/CodeCache: Queuing block BFC04B68 for recompilation due to backpatch
+[   40.2926] D/CDROM: Setloc     00:02:16
+[   40.2931] D/CodeCache: Page fault handler invoked at PC=0x7ff625324168 Address=0x2486d601800 (write), fastmem offset 1F801800
+[   40.2936] D/CodeCache: Backpatching store at 0x7ff625324168[5] (pc BFC05C38 addr 1F801800): Bitmask 00000040 Addr 6 Data 2 Size 1 Signed 00
+[   40.2941] D/CodeCache: Queuing block BFC05C2C for recompilation due to backpatch
+[   40.2947] D/CodeCache: Page fault handler invoked at PC=0x7ff625324180 Address=0x2486d601801 (write), fastmem offset 1F801801
+[   40.2954] D/CodeCache: Backpatching store at 0x7ff625324180[5] (pc BFC05C44 addr 1F801801): Bitmask 000000C0 Addr 7 Data 2 Size 1 Signed 00
+[   40.2960] D/CodeCache: Queuing block BFC05C2C for recompilation due to backpatch
+[   40.2964] D/CDROM: SeekL      00:02:16
+[   40.2968] D/CDROM: Seek time for 00:00:02->00:02:16 (164 LBA): 1725957 (50.960 ms) (2N forward)
+[   40.3255] D/CDROM: Logical seek to [00:02:16] complete
+[   40.3273] D/CodeCache: Page fault handler invoked at PC=0x7ff625325993 Address=0x2486d601800 (read), fastmem offset 1F801800
+[   40.3281] D/CodeCache: Backpatching load at 0x7ff625325993[5] (pc BFC04CF0 addr 1F801800): Bitmask 000000C0 Addr 6 Data 7 Size 1 Signed 00
+[   40.3289] D/CodeCache: Queuing block BFC04CDC for recompilation due to backpatch
+[   40.3296] D/CodeCache: Page fault handler invoked at PC=0x7ff625325a4c Address=0x2486d601802 (write), fastmem offset 1F801802
+[   40.3368] D/CodeCache: Backpatching store at 0x7ff625325a4c[5] (pc BFC04D20 addr 1F801802): Bitmask 000000C0 Addr 6 Data 7 Size 1 Signed 00
+[   40.3375] D/CodeCache: Queuing block BFC04D0C for recompilation due to backpatch
+[   40.3381] D/CodeCache: Page fault handler invoked at PC=0x7ff625325a76 Address=0x2486d601801 (write), fastmem offset 1F801801
+[   40.3385] D/CodeCache: Backpatching store at 0x7ff625325a76[5] (pc BFC04D3C addr 1F801801): Bitmask 000010C0 Addr 12 Data 2 Size 1 Signed 00
+[   40.3391] D/CodeCache: Queuing block BFC04D0C for recompilation due to backpatch
+[   40.3395] D/CDROM: Setmode    0x80
+[   40.3400] D/CDROM: Drive is idle, speed change takes 20321280 ticks
+[   40.3405] D/CodeCache: Page fault handler invoked at PC=0x7ff625326068 Address=0x2486d601800 (write), fastmem offset 1F801800
+[   40.3409] D/CodeCache: Backpatching store at 0x7ff625326068[5] (pc BFC05E64 addr 1F801800): Bitmask 00000040 Addr 6 Data 2 Size 1 Signed 00
+[   40.3414] D/CodeCache: Queuing block BFC05E58 for recompilation due to backpatch
+[   40.3420] D/CodeCache: Page fault handler invoked at PC=0x7ff625326227 Address=0x2486d601801 (write), fastmem offset 1F801801
+[   40.3425] D/CodeCache: Backpatching store at 0x7ff625326227[5] (pc BFC05EBC addr 1F801801): Bitmask 000000C0 Addr 6 Data 2 Size 1 Signed 00
+[   40.3437] D/CodeCache: Queuing block BFC05EAC for recompilation due to backpatch
+[   40.3447] D/CDROM: ReadN      00:02:16
+[   40.3457] D/CDROM: Seek time for 00:02:14->00:02:16 (2 LBA): 20768093 (613.192 ms) (20289816 for speed change/init) (forward)
+[   40.7293] V/PerfMon: FPS: 0.00 VPS: 49.71 CPU: 2.97 RNDR: 3.09 GPU: 0.00 Avg: 20.12ms Min: 19.18ms Max: 21.02ms
+[   40.9486] D/CDROM: DataSector 00:02:16 LBA=166 Mode=2 Submode=0x09 Buffer=1
+[   40.9508] D/CodeCache: Page fault handler invoked at PC=0x7ff625326469 Address=0x2486d601801 (read), fastmem offset 1F801801
+[   40.9519] D/CodeCache: Backpatching load at 0x7ff625326469[5] (pc BFC05958 addr 1F801801): Bitmask 000030C0 Addr 6 Data 13 Size 1 Signed 00
+[   40.9528] D/CodeCache: Queuing block BFC0593C for recompilation due to backpatch
+[   40.9538] D/CodeCache: Page fault handler invoked at PC=0x7ff62532663d Address=0x2486d601800 (write), fastmem offset 1F801800
+[   40.9550] D/CodeCache: Backpatching store at 0x7ff62532663d[5] (pc BFC05F3C addr 1F801800): Bitmask 000010C0 Addr 7 Data 2 Size 1 Signed 00
+[   40.9562] D/CodeCache: Queuing block BFC05F1C for recompilation due to backpatch
+[   40.9646] D/CodeCache: Page fault handler invoked at PC=0x7ff625326642 Address=0x2486d601800 (read), fastmem offset 1F801800
+[   40.9659] D/CodeCache: Backpatching load at 0x7ff625326642[5] (pc BFC05F40 addr 1F801800): Bitmask 000010C0 Addr 7 Data 0 Size 1 Signed 00
+[   40.9671] D/CodeCache: Queuing block BFC05F1C for recompilation due to backpatch
+[   40.9678] D/CodeCache: Page fault handler invoked at PC=0x7ff625326649 Address=0x2486d601803 (write), fastmem offset 1F801803
+[   40.9686] D/CodeCache: Backpatching store at 0x7ff625326649[5] (pc BFC05F44 addr 1F801803): Bitmask 000010C0 Addr 12 Data 2 Size 1 Signed 00
+[   40.9698] D/CodeCache: Queuing block BFC05F1C for recompilation due to backpatch
+[   40.9704] D/CodeCache: Page fault handler invoked at PC=0x7ff62532664e Address=0x2486d601803 (read), fastmem offset 1F801803
+[   40.9709] D/CodeCache: Backpatching load at 0x7ff62532664e[5] (pc BFC05F48 addr 1F801803): Bitmask 000010C0 Addr 12 Data 0 Size 1 Signed 00
+[   40.9714] D/CodeCache: Queuing block BFC05F1C for recompilation due to backpatch
+[   40.9718] D/CodeCache: Page fault handler invoked at PC=0x7ff625326655 Address=0x2486d601800 (write), fastmem offset 1F801800
+[   40.9722] D/CodeCache: Backpatching store at 0x7ff625326655[5] (pc BFC05F50 addr 1F801800): Bitmask 000010C0 Addr 7 Data 2 Size 1 Signed 00
+[   40.9726] D/CodeCache: Queuing block BFC05F1C for recompilation due to backpatch
+[   40.9730] D/CodeCache: Page fault handler invoked at PC=0x7ff62532665f Address=0x2486d601803 (write), fastmem offset 1F801803
+[   40.9734] D/CodeCache: Backpatching store at 0x7ff62532665f[5] (pc BFC05F58 addr 1F801803): Bitmask 000010C0 Addr 12 Data 2 Size 1 Signed 00
+[   40.9739] D/CodeCache: Queuing block BFC05F1C for recompilation due to backpatch
+[   40.9743] D/CodeCache: Page fault handler invoked at PC=0x7ff62532667a Address=0x2486d601018 (write), fastmem offset 1F801018
+[   40.9748] D/CodeCache: Backpatching store at 0x7ff62532667a[5] (pc BFC05F6C addr 1F801018): Bitmask 000030C0 Addr 13 Data 2 Size 4 Signed 00
+[   40.9754] D/CodeCache: Queuing block BFC05F1C for recompilation due to backpatch
+[   40.9760] D/CodeCache: Page fault handler invoked at PC=0x7ff625326695 Address=0x2486d601020 (write), fastmem offset 1F801020
+[   40.9770] D/CodeCache: Backpatching store at 0x7ff625326695[5] (pc BFC05F7C addr 1F801020): Bitmask 000070C0 Addr 14 Data 2 Size 4 Signed 00
+[   40.9777] D/CodeCache: Queuing block BFC05F1C for recompilation due to backpatch
+[   40.9785] D/CodeCache: Page fault handler invoked at PC=0x7ff625326756 Address=0x2486d6010f4 (read), fastmem offset 1F8010F4
+[   40.9793] D/CodeCache: Backpatching load at 0x7ff625326756[5] (pc BFC065CC addr 1F8010F4): Bitmask 000000C0 Addr 6 Data 7 Size 4 Signed 00
+[   40.9799] D/CodeCache: Queuing block BFC065C0 for recompilation due to backpatch
+[   40.9806] D/CodeCache: Page fault handler invoked at PC=0x7ff625326789 Address=0x2486d6010f4 (write), fastmem offset 1F8010F4
+[   40.9813] D/CodeCache: Backpatching store at 0x7ff625326789[5] (pc BFC065F0 addr 1F8010F4): Bitmask 000030C0 Addr 6 Data 7 Size 4 Signed 00
+[   40.9820] D/CodeCache: Queuing block BFC065C0 for recompilation due to backpatch
+[   40.9825] D/CodeCache: Page fault handler invoked at PC=0x7ff62532678e Address=0x2486d6010f0 (read), fastmem offset 1F8010F0
+[   40.9830] D/CodeCache: Backpatching load at 0x7ff62532678e[5] (pc BFC065F4 addr 1F8010F0): Bitmask 000070C0 Addr 12 Data 14 Size 4 Signed 00
+[   40.9835] D/CodeCache: Queuing block BFC065C0 for recompilation due to backpatch
+[   40.9838] D/CodeCache: Page fault handler invoked at PC=0x7ff62532679a Address=0x2486d6010f0 (write), fastmem offset 1F8010F0
+[   40.9843] D/CodeCache: Backpatching store at 0x7ff62532679a[5] (pc BFC06600 addr 1F8010F0): Bitmask 00007040 Addr 12 Data 14 Size 4 Signed 00
+[   40.9847] D/CodeCache: Queuing block BFC065C0 for recompilation due to backpatch
+[   40.9851] D/CodeCache: Page fault handler invoked at PC=0x7ff6253267ab Address=0x2486d6010b0 (write), fastmem offset 1F8010B0
+[   40.9855] D/CodeCache: Backpatching store at 0x7ff6253267ab[5] (pc BFC06608 addr 1F8010B0): Bitmask 000070C0 Addr 13 Data 2 Size 4 Signed 00
+[   40.9860] D/CodeCache: Queuing block BFC065C0 for recompilation due to backpatch
+[   40.9864] D/CodeCache: Page fault handler invoked at PC=0x7ff6253267b6 Address=0x2486d6010b4 (write), fastmem offset 1F8010B4
+[   40.9870] D/CodeCache: Backpatching store at 0x7ff6253267b6[5] (pc BFC06610 addr 1F8010B4): Bitmask 000070C0 Addr 1 Data 7 Size 4 Signed 00
+[   40.9880] D/CodeCache: Queuing block BFC065C0 for recompilation due to backpatch
+[   40.9890] D/CodeCache: Page fault handler invoked at PC=0x7ff6253267d4 Address=0x2486d6010b8 (write), fastmem offset 1F8010B8
+[   40.9900] D/CodeCache: Backpatching store at 0x7ff6253267d4[5] (pc BFC06618 addr 1F8010B8): Bitmask 0000F0C0 Addr 1 Data 2 Size 4 Signed 00
+[   40.9911] D/CodeCache: Queuing block BFC065C0 for recompilation due to backpatch
+[   40.9919] D/CodeCache: Page fault handler invoked at PC=0x7ff625326947 Address=0x2486d601801 (write), fastmem offset 1F801801
+[   40.9925] D/CodeCache: Backpatching store at 0x7ff625326947[5] (pc BFC05FE8 addr 1F801801): Bitmask 00000040 Addr 6 Data 2 Size 1 Signed 00
+[   40.9931] D/CodeCache: Queuing block BFC05FC8 for recompilation due to backpatch
+[   40.9936] D/CDROM: Pause                  0.89ms
+[   40.9940] D/CDROM: Setloc     00:02:18
+[   40.9943] D/CDROM: SeekL      00:02:18
+[   40.9947] D/CDROM: Seek time for 00:02:08->00:02:18 (10 LBA): 1723973 (50.902 ms) (2N forward)
+[   41.0088] D/CDROM: Logical seek to [00:02:18] complete
+[   41.0112] D/CDROM: Setmode    0x80
+[   41.0124] D/CDROM: ReadN      00:02:18
+[   41.0136] D/CDROM: Seek time for 00:02:16->00:02:18 (2 LBA): 476188 (14.060 ms) (forward)
+[   41.0289] D/CDROM: DataSector 00:02:18 LBA=168 Mode=2 Submode=0x89 Buffer=1
+[   41.0304] D/CDROM: Pause                  0.89ms
+[   41.0314] I/TTY: BOOTSTRAP LOADER Type C Ver 2.1   03-JUL-1994
+[   41.0325] I/TTY: Copyright 1993,1994 (C) Sony Computer Entertainment Inc.
+[   41.0334] D/Bus: BIOS POST status: 09
+[   41.0405] D/CodeCache: Page fault handler invoked at PC=0x7ff6253295e0 Address=0x2486d601800 (write), fastmem offset 1F801800
+[   41.0412] D/CodeCache: Backpatching store at 0x7ff6253295e0[5] (pc BFC04C08 addr 1F801800): Bitmask 000000C0 Addr 7 Data 2 Size 1 Signed 00
+[   41.0418] D/CodeCache: Queuing block BFC04BF0 for recompilation due to backpatch
+[   41.0423] D/CodeCache: Page fault handler invoked at PC=0x7ff62532960a Address=0x2486d601801 (write), fastmem offset 1F801801
+[   41.0428] D/CodeCache: Backpatching store at 0x7ff62532960a[5] (pc BFC04C24 addr 1F801801): Bitmask 000010C0 Addr 12 Data 2 Size 1 Signed 00
+[   41.0434] D/CodeCache: Queuing block BFC04BF0 for recompilation due to backpatch
+[   41.0445] D/CDROM: Getstat    Stat=0x02
+[   41.0454] D/CDROM: Setloc     00:02:22
+[   41.0462] D/CDROM: SeekL      00:02:22
+[   41.0467] D/CDROM: Seek time for 00:02:12->00:02:22 (10 LBA): 1727125 (50.995 ms) (2N forward)
+[   41.0892] D/CDROM: Logical seek to [00:02:22] complete
+[   41.0914] D/CDROM: Setmode    0x80
+[   41.0926] D/CDROM: ReadN      00:02:22
+[   41.0932] D/CDROM: Seek time for 00:02:20->00:02:22 (2 LBA): 479203 (14.149 ms) (forward)
+[   41.1098] D/CDROM: DataSector 00:02:22 LBA=172 Mode=2 Submode=0x89 Buffer=1
+[   41.1112] D/CDROM: Pause                  0.89ms
+[   41.1125] I/TTY: setup file    : cdrom:SYSTEM.CNF;1
+[   41.1300] D/CDROM: Getstat    Stat=0x02
+[   41.1311] D/CDROM: Setloc     00:02:23
+[   41.1323] D/CDROM: SeekL      00:02:23
+[   41.1335] D/CDROM: Seek time for 00:02:23->00:02:23 (0 LBA): 1839332 (54.308 ms) (1T back+forward)
+[   41.1698] D/CDROM: Logical seek to [00:02:23] complete
+[   41.1718] D/CDROM: Setmode    0x80
+[   41.1725] D/CDROM: ReadN      00:02:23
+[   41.1731] D/CDROM: Seek time for 00:02:21->00:02:23 (2 LBA): 472557 (13.953 ms) (forward)
+[   41.1898] D/CDROM: DataSector 00:02:23 LBA=173 Mode=2 Submode=0x89 Buffer=1
+[   41.2110] D/CDROM: Pause                  0.89ms
+[   41.2122] D/CodeCache: Page fault handler invoked at PC=0x7ff6252d0d11 Address=0x2490da0dd10 (read), fastmem offset BFC0DD10
+[   41.2134] D/CodeCache: Backpatching load at 0x7ff6252d0d11[5] (pc BFC034A4 addr BFC0DD10): Bitmask 00000040 Addr 1 Data 6 Size 1 Signed 01
+[   41.2146] D/CodeCache: Queuing block BFC034A4 for recompilation due to backpatch
+[   41.2156] D/CodeCache: Page fault handler invoked at PC=0x7ff6252d0db1 Address=0x2490da0dd11 (read), fastmem offset BFC0DD11
+[   41.2164] D/CodeCache: Backpatching load at 0x7ff6252d0db1[5] (pc BFC034B4 addr BFC0DD11): Bitmask 00000040 Addr 1 Data 6 Size 1 Signed 01
+[   41.2169] D/CodeCache: Queuing block BFC034B4 for recompilation due to backpatch
+[   41.2239] D/CodeCache: Page fault handler invoked at PC=0x7ff6252cc111 Address=0x2490da0dd10 (read), fastmem offset BFC0DD10
+[   41.2250] D/CodeCache: Backpatching load at 0x7ff6252cc111[5] (pc BFC01524 addr BFC0DD10): Bitmask 00000040 Addr 1 Data 6 Size 1 Signed 01
+[   41.2262] D/CodeCache: Queuing block BFC01524 for recompilation due to backpatch
+[   41.2271] I/TTY: TCB	00000004
+[   41.2279] I/TTY: EVENT	00000016
+[   41.2286] I/TTY: STACK	801fff00
+[   41.2293] I/TTY: BOOT =	cdrom:\SCES_008.68;1
+[   41.2302] I/TTY: argument =	
+[   41.2310] I/TTY: KERNEL SETUP!
+[   41.2323] D/CodeCache: Ignoring fault due to RAM write @ 0x00006D30
+[   41.2334] I/TTY: Configuration : EvCB	0x16		TCB	0x04
+[   41.2345] I/TTY: boot file     : cdrom:\SCES_008.68;1
+[   41.3505] D/CodeCache: Ignoring fault due to RAM write @ 0xA0030000
+[   41.3526] D/CodeCache: Ignoring fault due to RAM write @ 0xA0031000
+[   41.3535] D/CodeCache: Ignoring fault due to RAM write @ 0xA0032000
+[   41.3542] D/CodeCache: Ignoring fault due to RAM write @ 0xA0033000
+[   41.3549] D/CodeCache: Ignoring fault due to RAM write @ 0xA0034000
+[   41.3706] D/CodeCache: Ignoring fault due to RAM write @ 0xA0035000
+[   41.3723] D/CodeCache: Ignoring fault due to RAM write @ 0xA0036000
+[   41.3731] D/CodeCache: Ignoring fault due to RAM write @ 0xA0037000
+[   41.3739] D/CodeCache: Ignoring fault due to RAM write @ 0xA0039000
+[   41.3914] D/CodeCache: Ignoring fault due to RAM write @ 0xA003D000
+[   41.4522] D/CodeCache: Ignoring fault due to RAM write @ 0xA004C000
+[   41.4534] D/CodeCache: Ignoring fault due to RAM write @ 0xA004D000
+[   41.4714] D/CodeCache: Ignoring fault due to RAM write @ 0xA004E000
+[   41.4728] D/CodeCache: Ignoring fault due to RAM write @ 0xA004F000
+[   41.4737] D/CodeCache: Ignoring fault due to RAM write @ 0xA0050000
+[   41.4747] D/CodeCache: Ignoring fault due to RAM write @ 0xA0051000
+[   41.4754] D/CodeCache: Ignoring fault due to RAM write @ 0xA0052000
+[   41.4915] D/CodeCache: Ignoring fault due to RAM write @ 0xA0054000
+[   41.4928] D/CodeCache: Ignoring fault due to RAM write @ 0xA0055000
+[   41.4937] D/CodeCache: Ignoring fault due to RAM write @ 0xA0056000
+[   41.4946] D/CodeCache: Ignoring fault due to RAM write @ 0xA0057000
+[   41.5113] D/CodeCache: Ignoring fault due to RAM write @ 0xA0058000
+[   41.5136] D/CodeCache: Ignoring fault due to RAM write @ 0xA0059000
+[   41.5145] D/CodeCache: Ignoring fault due to RAM write @ 0xA005A000
+[   41.5151] D/CodeCache: Ignoring fault due to RAM write @ 0xA005B000
+[   41.5156] D/CodeCache: Ignoring fault due to RAM write @ 0xA005C000
+[   41.5319] D/CodeCache: Ignoring fault due to RAM write @ 0xA005D000
+[   41.5336] D/CodeCache: Ignoring fault due to RAM write @ 0xA005E000
+[   41.5348] D/CodeCache: Ignoring fault due to RAM write @ 0xA005F000
+[   41.5359] D/CodeCache: Ignoring fault due to RAM write @ 0xA0060000
+[   41.5368] D/CodeCache: Ignoring fault due to RAM write @ 0xA0061000
+[   41.5376] D/CodeCache: Ignoring fault due to RAM write @ 0xA0062000
+[   41.5518] D/CodeCache: Ignoring fault due to RAM write @ 0xA0063000
+[   41.5529] D/CodeCache: Ignoring fault due to RAM write @ 0xA0064000
+[   41.5539] D/CodeCache: Ignoring fault due to RAM write @ 0xA0065000
+[   41.5552] D/CodeCache: Ignoring fault due to RAM write @ 0xA0066000
+[   41.5560] D/CodeCache: Ignoring fault due to RAM write @ 0xA0067000
+[   41.7329] V/PerfMon: FPS: 0.00 VPS: 49.78 CPU: 4.09 RNDR: 2.88 GPU: 0.00 Avg: 20.09ms Min: 19.30ms Max: 20.63ms
+[   42.7376] V/PerfMon: FPS: 0.00 VPS: 49.75 CPU: 2.30 RNDR: 3.03 GPU: 0.00 Avg: 20.10ms Min: 19.51ms Max: 20.75ms
+[   43.2006] D/CDROM: Getstat    Stat=0x02
+[   43.2027] D/CDROM: Getstat    Stat=0x02
+[   43.2036] D/CDROM: Setloc     00:02:24
+[   43.2042] D/CDROM: SeekL      00:02:24
+[   43.2046] D/CDROM: Seek time for 00:02:18->00:02:24 (6 LBA): 1385495 (40.908 ms) (forward)
+[   43.2402] D/CDROM: Logical seek to [00:02:24] complete
+[   43.2424] D/CDROM: Setmode    0x80
+[   43.2432] D/CDROM: ReadN      00:02:24
+[   43.2439] D/CDROM: Seek time for 00:02:22->00:02:24 (2 LBA): 484669 (14.310 ms) (forward)
+[   43.2606] D/CDROM: DataSector 00:02:24 LBA=174 Mode=2 Submode=0x08 Buffer=1
+[   43.2617] D/CDROM: Pause                  0.89ms
+[   43.2625] D/CDROM: Getstat    Stat=0x02
+[   43.2630] D/CDROM: Setloc     00:02:25
+[   43.2634] D/CDROM: SeekL      00:02:25
+[   43.2641] D/CDROM: Seek time for 00:02:16->00:02:25 (9 LBA): 1711433 (50.531 ms) (2N forward)
+[   43.3206] D/CDROM: Logical seek to [00:02:25] complete
+[   43.3293] D/CDROM: Setmode    0x80
+[   43.3302] D/CDROM: ReadN      00:02:25
+[   43.3308] D/CDROM: Seek time for 00:02:23->00:02:25 (2 LBA): 481099 (14.205 ms) (forward)
+[   43.3412] D/CDROM: DataSector 00:02:25 LBA=175 Mode=2 Submode=0x08 Buffer=1
+[   43.3422] D/CDROM: DataSector 00:02:26 LBA=176 Mode=2 Submode=0x08 Buffer=2
+[   43.3433] D/CDROM: DataSector 00:02:27 LBA=177 Mode=2 Submode=0x08 Buffer=3
+[   43.3442] D/CDROM: DataSector 00:02:28 LBA=178 Mode=2 Submode=0x08 Buffer=4
+[   43.3451] D/CDROM: DataSector 00:02:29 LBA=179 Mode=2 Submode=0x08 Buffer=5
+[   43.3458] D/CDROM: DataSector 00:02:30 LBA=180 Mode=2 Submode=0x08 Buffer=6
+[   43.3465] D/CDROM: DataSector 00:02:31 LBA=181 Mode=2 Submode=0x08 Buffer=7
+[   43.3474] D/CDROM: DataSector 00:02:32 LBA=182 Mode=2 Submode=0x08 Buffer=0
+[   43.3479] D/CDROM: DataSector 00:02:33 LBA=183 Mode=2 Submode=0x08 Buffer=1
+[   43.3612] D/CDROM: DataSector 00:02:34 LBA=184 Mode=2 Submode=0x08 Buffer=2
+[   43.3635] D/CDROM: DataSector 00:02:35 LBA=185 Mode=2 Submode=0x08 Buffer=3
+[   43.3644] D/CDROM: DataSector 00:02:36 LBA=186 Mode=2 Submode=0x08 Buffer=4
+[   43.3654] D/CDROM: DataSector 00:02:37 LBA=187 Mode=2 Submode=0x08 Buffer=5
+[   43.3665] D/CDROM: DataSector 00:02:38 LBA=188 Mode=2 Submode=0x08 Buffer=6
+[   43.3675] D/CDROM: DataSector 00:02:39 LBA=189 Mode=2 Submode=0x08 Buffer=7
+[   43.3686] D/CDROM: DataSector 00:02:40 LBA=190 Mode=2 Submode=0x08 Buffer=0
+[   43.3758] D/CDROM: DataSector 00:02:41 LBA=191 Mode=2 Submode=0x08 Buffer=1
+[   43.3771] D/CDROM: DataSector 00:02:42 LBA=192 Mode=2 Submode=0x08 Buffer=2
+[   43.3780] D/CDROM: DataSector 00:02:43 LBA=193 Mode=2 Submode=0x08 Buffer=3
+[   43.3789] D/CDROM: DataSector 00:02:44 LBA=194 Mode=2 Submode=0x08 Buffer=4
+[   43.3798] D/CDROM: DataSector 00:02:45 LBA=195 Mode=2 Submode=0x08 Buffer=5
+[   43.3806] D/CDROM: DataSector 00:02:46 LBA=196 Mode=2 Submode=0x08 Buffer=6
+[   43.3820] D/CDROM: DataSector 00:02:47 LBA=197 Mode=2 Submode=0x08 Buffer=7
+[   43.3830] D/CDROM: DataSector 00:02:48 LBA=198 Mode=2 Submode=0x08 Buffer=0
+[   43.3837] D/CDROM: DataSector 00:02:49 LBA=199 Mode=2 Submode=0x08 Buffer=1
+[   43.3842] D/CDROM: DataSector 00:02:50 LBA=200 Mode=2 Submode=0x08 Buffer=2
+[   43.3847] D/CDROM: DataSector 00:02:51 LBA=201 Mode=2 Submode=0x08 Buffer=3
+[   43.3852] D/CDROM: DataSector 00:02:52 LBA=202 Mode=2 Submode=0x08 Buffer=4
+[   43.3857] D/CDROM: DataSector 00:02:53 LBA=203 Mode=2 Submode=0x08 Buffer=5
+[   43.3861] D/CDROM: DataSector 00:02:54 LBA=204 Mode=2 Submode=0x08 Buffer=6
+[   43.3865] D/CDROM: DataSector 00:02:55 LBA=205 Mode=2 Submode=0x08 Buffer=7
+[   43.3869] D/CDROM: DataSector 00:02:56 LBA=206 Mode=2 Submode=0x08 Buffer=0
+[   43.3876] D/CDROM: DataSector 00:02:57 LBA=207 Mode=2 Submode=0x08 Buffer=1
+[   43.3885] D/CDROM: DataSector 00:02:58 LBA=208 Mode=2 Submode=0x08 Buffer=2
+[   43.3891] D/CDROM: DataSector 00:02:59 LBA=209 Mode=2 Submode=0x08 Buffer=3
+[   43.3896] D/CDROM: DataSector 00:02:60 LBA=210 Mode=2 Submode=0x08 Buffer=4
+[   43.3902] D/CDROM: DataSector 00:02:61 LBA=211 Mode=2 Submode=0x08 Buffer=5
+[   43.3910] D/CDROM: DataSector 00:02:62 LBA=212 Mode=2 Submode=0x08 Buffer=6
+[   43.3919] D/CDROM: DataSector 00:02:63 LBA=213 Mode=2 Submode=0x08 Buffer=7
+[   43.3925] D/CDROM: DataSector 00:02:64 LBA=214 Mode=2 Submode=0x08 Buffer=0
+[   43.3930] D/CDROM: DataSector 00:02:65 LBA=215 Mode=2 Submode=0x08 Buffer=1
+[   43.3934] D/CDROM: DataSector 00:02:66 LBA=216 Mode=2 Submode=0x08 Buffer=2
+[   43.3939] D/CDROM: DataSector 00:02:67 LBA=217 Mode=2 Submode=0x08 Buffer=3
+[   43.3944] D/CDROM: DataSector 00:02:68 LBA=218 Mode=2 Submode=0x08 Buffer=4
+[   43.3948] D/CDROM: DataSector 00:02:69 LBA=219 Mode=2 Submode=0x08 Buffer=5
+[   43.4036] D/CDROM: DataSector 00:02:70 LBA=220 Mode=2 Submode=0x08 Buffer=6
+[   43.4044] D/CDROM: DataSector 00:02:71 LBA=221 Mode=2 Submode=0x08 Buffer=7
+[   43.4049] D/CDROM: DataSector 00:02:72 LBA=222 Mode=2 Submode=0x08 Buffer=0
+[   43.4054] D/CDROM: DataSector 00:02:73 LBA=223 Mode=2 Submode=0x08 Buffer=1
+[   43.4059] D/CDROM: DataSector 00:02:74 LBA=224 Mode=2 Submode=0x08 Buffer=2
+[   43.4064] D/CDROM: DataSector 00:03:00 LBA=225 Mode=2 Submode=0x08 Buffer=3
+[   43.4070] D/CDROM: DataSector 00:03:01 LBA=226 Mode=2 Submode=0x08 Buffer=4
+[   43.4074] D/CDROM: DataSector 00:03:02 LBA=227 Mode=2 Submode=0x08 Buffer=5
+[   43.4078] D/CDROM: DataSector 00:03:03 LBA=228 Mode=2 Submode=0x08 Buffer=6
+[   43.4082] D/CDROM: DataSector 00:03:04 LBA=229 Mode=2 Submode=0x08 Buffer=7
+[   43.4086] D/CDROM: DataSector 00:03:05 LBA=230 Mode=2 Submode=0x08 Buffer=0
+[   43.4091] D/CDROM: DataSector 00:03:06 LBA=231 Mode=2 Submode=0x08 Buffer=1
+[   43.4106] D/CDROM: DataSector 00:03:07 LBA=232 Mode=2 Submode=0x08 Buffer=2
+[   43.4117] D/CDROM: DataSector 00:03:08 LBA=233 Mode=2 Submode=0x08 Buffer=3
+[   43.4128] D/CDROM: DataSector 00:03:09 LBA=234 Mode=2 Submode=0x08 Buffer=4
+[   43.4134] D/CDROM: DataSector 00:03:10 LBA=235 Mode=2 Submode=0x08 Buffer=5
+[   43.4142] D/CDROM: DataSector 00:03:11 LBA=236 Mode=2 Submode=0x08 Buffer=6
+[   43.4147] D/CDROM: DataSector 00:03:12 LBA=237 Mode=2 Submode=0x08 Buffer=7
+[   43.4151] D/CDROM: DataSector 00:03:13 LBA=238 Mode=2 Submode=0x08 Buffer=0
+[   43.4232] D/CDROM: DataSector 00:03:14 LBA=239 Mode=2 Submode=0x08 Buffer=1
+[   43.4243] D/CDROM: DataSector 00:03:15 LBA=240 Mode=2 Submode=0x08 Buffer=2
+[   43.4256] D/CDROM: DataSector 00:03:16 LBA=241 Mode=2 Submode=0x08 Buffer=3
+[   43.4267] D/CDROM: DataSector 00:03:17 LBA=242 Mode=2 Submode=0x08 Buffer=4
+[   43.4272] D/CDROM: DataSector 00:03:18 LBA=243 Mode=2 Submode=0x08 Buffer=5
+[   43.4277] D/CDROM: DataSector 00:03:19 LBA=244 Mode=2 Submode=0x08 Buffer=6
+[   43.4281] D/CDROM: DataSector 00:03:20 LBA=245 Mode=2 Submode=0x08 Buffer=7
+[   43.4285] D/CDROM: DataSector 00:03:21 LBA=246 Mode=2 Submode=0x08 Buffer=0
+[   43.4290] D/CDROM: DataSector 00:03:22 LBA=247 Mode=2 Submode=0x08 Buffer=1
+[   43.4295] D/CDROM: DataSector 00:03:23 LBA=248 Mode=2 Submode=0x08 Buffer=2
+[   43.4300] D/CDROM: DataSector 00:03:24 LBA=249 Mode=2 Submode=0x08 Buffer=3
+[   43.4304] D/CDROM: DataSector 00:03:25 LBA=250 Mode=2 Submode=0x08 Buffer=4
+[   43.4308] D/CDROM: DataSector 00:03:26 LBA=251 Mode=2 Submode=0x08 Buffer=5
+[   43.4312] D/CDROM: DataSector 00:03:27 LBA=252 Mode=2 Submode=0x08 Buffer=6
+[   43.4317] D/CDROM: DataSector 00:03:28 LBA=253 Mode=2 Submode=0x08 Buffer=7
+[   43.4329] D/CDROM: DataSector 00:03:29 LBA=254 Mode=2 Submode=0x08 Buffer=0
+[   43.4339] D/CDROM: DataSector 00:03:30 LBA=255 Mode=2 Submode=0x08 Buffer=1
+[   43.4350] D/CDROM: DataSector 00:03:31 LBA=256 Mode=2 Submode=0x08 Buffer=2
+[   43.4459] D/CDROM: DataSector 00:03:32 LBA=257 Mode=2 Submode=0x08 Buffer=3
+[   43.4470] D/CDROM: DataSector 00:03:33 LBA=258 Mode=2 Submode=0x08 Buffer=4
+[   43.4476] D/CDROM: DataSector 00:03:34 LBA=259 Mode=2 Submode=0x08 Buffer=5
+[   43.4480] D/CDROM: DataSector 00:03:35 LBA=260 Mode=2 Submode=0x08 Buffer=6
+[   43.4484] D/CDROM: DataSector 00:03:36 LBA=261 Mode=2 Submode=0x08 Buffer=7
+[   43.4488] D/CDROM: DataSector 00:03:37 LBA=262 Mode=2 Submode=0x08 Buffer=0
+[   43.4493] D/CDROM: DataSector 00:03:38 LBA=263 Mode=2 Submode=0x08 Buffer=1
+[   43.4496] D/CDROM: DataSector 00:03:39 LBA=264 Mode=2 Submode=0x08 Buffer=2
+[   43.4501] D/CDROM: DataSector 00:03:40 LBA=265 Mode=2 Submode=0x08 Buffer=3
+[   43.4507] D/CDROM: DataSector 00:03:41 LBA=266 Mode=2 Submode=0x08 Buffer=4
+[   43.4511] D/CDROM: DataSector 00:03:42 LBA=267 Mode=2 Submode=0x08 Buffer=5
+[   43.4516] D/CDROM: DataSector 00:03:43 LBA=268 Mode=2 Submode=0x08 Buffer=6
+[   43.4520] D/CDROM: DataSector 00:03:44 LBA=269 Mode=2 Submode=0x08 Buffer=7
+[   43.4524] D/CDROM: DataSector 00:03:45 LBA=270 Mode=2 Submode=0x08 Buffer=0
+[   43.4529] D/CDROM: DataSector 00:03:46 LBA=271 Mode=2 Submode=0x08 Buffer=1
+[   43.4534] D/CDROM: DataSector 00:03:47 LBA=272 Mode=2 Submode=0x08 Buffer=2
+[   43.4541] D/CDROM: DataSector 00:03:48 LBA=273 Mode=2 Submode=0x08 Buffer=3
+[   43.4554] D/CDROM: DataSector 00:03:49 LBA=274 Mode=2 Submode=0x08 Buffer=4
+[   43.4642] D/CDROM: DataSector 00:03:50 LBA=275 Mode=2 Submode=0x08 Buffer=5
+[   43.4653] D/CDROM: DataSector 00:03:51 LBA=276 Mode=2 Submode=0x08 Buffer=6
+[   43.4665] D/CDROM: DataSector 00:03:52 LBA=277 Mode=2 Submode=0x08 Buffer=7
+[   43.4674] D/CDROM: DataSector 00:03:53 LBA=278 Mode=2 Submode=0x08 Buffer=0
+[   43.4680] D/CDROM: DataSector 00:03:54 LBA=279 Mode=2 Submode=0x08 Buffer=1
+[   43.4687] D/CDROM: DataSector 00:03:55 LBA=280 Mode=2 Submode=0x08 Buffer=2
+[   43.4693] D/CDROM: DataSector 00:03:56 LBA=281 Mode=2 Submode=0x08 Buffer=3
+[   43.4700] D/CDROM: DataSector 00:03:57 LBA=282 Mode=2 Submode=0x08 Buffer=4
+[   43.4705] D/CDROM: DataSector 00:03:58 LBA=283 Mode=2 Submode=0x08 Buffer=5
+[   43.4710] D/CDROM: DataSector 00:03:59 LBA=284 Mode=2 Submode=0x08 Buffer=6
+[   43.4716] D/CDROM: DataSector 00:03:60 LBA=285 Mode=2 Submode=0x08 Buffer=7
+[   43.4721] D/CDROM: DataSector 00:03:61 LBA=286 Mode=2 Submode=0x08 Buffer=0
+[   43.4727] D/CDROM: DataSector 00:03:62 LBA=287 Mode=2 Submode=0x08 Buffer=1
+[   43.4733] D/CDROM: DataSector 00:03:63 LBA=288 Mode=2 Submode=0x08 Buffer=2
+[   43.4738] D/CDROM: DataSector 00:03:64 LBA=289 Mode=2 Submode=0x08 Buffer=3
+[   43.4742] D/CDROM: DataSector 00:03:65 LBA=290 Mode=2 Submode=0x08 Buffer=4
+[   43.4747] D/CDROM: DataSector 00:03:66 LBA=291 Mode=2 Submode=0x08 Buffer=5
+[   43.4752] D/CDROM: DataSector 00:03:67 LBA=292 Mode=2 Submode=0x08 Buffer=6
+[   43.4756] D/CDROM: DataSector 00:03:68 LBA=293 Mode=2 Submode=0x08 Buffer=7
+[   43.4892] D/CDROM: DataSector 00:03:69 LBA=294 Mode=2 Submode=0x08 Buffer=0
+[   43.4903] D/CDROM: DataSector 00:03:70 LBA=295 Mode=2 Submode=0x08 Buffer=1
+[   43.4912] D/CDROM: DataSector 00:03:71 LBA=296 Mode=2 Submode=0x08 Buffer=2
+[   43.4920] D/CDROM: DataSector 00:03:72 LBA=297 Mode=2 Submode=0x08 Buffer=3
+[   43.4927] D/CDROM: DataSector 00:03:73 LBA=298 Mode=2 Submode=0x08 Buffer=4
+[   43.4934] D/CDROM: DataSector 00:03:74 LBA=299 Mode=2 Submode=0x08 Buffer=5
+[   43.4940] D/CDROM: DataSector 00:04:00 LBA=300 Mode=2 Submode=0x08 Buffer=6
+[   43.4945] D/CDROM: DataSector 00:04:01 LBA=301 Mode=2 Submode=0x08 Buffer=7
+[   43.4952] D/CDROM: DataSector 00:04:02 LBA=302 Mode=2 Submode=0x08 Buffer=0
+[   43.4958] D/CDROM: DataSector 00:04:03 LBA=303 Mode=2 Submode=0x08 Buffer=1
+[   43.4964] D/CDROM: DataSector 00:04:04 LBA=304 Mode=2 Submode=0x08 Buffer=2
+[   43.4970] D/CDROM: DataSector 00:04:05 LBA=305 Mode=2 Submode=0x08 Buffer=3
+[   43.4975] D/CDROM: DataSector 00:04:06 LBA=306 Mode=2 Submode=0x08 Buffer=4
+[   43.4982] D/CDROM: DataSector 00:04:07 LBA=307 Mode=2 Submode=0x08 Buffer=5
+[   43.4995] D/CDROM: DataSector 00:04:08 LBA=308 Mode=2 Submode=0x08 Buffer=6
+[   43.5006] D/CDROM: DataSector 00:04:09 LBA=309 Mode=2 Submode=0x08 Buffer=7
+[   43.5016] D/CDROM: DataSector 00:04:10 LBA=310 Mode=2 Submode=0x08 Buffer=0
+[   43.5029] D/CDROM: DataSector 00:04:11 LBA=311 Mode=2 Submode=0x08 Buffer=1
+[   43.5045] D/CDROM: DataSector 00:04:12 LBA=312 Mode=2 Submode=0x08 Buffer=2
+[   43.5054] D/CDROM: DataSector 00:04:13 LBA=313 Mode=2 Submode=0x08 Buffer=3
+[   43.5060] D/CDROM: DataSector 00:04:14 LBA=314 Mode=2 Submode=0x08 Buffer=4
+[   43.5066] D/CDROM: DataSector 00:04:15 LBA=315 Mode=2 Submode=0x08 Buffer=5
+[   43.5071] D/CDROM: DataSector 00:04:16 LBA=316 Mode=2 Submode=0x08 Buffer=6
+[   43.5075] D/CDROM: DataSector 00:04:17 LBA=317 Mode=2 Submode=0x08 Buffer=7
+[   43.5079] D/CDROM: DataSector 00:04:18 LBA=318 Mode=2 Submode=0x08 Buffer=0
+[   43.5084] D/CDROM: DataSector 00:04:19 LBA=319 Mode=2 Submode=0x08 Buffer=1
+[   43.5093] D/CDROM: DataSector 00:04:20 LBA=320 Mode=2 Submode=0x08 Buffer=2
+[   43.5104] D/CDROM: DataSector 00:04:21 LBA=321 Mode=2 Submode=0x08 Buffer=3
+[   43.5110] D/CDROM: DataSector 00:04:22 LBA=322 Mode=2 Submode=0x08 Buffer=4
+[   43.5116] D/CDROM: DataSector 00:04:23 LBA=323 Mode=2 Submode=0x08 Buffer=5
+[   43.5183] D/CDROM: DataSector 00:04:24 LBA=324 Mode=2 Submode=0x08 Buffer=6
+[   43.5190] D/CDROM: DataSector 00:04:25 LBA=325 Mode=2 Submode=0x08 Buffer=7
+[   43.5197] D/CDROM: DataSector 00:04:26 LBA=326 Mode=2 Submode=0x08 Buffer=0
+[   43.5203] D/CDROM: DataSector 00:04:27 LBA=327 Mode=2 Submode=0x08 Buffer=1
+[   43.5219] D/CDROM: DataSector 00:04:28 LBA=328 Mode=2 Submode=0x08 Buffer=2
+[   43.5234] D/CDROM: DataSector 00:04:29 LBA=329 Mode=2 Submode=0x08 Buffer=3
+[   43.5249] D/CDROM: DataSector 00:04:30 LBA=330 Mode=2 Submode=0x08 Buffer=4
+[   43.5257] D/CDROM: DataSector 00:04:31 LBA=331 Mode=2 Submode=0x08 Buffer=5
+[   43.5262] D/CDROM: DataSector 00:04:32 LBA=332 Mode=2 Submode=0x08 Buffer=6
+[   43.5267] D/CDROM: DataSector 00:04:33 LBA=333 Mode=2 Submode=0x08 Buffer=7
+[   43.5271] D/CDROM: DataSector 00:04:34 LBA=334 Mode=2 Submode=0x08 Buffer=0
+[   43.5275] D/CDROM: DataSector 00:04:35 LBA=335 Mode=2 Submode=0x08 Buffer=1
+[   43.5279] D/CDROM: DataSector 00:04:36 LBA=336 Mode=2 Submode=0x08 Buffer=2
+[   43.5283] D/CDROM: DataSector 00:04:37 LBA=337 Mode=2 Submode=0x08 Buffer=3
+[   43.5288] D/CDROM: DataSector 00:04:38 LBA=338 Mode=2 Submode=0x08 Buffer=4
+[   43.5292] D/CDROM: DataSector 00:04:39 LBA=339 Mode=2 Submode=0x08 Buffer=5
+[   43.5296] D/CDROM: DataSector 00:04:40 LBA=340 Mode=2 Submode=0x08 Buffer=6
+[   43.5301] D/CDROM: DataSector 00:04:41 LBA=341 Mode=2 Submode=0x08 Buffer=7
+[   43.5306] D/CDROM: DataSector 00:04:42 LBA=342 Mode=2 Submode=0x08 Buffer=0
+[   43.5311] D/CDROM: DataSector 00:04:43 LBA=343 Mode=2 Submode=0x08 Buffer=1
+[   43.5318] D/CDROM: DataSector 00:04:44 LBA=344 Mode=2 Submode=0x08 Buffer=2
+[   43.5327] D/CDROM: DataSector 00:04:45 LBA=345 Mode=2 Submode=0x08 Buffer=3
+[   43.5334] D/CDROM: DataSector 00:04:46 LBA=346 Mode=2 Submode=0x08 Buffer=4
+[   43.5340] D/CDROM: DataSector 00:04:47 LBA=347 Mode=2 Submode=0x08 Buffer=5
+[   43.5347] D/CDROM: DataSector 00:04:48 LBA=348 Mode=2 Submode=0x08 Buffer=6
+[   43.5428] D/CDROM: DataSector 00:04:49 LBA=349 Mode=2 Submode=0x08 Buffer=7
+[   43.5440] D/CDROM: DataSector 00:04:50 LBA=350 Mode=2 Submode=0x08 Buffer=0
+[   43.5452] D/CDROM: DataSector 00:04:51 LBA=351 Mode=2 Submode=0x08 Buffer=1
+[   43.5461] D/CDROM: DataSector 00:04:52 LBA=352 Mode=2 Submode=0x08 Buffer=2
+[   43.5473] D/CDROM: DataSector 00:04:53 LBA=353 Mode=2 Submode=0x08 Buffer=3
+[   43.5481] D/CDROM: DataSector 00:04:54 LBA=354 Mode=2 Submode=0x08 Buffer=4
+[   43.5488] D/CDROM: DataSector 00:04:55 LBA=355 Mode=2 Submode=0x08 Buffer=5
+[   43.5493] D/CDROM: DataSector 00:04:56 LBA=356 Mode=2 Submode=0x08 Buffer=6
+[   43.5498] D/CDROM: DataSector 00:04:57 LBA=357 Mode=2 Submode=0x08 Buffer=7
+[   43.5504] D/CDROM: DataSector 00:04:58 LBA=358 Mode=2 Submode=0x08 Buffer=0
+[   43.5510] D/CDROM: DataSector 00:04:59 LBA=359 Mode=2 Submode=0x08 Buffer=1
+[   43.5514] D/CDROM: DataSector 00:04:60 LBA=360 Mode=2 Submode=0x08 Buffer=2
+[   43.5518] D/CDROM: DataSector 00:04:61 LBA=361 Mode=2 Submode=0x08 Buffer=3
+[   43.5526] D/CDROM: DataSector 00:04:62 LBA=362 Mode=2 Submode=0x08 Buffer=4
+[   43.5531] D/CDROM: DataSector 00:04:63 LBA=363 Mode=2 Submode=0x08 Buffer=5
+[   43.5537] D/CDROM: DataSector 00:04:64 LBA=364 Mode=2 Submode=0x08 Buffer=6
+[   43.5542] D/CDROM: DataSector 00:04:65 LBA=365 Mode=2 Submode=0x08 Buffer=7
+[   43.5550] D/CDROM: DataSector 00:04:66 LBA=366 Mode=2 Submode=0x08 Buffer=0
+[   43.5559] D/CDROMAsyncReader: Read LBA 369 took 7.69 msec
+[   43.5640] D/CDROM: DataSector 00:04:67 LBA=367 Mode=2 Submode=0x08 Buffer=1
+[   43.5650] D/CDROM: Pause                  0.89ms
+[   43.5660] D/Bus: Cache control <- 0x00000804
+[   43.5670] D/Bus: Cache control <- 0x00000800
+[   43.5680] D/Bus: Cache control <- 0x0001E988
+[   43.5690] I/TTY: EXEC:PC0(800110c0)  T_ADDR(80010000)  T_SIZE(00060800)
+[   43.5700] I/TTY: boot address  : 800110c0 801fff00
+[   43.5707] I/TTY: Execute !
+[   43.5713] I/TTY:                 S_ADDR(801fff00)  S_SIZE()
+[   43.5825] I/TTY: Change effective memory : 8 MBytes
+[   43.5838] E(ReadBlockInstructions): Instruction read failed at PC=0xBFC0E5E8, truncating block.
+[   43.5845] W(ReadBlockInstructions): Empty block compiled at 0xBFC0E5E8
+[   43.5856] E(CompileOrRevalidateBlock): Failed to read block at 0xBFC0E5E8, falling back to uncached interpreter
+[   43.7429] V/PerfMon: FPS: 0.00 VPS: 49.75 CPU: 4.22 RNDR: 2.86 GPU: 0.00 Avg: 20.10ms Min: 19.35ms Max: 20.84ms
+[   44.7477] V/PerfMon: FPS: 0.00 VPS: 49.75 CPU: 2.44 RNDR: 3.04 GPU: 0.00 Avg: 20.10ms Min: 19.85ms Max: 20.48ms
+[   45.7542] V/PerfMon: FPS: 0.00 VPS: 49.75 CPU: 2.40 RNDR: 2.99 GPU: 0.00 Avg: 20.10ms Min: 19.53ms Max: 20.68ms
+[   46.7580] V/PerfMon: FPS: 0.00 VPS: 49.75 CPU: 2.65 RNDR: 3.13 GPU: 0.00 Avg: 20.10ms Min: 19.69ms Max: 20.51ms
+[   47.7633] V/PerfMon: FPS: 0.00 VPS: 49.75 CPU: 2.32 RNDR: 2.83 GPU: 0.00 Avg: 20.10ms Min: 19.35ms Max: 20.63ms
+[   48.7682] V/PerfMon: FPS: 0.00 VPS: 49.74 CPU: 2.18 RNDR: 2.93 GPU: 0.00 Avg: 20.11ms Min: 19.11ms Max: 21.09ms
+[   49.7746] V/PerfMon: FPS: 0.00 VPS: 49.76 CPU: 2.29 RNDR: 3.20 GPU: 0.00 Avg: 20.10ms Min: 19.64ms Max: 20.55ms
+[   50.7782] V/PerfMon: FPS: 0.00 VPS: 49.75 CPU: 2.33 RNDR: 3.06 GPU: 0.00 Avg: 20.10ms Min: 19.66ms Max: 20.49ms
+[   51.7835] V/PerfMon: FPS: 0.00 VPS: 49.75 CPU: 2.30 RNDR: 3.07 GPU: 0.00 Avg: 20.10ms Min: 19.63ms Max: 20.57ms
+[   52.7887] V/PerfMon: FPS: 0.00 VPS: 49.75 CPU: 2.34 RNDR: 3.07 GPU: 0.00 Avg: 20.10ms Min: 19.73ms Max: 20.42ms
+[   53.7937] V/PerfMon: FPS: 0.00 VPS: 49.75 CPU: 2.52 RNDR: 3.14 GPU: 0.00 Avg: 20.10ms Min: 19.61ms Max: 20.68ms
+[   54.7988] V/PerfMon: FPS: 0.00 VPS: 49.74 CPU: 2.29 RNDR: 3.09 GPU: 0.00 Avg: 20.10ms Min: 19.59ms Max: 20.60ms
+[   55.8038] V/PerfMon: FPS: 0.00 VPS: 49.75 CPU: 2.20 RNDR: 2.79 GPU: 0.00 Avg: 20.10ms Min: 19.75ms Max: 20.51ms
+[   57.1071] V/PerfMon: FPS: 0.00 VPS: 49.75 CPU: 2.40 RNDR: 3.04 GPU: 0.00 Avg: 20.10ms Min: 19.62ms Max: 20.58ms
+[   57.8140] V/PerfMon: FPS: 0.00 VPS: 49.74 CPU: 2.48 RNDR: 2.93 GPU: 0.00 Avg: 20.10ms Min: 19.48ms Max: 20.66ms
+[   58.8192] V/PerfMon: FPS: 0.00 VPS: 49.75 CPU: 2.38 RNDR: 3.11 GPU: 0.00 Avg: 20.10ms Min: 19.59ms Max: 20.65ms
+[   59.8241] V/PerfMon: FPS: 0.00 VPS: 49.75 CPU: 2.26 RNDR: 3.06 GPU: 0.00 Avg: 20.10ms Min: 19.63ms Max: 20.63ms
+[   60.8293] V/PerfMon: FPS: 0.00 VPS: 49.75 CPU: 2.46 RNDR: 3.09 GPU: 0.00 Avg: 20.10ms Min: 19.71ms Max: 20.48ms
+[   61.8342] V/PerfMon: FPS: 0.00 VPS: 49.75 CPU: 2.27 RNDR: 2.89 GPU: 0.00 Avg: 20.10ms Min: 19.69ms Max: 20.55ms
+[   62.8399] V/PerfMon: FPS: 0.00 VPS: 49.73 CPU: 2.19 RNDR: 3.03 GPU: 0.00 Avg: 20.11ms Min: 19.69ms Max: 20.49ms

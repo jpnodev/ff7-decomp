@@ -28,6 +28,7 @@ SECTIONS
         main_TEXT_SIZE = ABSOLUTE(main_TEXT_END - main_TEXT_START);
         main_DATA_START = .;
         build/asm/SCES_008.68/main_raw.s.o(.data);
+        build/assets/SCES_008.68/main_data.bin.o(.data);
         . = ALIGN(., 16);
         main_DATA_END = .;
         main_DATA_SIZE = ABSOLUTE(main_DATA_END - main_DATA_START);

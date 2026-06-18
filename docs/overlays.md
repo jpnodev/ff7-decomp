@@ -19,3 +19,7 @@ For each overlay, we need to understand:
 - The entry point or exported function table.
 - Shared memory regions with the main executable (`SCES_008.68`).
 - The specific module that triggers the loading of the overlay.
+
+| File | Compressed | Decompressed size | Load address | Entry | Loader function | Status |
+|---|---:|---:|---:|---:|---|---|
+| BATTLE.X | TBD | TBD | TBD | TBD | TBD | pending |

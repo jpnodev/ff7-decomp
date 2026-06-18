@@ -8,7 +8,8 @@ Préfixes recommandés :
 
 ```text
 psyq_*
-  Fonction SDK/PsyQ reconnue ou wrapper PsyQ.
+  Wrapper PsyQ ou fonction reconnue mais ambiguë.
+  **Note :** Pour les fonctions SDK standards et certaines (ex: InitHeap, ResetGraph, DrawSync), garder le nom officiel sans le préfixe psyq_ si l'identification est certaine.
 
 bios_*
   Fonction BIOS ou syscall PSX.
@@ -88,6 +89,18 @@ ff7_init_unknown_01
 ```
 
 Quand le rôle devient clair, renommer.
+
+## Règle spéciale matching
+
+Quand une fonction n'est pas encore comprise, conserver l'adresse dans le nom :
+
+```text
+ff7_unknown_80012340
+field_unknown_80045678
+battle_unknown_800ABCDE
+```
+
+Quand le rôle devient clair, renommer sans perdre l'adresse dans le commentaire Ghidra.
 
 ## Variables globales
 

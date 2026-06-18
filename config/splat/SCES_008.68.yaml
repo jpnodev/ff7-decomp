@@ -52,5 +52,5 @@ segments:
     vram: 0x80010000
     subsegments:
       - [0x800, asm, main_raw]
-
+      - [0x3B890, bin, main_data]
   - [0x61000]

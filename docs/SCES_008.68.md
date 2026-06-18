@@ -17,6 +17,9 @@ This document contains notes and reverse engineering progress for the main game 
 - **Startup**: `start` at `0x800110C0`. Clears BSS and initializes heap, then calls `main`.
 - **Main Game Loop**: TBD
 
-## Noteworthy Functions
+## Function map
 
-(Add documented functions here as reverse engineering progresses)
+| Address | Name | Module | Status | Notes |
+|---|---|---|---|---|
+| 0x800110C0 | start | crt/psyq | identified | PsyQ startup / 2MBYTE.OBJ |
+| TBD | main | ff7 | pending | Main entry after runtime startup |

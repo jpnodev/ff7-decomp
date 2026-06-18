@@ -19,13 +19,15 @@ Volume ID: FINALFANTASY7
 Pour ne pas alourdir ce fichier d'introduction, la documentation a été scindée en deux répertoires :
 
 - **`workflow/`** : Contient tous les guides méthodologiques. C'est ici qu'il faut aller pour comprendre le fonctionnement du projet.
-  - [`workflow/splat_workflow.md`](file:///mnt/c/Users/clive/ff7-decomp/workflow/splat_workflow.md) : Le workflow pas-à-pas de la décompilation.
-  - [`workflow/scripts_reference.md`](file:///mnt/c/Users/clive/ff7-decomp/workflow/scripts_reference.md) : Le rôle et le fonctionnement de chaque script (`.zsh`, `.py`, `.java`).
-  - [`workflow/naming_conventions.md`](file:///mnt/c/Users/clive/ff7-decomp/workflow/naming_conventions.md) : Les règles de nommage à suivre pour le C et Ghidra.
+
+  - [workflow/splat_workflow.md](workflow/splat_workflow.md) : Le workflow pas-à-pas de la décompilation.
+  - [workflow/scripts_reference.md](workflow/scripts_reference.md) : Le rôle et le fonctionnement de chaque script (`.zsh`, `.py`, `.java`).
+  - [workflow/naming_conventions.md](workflow/naming_conventions.md) : Les règles de nommage à suivre pour le C et Ghidra.
 
 - **`docs/`** : Contient la documentation technique du code décompilé.
-  - [`docs/SCES_008.68.md`](file:///mnt/c/Users/clive/ff7-decomp/docs/SCES_008.68.md) : Informations techniques sur l'exécutable principal.
-  - [`docs/overlays.md`](file:///mnt/c/Users/clive/ff7-decomp/docs/overlays.md) : Liste et fonctionnement des exécutables secondaires (les modules chargés à chaud).
+
+  - [docs/SCES_008.68.md](docs/SCES_008.68.md) : Informations techniques sur l'exécutable principal.
+  - [docs/overlays.md](docs/overlays.md) : Liste et fonctionnement des exécutables secondaires (les modules chargés à chaud).
 
 ## Prérequis
 - `python 3.14.4` (via `pyenv` recommandé)
