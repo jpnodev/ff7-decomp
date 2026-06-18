@@ -1,0 +1,3 @@
+start = 0x800110C0; // type:func
+D_80062DC0 = 0x80062DC0; // type:u32
+D_8009FFAC = 0x8009FFAC; // type:u32

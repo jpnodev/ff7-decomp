@@ -1,0 +1,36 @@
+PSX disc extraction summary
+===========================
+
+Config:
+  /mnt/c/Users/clive/ff7-decomp/scripts/ff7_paths.config.zsh
+
+Input BIN:
+  /mnt/c/Users/clive/PSX Roms/Final Fantasy VII/Final Fantasy VII Disc 1.bin
+
+Input CUE:
+  /mnt/c/Users/clive/PSX Roms/Final Fantasy VII/Final Fantasy VII Disc 1.cue
+
+Output:
+  /mnt/c/Users/clive/ff7-decomp/game_dump
+
+Extracted files:
+  3382
+
+Detected executable-like files:
+  9
+
+SYSTEM.CNF:
+  /mnt/c/Users/clive/ff7-decomp/game_dump/extracted/SYSTEM.CNF
+
+Boot target:
+  SCES_008.68
+
+Boot executable:
+  /mnt/c/Users/clive/ff7-decomp/game_dump/extracted/SCES_008.68
+
+Important folders:
+  extracted/       Full extracted CD filesystem
+  metadata/        XML, filelist, hashes, notes
+  executables/     PS-X EXE and executable-like files
+  ghidra_import/   Files staged for Ghidra import
+  original/        Copy of original BIN/CUE

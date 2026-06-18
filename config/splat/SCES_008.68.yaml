@@ -1,0 +1,56 @@
+name: FF7_SCES_008_68
+sha1: c386c5f8649331bb9b58d76ca3da1cf4870c3a3c
+
+options:
+  basename: SCES_008.68
+  target_path: baserom/SCES_008.68
+  elf_path: build/SCES_008.68.elf
+  base_path: ../..
+
+  platform: psx
+  compiler: PSYQ
+  endianness: little
+
+  asm_path: asm/SCES_008.68
+  src_path: src/SCES_008.68
+  build_path: build
+  asset_path: assets/SCES_008.68
+
+  ld_script_path: ld/SCES_008.68.ld
+  ld_dependencies: True
+
+  symbol_addrs_path:
+    - config/symbols/SCES_008.68.symbols.txt
+    - ghidra_exports/splat/SCES_008.68.symbols.from_ghidra.txt
+
+  undefined_funcs_auto_path: config/symbols/SCES_008.68.undefined_funcs_auto.txt
+  undefined_syms_auto_path: config/symbols/SCES_008.68.undefined_syms_auto.txt
+
+  create_undefined_funcs_auto: True
+  create_undefined_syms_auto: True
+
+  find_file_boundaries: True
+  pair_rodata_to_text: True
+  migrate_rodata_to_functions: False
+
+  gp_value: 0x80062CF8
+
+  generated_s_preamble: |
+    .set noat
+    .set noreorder
+
+  mips_abi_float_regs: o32
+
+segments:
+  - name: psx_header
+    type: bin
+    start: 0x0
+
+  - name: main
+    type: code
+    start: 0x800
+    vram: 0x80010000
+    subsegments:
+      - [0x800, asm, main_raw]
+
+  - [0x61000]

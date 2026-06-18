@@ -1,0 +1,37 @@
+FF7 / PSX dump notes
+====================
+
+Config file:
+  /mnt/c/Users/clive/ff7-decomp/scripts/ff7_paths.config.zsh
+
+Ghidra Windows:
+  C:/Tools/ghidra
+
+DuckStation Windows:
+  C:/Tools/DuckStation
+
+Ghidra project name:
+  ff7-disc1
+
+Extracted filesystem:
+  C:\Users\clive\ff7-decomp\game_dump\extracted
+
+Ghidra import staging folder:
+  C:\Users\clive\ff7-decomp\game_dump\ghidra_import
+
+dumpsxiso XML:
+  C:\Users\clive\ff7-decomp\game_dump\metadata\ff7_disc1.xml
+
+SYSTEM.CNF boot target:
+  SCES_008.68
+
+Boot executable, WSL:
+  /mnt/c/Users/clive/ff7-decomp/game_dump/extracted/SCES_008.68
+
+Boot executable, Windows:
+  C:\Users\clive\ff7-decomp\game_dump\extracted\SCES_008.68
+
+Recommended Ghidra import:
+  Import the boot executable into project "ff7-disc1".
+  Use ghidra_psx_ldr / PSX loader.
+  Then run auto-analysis.
