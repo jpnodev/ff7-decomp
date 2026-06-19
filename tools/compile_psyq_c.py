@@ -14,7 +14,7 @@ def main():
     parser.add_argument("--as_bin", required=True, dest="as_bin", help="Path to GNU assembler")
     parser.add_argument("--asflags", default="", help="GNU assembler flags")
     parser.add_argument("--input", required=True, help="Input C file")
-    parser.add_argument("--output", required=True, help="Output object file")
+    parser.add_argument("-o", "--output", required=True, help="Output object file")
     
     args = parser.parse_args()
 

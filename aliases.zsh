@@ -58,3 +58,15 @@ alias ff7-tool-vram-to-fileoff='py tools/vram_to_fileoff.py'
 
 # Test de compilation C vers objet MIPS (wrapper PsyQ)
 alias ff7-tool-compile-c='py tools/compile_psyq_c.py'
+
+# ==========================================
+# Decomp-Permuter
+# ==========================================
+
+# Importe une fonction dans le permuteur
+# Utilisation: ff7-perm-import <nom_fonction>
+alias ff7-perm-import='zsh tools/import_perm.sh'
+
+# Lance le permuteur sur une fonction
+# Utilisation: ff7-perm <nom_fonction> [--stop-on-zero]
+alias ff7-perm='zsh tools/run_perm.sh'

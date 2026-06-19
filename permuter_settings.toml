@@ -1,0 +1,6 @@
+build_system = "make"
+compiler_type = "base"
+
+[decompme.compilers]
+"python3 tools/compile_psyq_c.py" = "psyq4.0"
+"tools/compilers/cc1-psx-272" = "psyq4.0"

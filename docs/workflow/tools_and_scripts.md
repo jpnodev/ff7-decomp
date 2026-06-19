@@ -65,3 +65,14 @@ Toutes ces commandes sont encapsulées dans des raccourcis ZSH pratiques. (Voir 
 ### `asm-differ` (`tools/asm-differ/diff.py`)
 - **Rôle :** Afficher et comparer le code assembleur d'une fonction du jeu original et de notre compilation C.
 - **Utilisation :** Alias `ff7-diff <nom_fonction>`.
+
+## Optimisation et Permutation (`tools/decomp-permuter/`)
+
+### `import_perm.sh`
+- **Rôle :** Importer une fonction C non-matching et son code assembleur cible dans l'environnement du permuteur.
+- **Fonctionnement :** Prépare un dossier dans `nonmatchings/<fonction>/` avec le contexte, le code source, et la configuration du compilateur.
+- **Utilisation :** Alias `ff7-perm-import <nom_fonction>`.
+
+### `run_perm.sh`
+- **Rôle :** Lancer le permuteur sur une fonction importée pour générer des variantes aléatoires et trouver la correspondance (100% match).
+- **Utilisation :** Alias `ff7-perm <nom_fonction> [--stop-on-zero]` (ajoute `--stop-on-zero` pour l'arrêter dès que la bonne configuration est trouvée).
