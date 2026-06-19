@@ -44,7 +44,7 @@ def main():
         sys.exit(1)
 
     # Step 3: Massage and Assemble (maspsx + as: .s -> .o)
-    maspsx_cmd = f"python3 {args.maspsx} --aspsx-version 2.21 --run-assembler --gnu-as-path {args.as_bin} {args.asflags} -o {args.output} < {assembly_file}"
+    maspsx_cmd = f"python3 {args.maspsx} --run-assembler --gnu-as-path {args.as_bin} {args.asflags} -o {args.output} < {assembly_file}"
     try:
         subprocess.run(maspsx_cmd, shell=True, check=True)
     except subprocess.CalledProcessError as e:
