@@ -1,4 +1,9 @@
 [submodule "tools/maspsx"]
+	path = tools/maspx
 	url = https://github.com/jpnodev/maspsx.git
 [submodule "tools/asm-differ"]
 	path = tools/asm-differ
+	url = https://github.com/jpnodev/asm-differ.git
+[submodule "tools/decomp-permuter"]
+	path = tools/decomp-permuter
+	url = https://github.com/jpnodev/decomp-permuter.git
