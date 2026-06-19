@@ -57,6 +57,8 @@ segments:
       - [0x197C, asm, before_main]
       - [0x2438, asm, main]
       - [0x305C, asm, after_main]
+      - [0x34034, c, FUN_80043834]
+      - [0x3418C, asm, after_FUN_80043834]
       - [0x36728, c, FUN_80045f28]
       - [0x36864, asm, after_FUN_80045f28]
       - [0x36B4C, c, FUN_8004634c]
