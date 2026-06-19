@@ -1,1 +1,18 @@
 Address,Comment
+0x800110C0,"Possible 2MBYTE.OBJ/stup2
+Possible 2MBYTE.OBJ/__SN_ENTRY_POINT"
+0x800149FC,"Possible S_I.OBJ/SpuInit"
+0x80037ADC,"Possible S_W.OBJ/SpuWrite"
+0x80037B04,"Possible S_W.OBJ/S_W_OBJ_28"
+0x80037B28,"Possible S_W.OBJ/S_W_OBJ_4C"
+0x8003CDB8,"Possible GS_106.OBJ/GsSetProjection
+Possible _OP_VDEL.OBJ/__builtin_vec_delete
+Possible _OP_VNEW.OBJ/__builtin_vec_new
+Possible SSNOFF.OBJ/SsSetNoiseOff
+Possible SSQUIT.OBJ/SsQuit"
+0x8004054C,"Possible GS_106.OBJ/GsSetProjection
+Possible _OP_VDEL.OBJ/__builtin_vec_delete
+Possible _OP_VNEW.OBJ/__builtin_vec_new
+Possible SSNOFF.OBJ/SsSetNoiseOff
+Possible SSQUIT.OBJ/SsQuit"
+0x8004642C,"{@address 0x8004642c}"

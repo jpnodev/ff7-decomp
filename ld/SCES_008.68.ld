@@ -27,8 +27,8 @@ SECTIONS
         build/asm/SCES_008.68/before_main.s.o(.text);
         build/asm/SCES_008.68/main.s.o(.text);
         build/asm/SCES_008.68/after_main.s.o(.text);
-        build/src/SCES_008.68/FUN_8004642c.c.o(.text);
-        build/asm/SCES_008.68/after_FUN_8004642c.s.o(.text);
+        build/src/SCES_008.68/ff7_memset.c.o(.text);
+        build/asm/SCES_008.68/after_ff7_memset.s.o(.text);
         . = ALIGN(., 16);
         main_TEXT_END = .;
         main_TEXT_SIZE = ABSOLUTE(main_TEXT_END - main_TEXT_START);
@@ -38,8 +38,8 @@ SECTIONS
         build/asm/SCES_008.68/before_main.s.o(.data);
         build/asm/SCES_008.68/main.s.o(.data);
         build/asm/SCES_008.68/after_main.s.o(.data);
-        build/src/SCES_008.68/FUN_8004642c.c.o(.data);
-        build/asm/SCES_008.68/after_FUN_8004642c.s.o(.data);
+        build/src/SCES_008.68/ff7_memset.c.o(.data);
+        build/asm/SCES_008.68/after_ff7_memset.s.o(.data);
         build/assets/SCES_008.68/main_data.bin.o(.data);
         . = ALIGN(., 16);
         main_DATA_END = .;
@@ -50,8 +50,8 @@ SECTIONS
         build/asm/SCES_008.68/before_main.s.o(.rodata);
         build/asm/SCES_008.68/main.s.o(.rodata);
         build/asm/SCES_008.68/after_main.s.o(.rodata);
-        build/src/SCES_008.68/FUN_8004642c.c.o(.rodata);
-        build/asm/SCES_008.68/after_FUN_8004642c.s.o(.rodata);
+        build/src/SCES_008.68/ff7_memset.c.o(.rodata);
+        build/asm/SCES_008.68/after_ff7_memset.s.o(.rodata);
         . = ALIGN(., 16);
         main_RODATA_END = .;
         main_RODATA_SIZE = ABSOLUTE(main_RODATA_END - main_RODATA_START);
@@ -61,8 +61,8 @@ SECTIONS
         build/asm/SCES_008.68/before_main.s.o(.bss);
         build/asm/SCES_008.68/main.s.o(.bss);
         build/asm/SCES_008.68/after_main.s.o(.bss);
-        build/src/SCES_008.68/FUN_8004642c.c.o(.bss);
-        build/asm/SCES_008.68/after_FUN_8004642c.s.o(.bss);
+        build/src/SCES_008.68/ff7_memset.c.o(.bss);
+        build/asm/SCES_008.68/after_ff7_memset.s.o(.bss);
         . = ALIGN(., 16);
         main_BSS_END = .;
         main_BSS_SIZE = ABSOLUTE(main_BSS_END - main_BSS_START);

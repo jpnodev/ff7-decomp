@@ -17,27 +17,25 @@ The repository is organized to separate the decompilation workflow from game ass
 - **`tools/`**: Project-specific automation scripts and generic utilities (e.g., `tools/iso/build_iso.zsh`, `tools/asm-differ/`, `compare_binaries.py`).
 - **`docs/`**: Comprehensive guides detailing the methodology (`docs/workflow/`) and technical details (`docs/technical/`).
 
-## 3. Current State: 100% Assembly Byte-Match Achieved
-We have successfully achieved a **perfect byte-for-byte match** of the main executable in pure assembly.
-- The `config/splat/SCES_008.68.yaml` is properly configured. We successfully bypassed a major assembler issue ("branch relaxation" altering binary size by misinterpreting raw data as code) by explicitly splitting the file into a code segment (`asm`) up to offset `0x3B890`, and a raw data segment (`bin`) afterwards.
-- The `Makefile` has been customized to automatically link all `splat`-extracted generic `.bin` files into the final ELF.
-- `tools/iso/build_iso.zsh` successfully packages the rebuilt binary into a bootable `.cue`/`.bin` format using `mkpsxiso` and copies it to the emulator directory. 
-- **Validation**: The rebuilt ISO boots perfectly in DuckStation. The intro video plays, and the main menu is fully functional.
+## 3. Current State: First C Function Matched!
+We have successfully achieved a **perfect byte-for-byte match** of the main executable, and we have just decompiled our first C function!
+- The `config/splat/SCES_008.68.yaml` is properly configured, separating code (`asm`) and data (`bin`).
+- The `Makefile` links all generic `.bin` files and compiles `.c` files using the original 1997 PsyQ toolchain (`cc1-psx-272` with `-O2 -G8`).
+- `tools/iso/build_iso.zsh` successfully packages the rebuilt binary into a bootable `.cue`/`.bin` format.
+- **First Matched Function**: `FUN_8004642c` is 100% matched! We resolved a compiler quirk where PsyQ unexpectedly allocated 8 bytes on the stack for a leaf function by introducing a `volatile char dummy[8];` in the C code to force the stack allocation.
+- **Workflow Automation**: All complex commands have been wrapped in `aliases.zsh`. Sourcing this file provides `ff7-split` (which purges old `asm/` files to prevent ghost files), `ff7-build`, `ff7-check`, and `ff7-diff`.
 
 ## 4. Next Steps for the Decompilation Expert
-You are taking over at the most exciting phase: **Phase D (C-Matching)**. 
+You are taking over right as we dive deep into **Phase D (C-Matching)**. 
 
 The environment is stable, automated, and strictly verified. Your immediate priorities are:
 
-1. **Identify and Decompile Small Leaf Functions**:
-   - The PsyQ toolchain (`cc1-psx-272` with `-G8`) has been successfully integrated via `tools/compile_psyq_c.py`.
-   - **DO NOT** begin by decompiling large, complex functions like `_start`, `main`, or PsyQ SDK initializations.
-   - Start by isolating a very small "leaf" function (5-20 instructions, no SDK calls, no complex switches).
-   - Change its type to `c` in `config/splat/SCES_008.68.yaml`, generate the C file, and use the `INCLUDE_ASM` macro for the surrounding un-decompiled code.
-   - Compile and compare using `tools/compile_psyq_c.py` and `tools/compare_binaries.py` (or locally generated assembly diffs) until you achieve a 100% byte match.
-   - **Tutoriel asm-differ** : Utilisez l'outil `asm-differ` pour avoir un affichage côte à côte des instructions !
-     Lancez simplement : `python3 tools/asm-differ/diff.py -mwo <nom_de_la_fonction>`
-     Le script compilera automatiquement (`make`) et vous montrera les différences en temps réel (`-m` pour auto-make, `-w` pour watch, `-o` pour comparer les .o).
+1. **Continue Decompiling Small Leaf Functions**:
+   - Focus on small "leaf" functions (5-20 instructions) without complex SDK calls.
+   - Change their type to `c` in `config/splat/SCES_008.68.yaml`, run `ff7-split`, and write the C code in `src/`.
+   - **asm-differ Tutorial**: Use the custom alias to get a side-by-side diff of the instructions:
+     `ff7-diff <nom_de_la_fonction>`
+     *Note: Since we do not yet generate `.o` files from the original assembly, we perform binary diffing (`-s`). If your function has multiple early returns (`jr ra`), you must append `-ss` or `-sss` to the command line to prevent `asm-differ` from truncating the output too early.*
 
 2. **Ghidra Integration (Crucial Workflow Rule)**:
    - **The human user acts as the Ghidra operator.** Ask the user to search for small leaf functions or provide pseudo-code.
