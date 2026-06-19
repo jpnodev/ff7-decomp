@@ -14,15 +14,14 @@ The repository is organized to separate the decompilation workflow from game ass
 - **`config/splat/`**: Contains the YAML configuration files dictating how `splat` should split the binaries.
 - **`asm/` & `assets/`**: Auto-generated directories where `splat` extracts assembly code (`.s`) and raw data (`.bin`).
 - **`src/`**: Destination for the decompiled C code (`.c`).
-- **`scripts/`**: Project-specific automation scripts (e.g., `build_iso.zsh`, `dump_psx_disc.zsh`).
-- **`tools/`**: Reusable generic utilities (e.g., `compare_binaries.py`, `vram_to_fileoff.py`).
-- **`workflow/` & `docs/`**: Comprehensive guides detailing the naming conventions, the splat workflow, and reverse engineering notes.
+- **`tools/`**: Project-specific automation scripts and generic utilities (e.g., `tools/iso/build_iso.zsh`, `tools/asm-differ/`, `compare_binaries.py`).
+- **`docs/`**: Comprehensive guides detailing the methodology (`docs/workflow/`) and technical details (`docs/technical/`).
 
 ## 3. Current State: 100% Assembly Byte-Match Achieved
 We have successfully achieved a **perfect byte-for-byte match** of the main executable in pure assembly.
 - The `config/splat/SCES_008.68.yaml` is properly configured. We successfully bypassed a major assembler issue ("branch relaxation" altering binary size by misinterpreting raw data as code) by explicitly splitting the file into a code segment (`asm`) up to offset `0x3B890`, and a raw data segment (`bin`) afterwards.
 - The `Makefile` has been customized to automatically link all `splat`-extracted generic `.bin` files into the final ELF.
-- `scripts/build_iso.zsh` successfully packages the rebuilt binary into a bootable `.cue`/`.bin` format using `mkpsxiso` and copies it to the emulator directory. 
+- `tools/iso/build_iso.zsh` successfully packages the rebuilt binary into a bootable `.cue`/`.bin` format using `mkpsxiso` and copies it to the emulator directory. 
 - **Validation**: The rebuilt ISO boots perfectly in DuckStation. The intro video plays, and the main menu is fully functional.
 
 ## 4. Next Steps for the Decompilation Expert
@@ -36,6 +35,9 @@ The environment is stable, automated, and strictly verified. Your immediate prio
    - Start by isolating a very small "leaf" function (5-20 instructions, no SDK calls, no complex switches).
    - Change its type to `c` in `config/splat/SCES_008.68.yaml`, generate the C file, and use the `INCLUDE_ASM` macro for the surrounding un-decompiled code.
    - Compile and compare using `tools/compile_psyq_c.py` and `tools/compare_binaries.py` (or locally generated assembly diffs) until you achieve a 100% byte match.
+   - **Tutoriel asm-differ** : Utilisez l'outil `asm-differ` pour avoir un affichage côte à côte des instructions !
+     Lancez simplement : `python3 tools/asm-differ/diff.py -mwo <nom_de_la_fonction>`
+     Le script compilera automatiquement (`make`) et vous montrera les différences en temps réel (`-m` pour auto-make, `-w` pour watch, `-o` pour comparer les .o).
 
 2. **Ghidra Integration (Crucial Workflow Rule)**:
    - **The human user acts as the Ghidra operator.** Ask the user to search for small leaf functions or provide pseudo-code.
@@ -47,10 +49,10 @@ The environment is stable, automated, and strictly verified. Your immediate prio
 
 3. **Tackle the Overlays (`.X` files)**:
    - FF7 uses multiple overlays (`BATTLE.X`, `FIELD.TDB`/`DSCHANGE.X`, etc.) due to the PSX's 2MB RAM limit.
-   - You will need to determine their load addresses, identify the functions that load them, and create new splat YAML profiles for each overlay (documented in `docs/overlays.md`).
+   - You will need to determine their load addresses, identify the functions that load them, and create new splat YAML profiles for each overlay (documented in `docs/technical/overlays.md`).
 
 ## 5. Key References
-- Please read `workflow/splat_workflow.md` to understand the iterative split/make/compare loop.
-- Please read `workflow/naming_conventions.md` to adhere to the established project conventions (e.g., retaining addresses in function names until their roles are 100% understood: `ff7_unknown_80012340`).
+- Please read `docs/workflow/splat_workflow.md` to understand the iterative split/make/compare loop.
+- Please read `docs/workflow/naming_conventions.md` to adhere to the established project conventions (e.g., retaining addresses in function names until their roles are 100% understood: `ff7_unknown_80012340`).
 
 Good luck! The foundation is solid, and the path to a full C decompilation is now wide open.

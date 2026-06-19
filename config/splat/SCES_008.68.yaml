@@ -57,5 +57,7 @@ segments:
       - [0x197C, asm, before_main]
       - [0x2438, asm, main]
       - [0x305C, asm, after_main]
+      - [0x36C2C, c, FUN_8004642c]
+      - [0x36C58, asm, after_FUN_8004642c]
       - [0x3B890, bin, main_data]
   - [0x61000]

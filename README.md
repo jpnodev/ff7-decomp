@@ -16,18 +16,17 @@ Volume ID: FINALFANTASY7
 
 ## Structure du Projet et Documentation
 
-Pour ne pas alourdir ce fichier d'introduction, la documentation a été scindée en deux répertoires :
+Pour ne pas alourdir ce fichier d'introduction, la documentation a été scindée en sous-répertoires dans `docs/` :
 
-- **`workflow/`** : Contient tous les guides méthodologiques. C'est ici qu'il faut aller pour comprendre le fonctionnement du projet.
+- **`docs/workflow/`** : Contient tous les guides méthodologiques. C'est ici qu'il faut aller pour comprendre le fonctionnement du projet.
+  - [docs/workflow/splat_workflow.md](docs/workflow/splat_workflow.md) : Le workflow pas-à-pas de la décompilation.
+  - [docs/workflow/tools_and_scripts.md](docs/workflow/tools_and_scripts.md) : Le rôle et le fonctionnement de chaque outil et script du dossier `tools/`.
+  - [docs/workflow/naming_conventions.md](docs/workflow/naming_conventions.md) : Les règles de nommage à suivre pour le C et Ghidra.
 
-  - [workflow/splat_workflow.md](workflow/splat_workflow.md) : Le workflow pas-à-pas de la décompilation.
-  - [workflow/scripts_reference.md](workflow/scripts_reference.md) : Le rôle et le fonctionnement de chaque script (`.zsh`, `.py`, `.java`).
-  - [workflow/naming_conventions.md](workflow/naming_conventions.md) : Les règles de nommage à suivre pour le C et Ghidra.
-
-- **`docs/`** : Contient la documentation technique du code décompilé.
-
-  - [docs/SCES_008.68.md](docs/SCES_008.68.md) : Informations techniques sur l'exécutable principal.
-  - [docs/overlays.md](docs/overlays.md) : Liste et fonctionnement des exécutables secondaires (les modules chargés à chaud).
+- **`docs/technical/`** : Contient la documentation technique du code décompilé.
+  - [docs/technical/SCES_008.68.md](docs/technical/SCES_008.68.md) : Informations techniques sur l'exécutable principal.
+  - [docs/technical/overlays.md](docs/technical/overlays.md) : Liste et fonctionnement des exécutables secondaires (les modules chargés à chaud).
+  - [docs/technical/handover.md](docs/technical/handover.md) : Historique des notes de transfert entre agents.
 
 ## Prérequis
 - `python 3.14.4` (via `pyenv` recommandé)
@@ -39,9 +38,9 @@ Pour ne pas alourdir ce fichier d'introduction, la documentation a été scindé
 
 ## Installation & Extraction
 
-1. Configure le fichier `scripts/ff7_paths.config.zsh` avec le chemin de tes ROMs.
+1. Configure le fichier `tools/iso/ff7_paths.config.zsh` avec le chemin de tes ROMs.
 2. Lance l'extraction globale (une seule fois) :
    ```bash
-   ./scripts/dump_psx_disc.zsh
+   ./tools/iso/dump_psx_disc.zsh
    ```
-3. Suis le guide de décompilation : [`workflow/splat_workflow.md`](file:///mnt/c/Users/clive/ff7-decomp/workflow/splat_workflow.md)
+3. Suis le guide de décompilation : [`docs/workflow/splat_workflow.md`](docs/workflow/splat_workflow.md)

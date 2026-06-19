@@ -1,7 +1,3 @@
-start = 0x800110C0; // type:func
-main = 0x80011C38; // type:func
-
-
 _bss = 0x80062DC0; // type:u32
 _bss_end = 0x8009FFA8; // type:u32
 _heap_base = 0x8009FFAC; // type:u32

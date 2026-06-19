@@ -2,7 +2,7 @@
 set -euo pipefail
 
 SCRIPT_DIR="${0:A:h}"
-PROJECT_ROOT="${SCRIPT_DIR}/.."
+PROJECT_ROOT="${SCRIPT_DIR}/../.."
 GAME_DUMP_DIR="${PROJECT_ROOT}/game_dump"
 BUILD_DIR="${PROJECT_ROOT}/build"
 

@@ -47,7 +47,7 @@ Cette phase ne remplace pas le matching byte-to-byte. Elle sert seulement à dé
 
 1. Reconstruis l'ISO complète :
    ```bash
-   ./scripts/build_iso.zsh
+   ./tools/iso/build_iso.zsh
    ```
 2. Charge le fichier `.cue` généré dans `DuckStation` et teste que le jeu tourne.
 

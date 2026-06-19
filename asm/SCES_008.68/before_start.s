@@ -1705,10 +1705,11 @@ dlabel D_8001109C
     /* 18AC 800110AC 20282530 */ .word 0x30252820
     /* 18B0 800110B0 3878290A */ .word 0x0A297838
     /* 18B4 800110B4 00000000 */ .word 0x00000000
-
-nonmatching func_800110B8
-
-alabel func_800110B8
-    /* 18B8 800110B8 0800E003 */ .word 0x03E00008
-    /* 18BC 800110BC 00000000 */ .word 0x00000000
 enddlabel D_80010A6E
+
+nonmatching __main, 0x8
+
+glabel __main
+    /* 18B8 800110B8 0800E003 */  jr         $ra
+    /* 18BC 800110BC 00000000 */   nop
+endlabel __main
