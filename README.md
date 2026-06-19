@@ -28,6 +28,29 @@ Pour ne pas alourdir ce fichier d'introduction, la documentation a été scindé
   - [docs/technical/overlays.md](docs/technical/overlays.md) : Liste et fonctionnement des exécutables secondaires (les modules chargés à chaud).
   - [docs/technical/handover.md](docs/technical/handover.md) : Historique des notes de transfert entre agents.
 
+## Architecture des Fichiers (Cycle de Décompilation)
+
+Le projet fait transiter le code de son état binaire d'origine jusqu'à sa recompilation complète. Voici la carte des dossiers impliqués dans ce cycle :
+
+### 1. La Vérité Terrain (Inputs originaux)
+- **`baserom/`** *(Généré par dump_psx_disc)* : Contient les binaires originaux du jeu (ex: `SCES_008.68`). C'est le point de départ de `splat` et l'élément de comparaison de `asm-differ`.
+- **`ghidra_exports/`** *(Export manuel)* : Données textuelles brutes (labels, adresses) extraites directement de l'interface de Ghidra.
+- **`config/symbols/`** *(Généré par clean_ghidra_exports / Manuel)* : Les listes de symboles nettoyées. Elles disent à `splat` et au linker comment s'appellent les différentes adresses mémoires.
+
+### 2. Le Code Démantelé (Splat & Développeurs)
+- **`asm/`** *(Généré par splat)* : Tout le code du jeu non encore décompilé en C. Ce sont des fichiers assembleur purs (`.s`). Le sous-dossier `nonmatchings/` découpe finement le jeu fonction par fonction.
+- **`assets/`** *(Généré par splat)* : Les données binaires (textures, tableaux bruts non traduits) que le jeu charge.
+- **`src/`** *(Écrit par nous)* : Les fichiers C (`.c`). C'est le résultat de notre travail de décompilation à partir de `asm/nonmatchings`.
+- **`include/`** *(Écrit par nous)* : Les headers C (`.h`) contenant les définitions des variables globales et des structs du jeu.
+
+### 3. Le Processus de Re-fusion (Compilation)
+- **`ld/`** *(Généré par splat)* : Les scripts de Linker (`.ld`). Ce sont les "plans de montage". Ils indiquent à `make` à quelle adresse mémoire exacte il doit recoudre chaque fichier de `asm/`, `src/` et `assets/`.
+- **`build/`** *(Généré par make)* : Le résultat final.
+  - Fichiers `.o` : Les fichiers objets intermédiaires compilés à partir du C ou du S.
+  - Fichier `.elf` : L'exécutable annoté (pratique pour l'analyse).
+  - Fichier `.map` : Le rapport généré par le compilateur qui liste où chaque fonction a fini par atterrir.
+  - Fichier `.bin` : Le binaire pur final qui doit être identique bit-à-bit à celui de `baserom/`.
+
 ## Prérequis
 - `python 3.14.4` (via `pyenv` recommandé)
 - `splat64[mips]` (via `pip install -r requirements.txt`)

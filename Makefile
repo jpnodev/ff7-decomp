@@ -69,3 +69,19 @@ $(BUILD_DIR)/assets/$(TARGET)/%.bin.o: assets/$(TARGET)/%.bin
 
 clean:
 	rm -rf $(BUILD_DIR)
+
+# ==========================================
+# Préparation pour le mode Object-Diffing (-o)
+# ==========================================
+# Plus tard, pour éviter les soucis avec `asm-differ` sur les binaires, 
+# nous pourrons utiliser cette cible pour compiler l'assembleur pur 
+# du jeu d'origine dans un dossier `expected/`.
+# `asm-differ -o` comparera alors directement le .o généré par C avec le .o original.
+# 
+# EXPECTED_DIR := expected
+# 
+# expected:
+# 	@mkdir -p $(EXPECTED_DIR)/$(BUILD_DIR)
+# 	# 1. Compiler les .s extraits dans $(EXPECTED_DIR)
+# 	# 2. Cela permettra à asm-differ de comparer les tailles exactes via les symboles des .o
+# 	@echo "Dossier expected/ préparé (à implémenter complètement plus tard)."

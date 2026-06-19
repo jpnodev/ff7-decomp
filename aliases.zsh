@@ -17,7 +17,7 @@ alias ff7-build='make clean && make'
 # Lance asm-differ avec recompilation automatique (-m) et watch (-w)
 # Utilisation: ff7-diff FUN_8004642c
 ff7-diff() {
-    py tools/asm-differ/diff.py -mw "$1" --no-pager
+    py tools/asm-differ/diff.py -mw -s "$1" --no-pager
 }
 
 # 5. Vérification Globale
