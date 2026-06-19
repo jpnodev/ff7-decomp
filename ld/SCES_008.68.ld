@@ -27,6 +27,7 @@ SECTIONS
         build/asm/SCES_008.68/before_main.s.o(.text);
         build/asm/SCES_008.68/main.s.o(.text);
         build/asm/SCES_008.68/after_main.s.o(.text);
+        build/src/SCES_008.68/FUN_8004634c.c.o(.text);
         build/src/SCES_008.68/ff7_memset.c.o(.text);
         build/asm/SCES_008.68/after_ff7_memset.s.o(.text);
         . = ALIGN(., 16);
@@ -38,6 +39,7 @@ SECTIONS
         build/asm/SCES_008.68/before_main.s.o(.data);
         build/asm/SCES_008.68/main.s.o(.data);
         build/asm/SCES_008.68/after_main.s.o(.data);
+        build/src/SCES_008.68/FUN_8004634c.c.o(.data);
         build/src/SCES_008.68/ff7_memset.c.o(.data);
         build/asm/SCES_008.68/after_ff7_memset.s.o(.data);
         build/assets/SCES_008.68/main_data.bin.o(.data);
@@ -50,6 +52,7 @@ SECTIONS
         build/asm/SCES_008.68/before_main.s.o(.rodata);
         build/asm/SCES_008.68/main.s.o(.rodata);
         build/asm/SCES_008.68/after_main.s.o(.rodata);
+        build/src/SCES_008.68/FUN_8004634c.c.o(.rodata);
         build/src/SCES_008.68/ff7_memset.c.o(.rodata);
         build/asm/SCES_008.68/after_ff7_memset.s.o(.rodata);
         . = ALIGN(., 16);
@@ -61,6 +64,7 @@ SECTIONS
         build/asm/SCES_008.68/before_main.s.o(.bss);
         build/asm/SCES_008.68/main.s.o(.bss);
         build/asm/SCES_008.68/after_main.s.o(.bss);
+        build/src/SCES_008.68/FUN_8004634c.c.o(.bss);
         build/src/SCES_008.68/ff7_memset.c.o(.bss);
         build/asm/SCES_008.68/after_ff7_memset.s.o(.bss);
         . = ALIGN(., 16);
