@@ -6,7 +6,7 @@ This document provides a comprehensive overview of the current project state, th
 
 ## 1. Project Context & Objectives
 The goal of this project is to achieve a **100% byte-perfect decompilation** of Final Fantasy VII (Disc 1 - `SCES_008.68`). 
-We are using a modern `splat` (spimdisasm) workflow combined with the original PsyQ SDK toolchain (via GNU Binutils `mipsel-linux-gnu-as` / `ld`) to split, reassemble, and verify the binary.
+We are using a modern `splat` (spimdisasm) workflow combined with the original **PsyQ SDK toolchain (cc1-psx 2.7.2 and 2.6.3)**, wrapped by `maspsx` and assembled via GNU Binutils `mipsel-linux-gnu-as` / `ld` to ensure a byte-for-byte match with the original 1997 compiler's output.
 
 ## 2. Architecture & Toolchain
 The repository is organized to separate the decompilation workflow from game assets and documentation:
@@ -30,19 +30,19 @@ You are taking over at the most exciting phase: **Phase D (C-Matching)**.
 
 The environment is stable, automated, and strictly verified. Your immediate priorities are:
 
-1. **Identify and Decompile `main`**:
-   - The PsyQ `start` function is identified at `0x800110C0`. 
-   - Analyze the `start` assembly to locate the jump to the game's actual `main` function.
-   - Isolate this function in `config/splat/SCES_008.68.yaml`, change its type to `c`, and begin writing the C equivalent in `src/SCES_008.68/main.c`.
-   - Compile, run `tools/compare_binaries.py`, and iterate until the C code produces the exact same assembly as the original.
+1. **Identify and Decompile Small Leaf Functions**:
+   - The PsyQ toolchain (`cc1-psx-272` with `-G8`) has been successfully integrated via `tools/compile_psyq_c.py`.
+   - **DO NOT** begin by decompiling large, complex functions like `_start`, `main`, or PsyQ SDK initializations.
+   - Start by isolating a very small "leaf" function (5-20 instructions, no SDK calls, no complex switches).
+   - Change its type to `c` in `config/splat/SCES_008.68.yaml`, generate the C file, and use the `INCLUDE_ASM` macro for the surrounding un-decompiled code.
+   - Compile and compare using `tools/compile_psyq_c.py` and `tools/compare_binaries.py` (or locally generated assembly diffs) until you achieve a 100% byte match.
 
 2. **Ghidra Integration (Crucial Workflow Rule)**:
-   - **The human user acts as the Ghidra operator.** You must *always* ask the user to search for a specific function, address, or reference in Ghidra.
+   - **The human user acts as the Ghidra operator.** Ask the user to search for small leaf functions or provide pseudo-code.
    - When the user provides you with the Ghidra pseudocode, address, or context, it is your job to:
-     1. Update the `config/splat/SCES_008.68.yaml` to isolate the function.
-     2. Update the relevant documentation in `docs/` (like `SCES_008.68.md` or `overlays.md`).
-     3. Write the equivalent C code in `src/`.
-     4. Iterate on the C code until it matches the assembly perfectly.
+     1. Isolate the function in `splat.yaml`.
+     2. Write the C code in `src/`.
+     3. Iterate on the C code until it matches the assembly perfectly, leveraging `mips2c` output if needed to get closer to the MIPS structure before tweaking it for `-O2` optimizations.
    - The user will use the `ExportSplatSymbols.java` script to export named symbols from Ghidra into `ghidra_exports/splat/` for you.
 
 3. **Tackle the Overlays (`.X` files)**:
