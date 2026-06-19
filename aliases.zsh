@@ -3,7 +3,7 @@
 
 # 1. Extraction (Splat)
 # Sépare le binaire en assembleur et intègre les nouveaux fichiers C selon le yaml
-alias ff7-split='py -m splat split config/splat/SCES_008.68.yaml'
+alias ff7-split='rm -rf asm/ assets/ ld/ && py -m splat split config/splat/SCES_008.68.yaml'
 
 # 2. Nettoyage des exports Ghidra
 # Retire les doublons des symboles exportés de Ghidra avant le split
