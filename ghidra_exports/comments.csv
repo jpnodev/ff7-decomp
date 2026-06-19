@@ -15,4 +15,4 @@ Possible _OP_VDEL.OBJ/__builtin_vec_delete
 Possible _OP_VNEW.OBJ/__builtin_vec_new
 Possible SSNOFF.OBJ/SsSetNoiseOff
 Possible SSQUIT.OBJ/SsQuit"
-0x8004642C,"{@address 0x00}"
+0x8004642C,"{@address 0x8004642c}"

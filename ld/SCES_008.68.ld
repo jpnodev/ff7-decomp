@@ -27,10 +27,6 @@ SECTIONS
         build/asm/SCES_008.68/before_main.s.o(.text);
         build/asm/SCES_008.68/main.s.o(.text);
         build/asm/SCES_008.68/after_main.s.o(.text);
-        build/src/SCES_008.68/FUN_80043834.c.o(.text);
-        build/asm/SCES_008.68/after_FUN_80043834.s.o(.text);
-        build/src/SCES_008.68/FUN_80045f28.c.o(.text);
-        build/asm/SCES_008.68/after_FUN_80045f28.s.o(.text);
         build/src/SCES_008.68/FUN_8004634c.c.o(.text);
         build/src/SCES_008.68/ff7_memset.c.o(.text);
         build/asm/SCES_008.68/after_ff7_memset.s.o(.text);
@@ -43,10 +39,6 @@ SECTIONS
         build/asm/SCES_008.68/before_main.s.o(.data);
         build/asm/SCES_008.68/main.s.o(.data);
         build/asm/SCES_008.68/after_main.s.o(.data);
-        build/src/SCES_008.68/FUN_80043834.c.o(.data);
-        build/asm/SCES_008.68/after_FUN_80043834.s.o(.data);
-        build/src/SCES_008.68/FUN_80045f28.c.o(.data);
-        build/asm/SCES_008.68/after_FUN_80045f28.s.o(.data);
         build/src/SCES_008.68/FUN_8004634c.c.o(.data);
         build/src/SCES_008.68/ff7_memset.c.o(.data);
         build/asm/SCES_008.68/after_ff7_memset.s.o(.data);
@@ -60,10 +52,6 @@ SECTIONS
         build/asm/SCES_008.68/before_main.s.o(.rodata);
         build/asm/SCES_008.68/main.s.o(.rodata);
         build/asm/SCES_008.68/after_main.s.o(.rodata);
-        build/src/SCES_008.68/FUN_80043834.c.o(.rodata);
-        build/asm/SCES_008.68/after_FUN_80043834.s.o(.rodata);
-        build/src/SCES_008.68/FUN_80045f28.c.o(.rodata);
-        build/asm/SCES_008.68/after_FUN_80045f28.s.o(.rodata);
         build/src/SCES_008.68/FUN_8004634c.c.o(.rodata);
         build/src/SCES_008.68/ff7_memset.c.o(.rodata);
         build/asm/SCES_008.68/after_ff7_memset.s.o(.rodata);
@@ -76,10 +64,6 @@ SECTIONS
         build/asm/SCES_008.68/before_main.s.o(.bss);
         build/asm/SCES_008.68/main.s.o(.bss);
         build/asm/SCES_008.68/after_main.s.o(.bss);
-        build/src/SCES_008.68/FUN_80043834.c.o(.bss);
-        build/asm/SCES_008.68/after_FUN_80043834.s.o(.bss);
-        build/src/SCES_008.68/FUN_80045f28.c.o(.bss);
-        build/asm/SCES_008.68/after_FUN_80045f28.s.o(.bss);
         build/src/SCES_008.68/FUN_8004634c.c.o(.bss);
         build/src/SCES_008.68/ff7_memset.c.o(.bss);
         build/asm/SCES_008.68/after_ff7_memset.s.o(.bss);
