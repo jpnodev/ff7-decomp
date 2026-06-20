@@ -70,3 +70,7 @@ alias ff7-perm-import='zsh tools/import_perm.sh'
 # Lance le permuteur sur une fonction
 # Utilisation: ff7-perm <nom_fonction> [--stop-on-zero]
 alias ff7-perm='zsh tools/run_perm.sh'
+
+# Applique le meilleur resultat du permuteur dans src/
+# Utilisation: ff7-perm-apply <nom_fonction> [nouveau_nom]
+alias ff7-perm-apply='zsh tools/apply_perm.sh'

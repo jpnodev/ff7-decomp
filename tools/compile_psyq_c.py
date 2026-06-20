@@ -11,6 +11,7 @@ def main():
     parser.add_argument("--cpp", default="mipsel-linux-gnu-cpp", help="Path to C preprocessor")
     parser.add_argument("--cppflags", default="-nostdinc -I include", help="CPP flags")
     parser.add_argument("--maspsx", required=True, help="Path to maspsx.py")
+    parser.add_argument("--maspsx_args", default="", help="maspsx arguments")
     parser.add_argument("--as_bin", required=True, dest="as_bin", help="Path to GNU assembler")
     parser.add_argument("--asflags", default="", help="GNU assembler flags")
     parser.add_argument("--input", required=True, help="Input C file")
@@ -44,7 +45,7 @@ def main():
         sys.exit(1)
 
     # Step 3: Massage and Assemble (maspsx + as: .s -> .o)
-    maspsx_cmd = f"python3 {args.maspsx} --run-assembler --gnu-as-path {args.as_bin} {args.asflags} -o {args.output} < {assembly_file}"
+    maspsx_cmd = f"python3 {args.maspsx} {args.maspsx_args} --run-assembler --gnu-as-path {args.as_bin} {args.asflags} -o {args.output} < {assembly_file}"
     try:
         subprocess.run(maspsx_cmd, shell=True, check=True)
     except subprocess.CalledProcessError as e:

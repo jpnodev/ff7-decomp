@@ -44,7 +44,13 @@ Ce document synthétise la boucle de travail itérative pour décompiler le jeu 
    ```
    *(Cet alias recompile automatiquement et se met à jour à chaque sauvegarde de fichier).*
    Ajuste ton code C, les types, et les variables globales jusqu'à ce que les instructions CPU affichées soient 100% identiques à celles de gauche (0 différences).
-6. Une fois la fonction parfaitement "matchée", lance une vérification globale pour confirmer que le binaire final complet n'est pas altéré :
+6. Si tu bloques sur les derniers registres ou instructions, utilise le **decomp-permuter** :
+   - Assure-toi que ton code dans `src/` est propre, sans macros de permuteur.
+   - Lance l'import : `ff7-perm-import <nom_de_la_fonction>`. (Cela va configurer le dossier `nonmatchings/<nom_de_la_fonction>`).
+   - Édite **uniquement** `nonmatchings/<nom_de_la_fonction>/base.c` pour ajouter tes macros (`PERM_RANDOMIZE`, `PERM_LINESWAP`) et renommer la fonction avec un `func_` au lieu de `FUN_` pour correspondre à l'assembleur extrait.
+   - Lance le permuteur : `ff7-perm <nom_de_la_fonction> --stop-on-zero`.
+   - Copie la solution trouvée (dans `output/.../source.c`) vers ton vrai fichier dans `src/`, nettoie les macros et remets son nom d'origine.
+7. Une fois la fonction parfaitement "matchée", lance une vérification globale pour confirmer que le binaire final complet n'est pas altéré :
    ```bash
    ff7-check
    ```

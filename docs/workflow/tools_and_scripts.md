@@ -69,10 +69,15 @@ Toutes ces commandes sont encapsulées dans des raccourcis ZSH pratiques. (Voir 
 ## Optimisation et Permutation (`tools/decomp-permuter/`)
 
 ### `import_perm.sh`
-- **Rôle :** Importer une fonction C non-matching et son code assembleur cible dans l'environnement du permuteur.
-- **Fonctionnement :** Prépare un dossier dans `nonmatchings/<fonction>/` avec le contexte, le code source, et la configuration du compilateur.
-- **Utilisation :** Alias `ff7-perm-import <nom_fonction>`.
+- **Rôle :** Importer une fonction C non-matching et son code assembleur cible dans l'environnement du permuteur, sans salir le dossier `src/`.
+- **Fonctionnement :** Crée un dossier dans `nonmatchings/<fonction>/` avec le contexte, configure le nom de la fonction (remplace `FUN_` par `func_` dans une copie temporaire) et prépare le `settings.toml`.
+- **Utilisation :** Alias `ff7-perm-import <nom_fonction>`. Ensuite, éditer `nonmatchings/<nom_fonction>/base.c` manuellement pour ajouter les macros de permuteur.
 
 ### `run_perm.sh`
 - **Rôle :** Lancer le permuteur sur une fonction importée pour générer des variantes aléatoires et trouver la correspondance (100% match).
 - **Utilisation :** Alias `ff7-perm <nom_fonction> [--stop-on-zero]` (ajoute `--stop-on-zero` pour l'arrêter dès que la bonne configuration est trouvée).
+
+### `apply_perm.sh`
+- **Rôle :** Appliquer le meilleur résultat trouvé par le permuteur vers le dossier `src/` d'origine.
+- **Fonctionnement :** Cherche le score le plus bas dans `nonmatchings/<fonction>/output-*/`, copie le code source C sans les macros dans `src/`, renomme la fonction avec le nom cible, et propose de supprimer le dossier de travail du permuteur.
+- **Utilisation :** Alias `ff7-perm-apply <nom_fonction> [nouveau_nom]` (ex: `ff7-perm-apply FUN_80043834 ResetGraph`).

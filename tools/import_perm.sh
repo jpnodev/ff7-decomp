@@ -15,8 +15,16 @@ echo "Cleaning up old permuter directories..."
 rm -rf nonmatchings/$FUNC
 
 echo "Importing $FUNC into decomp-permuter using $ASM_FILE..."
-OUTPUT=$(python3 tools/decomp-permuter/import.py src/SCES_008.68/$FUNC.c "$ASM_FILE" 2>&1)
+
+# Create a temporary C file with the renamed function to satisfy import.py
+TEMP_C="src/SCES_008.68/${FUNC}_temp.c"
+# Replace FUN_ with func_ for the function definition
+sed "s/unsigned int ${FUNC}/unsigned int func_${FUNC#FUN_}/g" src/SCES_008.68/$FUNC.c > "$TEMP_C"
+
+OUTPUT=$(python3 tools/decomp-permuter/import.py "$TEMP_C" "$ASM_FILE" 2>&1)
 echo "$OUTPUT"
+
+rm -f "$TEMP_C"
 
 # Extract the directory name from "Done. Imported into nonmatchings/..."
 IMPORT_DIR=$(echo "$OUTPUT" | grep -oP "Imported into \K.*")
@@ -26,11 +34,7 @@ if [ -n "$IMPORT_DIR" ] && [ -d "$IMPORT_DIR" ]; then
         # Rename the directory to our standard name
         mv "$IMPORT_DIR" "nonmatchings/$FUNC"
     fi
-    # Fix settings.toml to use the C function name
-    # The original function name in settings is derived from the glabel, so we extract it
-    OLD_FUNC=$(basename "$IMPORT_DIR")
     # If it has a -number suffix, remove it to get the func name
     OLD_FUNC=${OLD_FUNC%-*}
-    sed -i "s/$OLD_FUNC/$FUNC/g" "nonmatchings/$FUNC/settings.toml"
 fi
 echo "Done! You can now run 'ff7-perm $FUNC' to start permuting."
