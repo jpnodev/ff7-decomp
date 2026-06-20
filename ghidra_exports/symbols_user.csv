@@ -1,11 +1,13 @@
 Name,Address,Type
 printf_ptr,0x80010D18,label
 s_SetGraphDebug,0x80010D18,label
+s_SetDispMask,0x80010D74,label
 start,0x800110C0,func
 stup1,0x800110E4,func
 stup0,0x80011160,func
 2MBYTE_OBJ_B4,0x8001116C,func
 main,0x80011C38,func
+SpuInit,0x80036194,func
 SPU_OBJ_DC,0x80036404,func
 SPU_OBJ_3AC,0x800366D4,func
 SPU_OBJ_440,0x80036768,func
@@ -136,6 +138,7 @@ COR_05_OBJ_134,0x80039D1C,func
 csqrt,0x80039D3C,func
 COR_05_OBJ_1AC,0x80039D94,func
 COR_05_OBJ_1D8,0x80039DC0,func
+InitGeom,0x80039DD8,func
 SquareRoot0,0x80039E58,func
 InvSquareRoot,0x80039EE8,func
 VectorNormalS,0x80039F74,func
@@ -317,6 +320,8 @@ SPRINTF_OBJ_770,0x8004346C,func
 SPRINTF_OBJ_804,0x80043500,func
 MEMMOVE_OBJ_64,0x800435DC,func
 SetGraphDebug,0x80043AA4,func
+SetDispMask,0x80043C38,func
+SendGp1Command,0x800457EC,func
 ff7_memset,0x8004642C,func
 memset,0x80048394,func
 _card_info,0x80048864,func
@@ -333,6 +338,9 @@ _patch_card,0x80048A30,func
 PATCH_OBJ_E0,0x80048AB8,func
 PATCH_OBJ_F4,0x80048ACC,func
 _patch_card2,0x80048AE8,func
+Gp1CommandHandlersPtr,0x80062BAC,label
 GraphDebugType,0x80062BB4,label
 GraphDebugLevel,0x80062BB6,label
 GraphDebugReverse,0x80062BB7,label
+ptr_GPU_GP1,0x80062C88,label
+Gp1CommandArgsMirror,0x800706BC,label

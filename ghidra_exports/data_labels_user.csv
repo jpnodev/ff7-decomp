@@ -1,6 +1,10 @@
 Name,Address
 printf_ptr,0x80010D18
 s_SetGraphDebug,0x80010D18
+s_SetDispMask,0x80010D74
+Gp1CommandHandlersPtr,0x80062BAC
 GraphDebugType,0x80062BB4
 GraphDebugLevel,0x80062BB6
 GraphDebugReverse,0x80062BB7
+ptr_GPU_GP1,0x80062C88
+Gp1CommandArgsMirror,0x800706BC

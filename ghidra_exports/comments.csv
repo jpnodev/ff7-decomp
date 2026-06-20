@@ -2,6 +2,8 @@ Address,Comment
 0x800110C0,"Possible 2MBYTE.OBJ/stup2
 Possible 2MBYTE.OBJ/__SN_ENTRY_POINT"
 0x800149FC,"Possible S_I.OBJ/SpuInit"
+0x80036194,"Possible UT_ROFF.OBJ/SsUtReverbOff
+Possible S_I.OBJ/SpuInit"
 0x80037ADC,"Possible S_W.OBJ/SpuWrite"
 0x80037B04,"Possible S_W.OBJ/S_W_OBJ_28"
 0x80037B28,"Possible S_W.OBJ/S_W_OBJ_4C"
