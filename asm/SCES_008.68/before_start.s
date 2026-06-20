@@ -1254,9 +1254,9 @@ dlabel D_80010D00
     /* 1510 80010D10 2564292E */ .word 0x2E296425
     /* 1514 80010D14 2E2E0A00 */ .word 0x000A2E2E /* invalid instruction */
 
-nonmatching D_80010D18
+nonmatching s_SetGraphDebug
 
-dlabel D_80010D18
+alabel s_SetGraphDebug
     /* 1518 80010D18 53657447 */ .word 0x47746553 /* invalid instruction */
     /* 151C 80010D1C 72617068 */ .word 0x68706172
     /* 1520 80010D20 44656275 */ .word 0x75626544 /* invalid instruction */

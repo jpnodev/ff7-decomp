@@ -14,8 +14,8 @@
 nonmatching func_8003DAB4, 0x10
 
 glabel func_8003DAB4
-    /* 2E2B4 8003DAB4 0580023C */  lui        $v0, %hi(D_8005154C)
-    /* 2E2B8 8003DAB8 4C15428C */  lw         $v0, %lo(D_8005154C)($v0)
+    /* 2E2B4 8003DAB4 0580023C */  lui        $v0, %hi(VideoMode)
+    /* 2E2B8 8003DAB8 4C15428C */  lw         $v0, %lo(VideoMode)($v0)
     /* 2E2BC 8003DABC 0800E003 */  jr         $ra
     /* 2E2C0 8003DAC0 00000000 */   nop
 endlabel func_8003DAB4

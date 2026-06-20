@@ -298,11 +298,11 @@ glabel func_8001146C
     /* 1D58 80011558 00000000 */   nop
 endlabel func_8001146C
 
-nonmatching func_8001155C, 0x1C0
+nonmatching VsyncHandler, 0x1C0
 
-glabel func_8001155C
-    /* 1D5C 8001155C 0980023C */  lui        $v0, %hi(D_80095EF0)
-    /* 1D60 80011560 F05E4294 */  lhu        $v0, %lo(D_80095EF0)($v0)
+glabel VsyncHandler
+    /* 1D5C 8001155C 0980023C */  lui        $v0, %hi(VsyncCounter)
+    /* 1D60 80011560 F05E4294 */  lhu        $v0, %lo(VsyncCounter)($v0)
     /* 1D64 80011564 E8FFBD27 */  addiu      $sp, $sp, -0x18
     /* 1D68 80011568 00140200 */  sll        $v0, $v0, 16
     /* 1D6C 8001156C 031C0200 */  sra        $v1, $v0, 16
@@ -419,4 +419,4 @@ glabel func_8001155C
     /* 1F10 80011710 1800BD27 */  addiu      $sp, $sp, 0x18
     /* 1F14 80011714 0800E003 */  jr         $ra
     /* 1F18 80011718 00000000 */   nop
-endlabel func_8001155C
+endlabel VsyncHandler

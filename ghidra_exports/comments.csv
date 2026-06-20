@@ -12,6 +12,7 @@ Possible _OP_VDEL.OBJ/__builtin_vec_delete
 Possible _OP_VNEW.OBJ/__builtin_vec_new
 Possible SSNOFF.OBJ/SsSetNoiseOff
 Possible SSQUIT.OBJ/SsQuit"
+0x8003DA9C,"Possible VMODE.OBJ/SetVideoMode"
 0x8004054C,"Possible GS_106.OBJ/GsSetProjection
 Possible _OP_VDEL.OBJ/__builtin_vec_delete
 Possible _OP_VNEW.OBJ/__builtin_vec_new
