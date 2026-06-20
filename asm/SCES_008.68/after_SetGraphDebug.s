@@ -14,8 +14,8 @@
 nonmatching func_80043B10, 0xAC
 
 glabel func_80043B10
-    /* 34310 80043B10 0680023C */  lui        $v0, %hi(D_80062BB6)
-    /* 34314 80043B14 B62B4290 */  lbu        $v0, %lo(D_80062BB6)($v0)
+    /* 34310 80043B10 0680023C */  lui        $v0, %hi(GraphDebugLevel)
+    /* 34314 80043B14 B62B4290 */  lbu        $v0, %lo(GraphDebugLevel)($v0)
     /* 34318 80043B18 E0FFBD27 */  addiu      $sp, $sp, -0x20
     /* 3431C 80043B1C 1000B0AF */  sw         $s0, 0x10($sp)
     /* 34320 80043B20 1400B1AF */  sw         $s1, 0x14($sp)
@@ -39,8 +39,8 @@ glabel func_80043B10
     /* 34364 80043B64 00000000 */  nop
     /* 34368 80043B68 0D000212 */  beq        $s0, $v0, .L80043BA0
     /* 3436C 80043B6C 21104002 */   addu      $v0, $s2, $zero
-    /* 34370 80043B70 0680023C */  lui        $v0, %hi(D_80062BAC)
-    /* 34374 80043B74 AC2B428C */  lw         $v0, %lo(D_80062BAC)($v0)
+    /* 34370 80043B70 0680023C */  lui        $v0, %hi(Gp1CommandHandlersPtr)
+    /* 34374 80043B74 AC2B428C */  lw         $v0, %lo(Gp1CommandHandlersPtr)($v0)
     /* 34378 80043B78 00000000 */  nop
     /* 3437C 80043B7C 3400428C */  lw         $v0, 0x34($v0)
     /* 34380 80043B80 00000000 */  nop
@@ -64,8 +64,8 @@ endlabel func_80043B10
 nonmatching func_80043BBC, 0x10
 
 glabel func_80043BBC
-    /* 343BC 80043BBC 0680023C */  lui        $v0, %hi(D_80062BB4)
-    /* 343C0 80043BC0 B42B4290 */  lbu        $v0, %lo(D_80062BB4)($v0)
+    /* 343BC 80043BBC 0680023C */  lui        $v0, %hi(GraphDebugType)
+    /* 343C0 80043BC0 B42B4290 */  lbu        $v0, %lo(GraphDebugType)($v0)
     /* 343C4 80043BC4 0800E003 */  jr         $ra
     /* 343C8 80043BC8 00000000 */   nop
 endlabel func_80043BBC
@@ -73,8 +73,8 @@ endlabel func_80043BBC
 nonmatching func_80043BCC, 0x10
 
 glabel func_80043BCC
-    /* 343CC 80043BCC 0680023C */  lui        $v0, %hi(D_80062BB6)
-    /* 343D0 80043BD0 B62B4290 */  lbu        $v0, %lo(D_80062BB6)($v0)
+    /* 343CC 80043BCC 0680023C */  lui        $v0, %hi(GraphDebugLevel)
+    /* 343D0 80043BD0 B62B4290 */  lbu        $v0, %lo(GraphDebugLevel)($v0)
     /* 343D4 80043BD4 0800E003 */  jr         $ra
     /* 343D8 80043BD8 00000000 */   nop
 endlabel func_80043BCC
@@ -82,8 +82,8 @@ endlabel func_80043BCC
 nonmatching func_80043BDC, 0x5C
 
 glabel func_80043BDC
-    /* 343DC 80043BDC 0680023C */  lui        $v0, %hi(D_80062BB6)
-    /* 343E0 80043BE0 B62B4290 */  lbu        $v0, %lo(D_80062BB6)($v0)
+    /* 343DC 80043BDC 0680023C */  lui        $v0, %hi(GraphDebugLevel)
+    /* 343E0 80043BE0 B62B4290 */  lbu        $v0, %lo(GraphDebugLevel)($v0)
     /* 343E4 80043BE4 E8FFBD27 */  addiu      $sp, $sp, -0x18
     /* 343E8 80043BE8 1000B0AF */  sw         $s0, 0x10($sp)
     /* 343EC 80043BEC 21808000 */  addu       $s0, $a0, $zero

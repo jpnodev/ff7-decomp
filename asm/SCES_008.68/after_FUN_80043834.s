@@ -14,13 +14,13 @@
 nonmatching func_80043990, 0x114
 
 glabel func_80043990
-    /* 34190 80043990 0680023C */  lui        $v0, %hi(D_80062BB6)
-    /* 34194 80043994 B62B4290 */  lbu        $v0, %lo(D_80062BB6)($v0)
+    /* 34190 80043990 0680023C */  lui        $v0, %hi(GraphDebugLevel)
+    /* 34194 80043994 B62B4290 */  lbu        $v0, %lo(GraphDebugLevel)($v0)
     /* 34198 80043998 E0FFBD27 */  addiu      $sp, $sp, -0x20
     /* 3419C 8004399C 1400B1AF */  sw         $s1, 0x14($sp)
     /* 341A0 800439A0 1000B0AF */  sw         $s0, 0x10($sp)
-    /* 341A4 800439A4 0680103C */  lui        $s0, %hi(D_80062BB7)
-    /* 341A8 800439A8 B72B1026 */  addiu      $s0, $s0, %lo(D_80062BB7)
+    /* 341A4 800439A4 0680103C */  lui        $s0, %hi(GraphDebugReverse)
+    /* 341A8 800439A8 B72B1026 */  addiu      $s0, $s0, %lo(GraphDebugReverse)
     /* 341AC 800439AC 1C00BFAF */  sw         $ra, 0x1C($sp)
     /* 341B0 800439B0 1800B2AF */  sw         $s2, 0x18($sp)
     /* 341B4 800439B4 00001292 */  lbu        $s2, 0x0($s0)
@@ -35,8 +35,8 @@ glabel func_80043990
     /* 341D8 800439D8 09F84000 */  jalr       $v0
     /* 341DC 800439DC 21282002 */   addu      $a1, $s1, $zero
   .L800439E0:
-    /* 341E0 800439E0 0680023C */  lui        $v0, %hi(D_80062BAC)
-    /* 341E4 800439E4 AC2B428C */  lw         $v0, %lo(D_80062BAC)($v0)
+    /* 341E0 800439E0 0680023C */  lui        $v0, %hi(Gp1CommandHandlersPtr)
+    /* 341E4 800439E4 AC2B428C */  lw         $v0, %lo(Gp1CommandHandlersPtr)($v0)
     /* 341E8 800439E8 000011A2 */  sb         $s1, 0x0($s0)
     /* 341EC 800439EC 2800428C */  lw         $v0, 0x28($v0)
     /* 341F0 800439F0 00000000 */  nop
@@ -53,23 +53,23 @@ glabel func_80043990
     /* 34218 80043A18 0008023C */  lui        $v0, (0x8000000 >> 16)
   .L80043A1C:
     /* 3421C 80043A1C 25208200 */  or         $a0, $a0, $v0
-    /* 34220 80043A20 0680023C */  lui        $v0, %hi(D_80062BAC)
-    /* 34224 80043A24 AC2B428C */  lw         $v0, %lo(D_80062BAC)($v0)
+    /* 34220 80043A20 0680023C */  lui        $v0, %hi(Gp1CommandHandlersPtr)
+    /* 34224 80043A24 AC2B428C */  lw         $v0, %lo(Gp1CommandHandlersPtr)($v0)
     /* 34228 80043A28 00000000 */  nop
     /* 3422C 80043A2C 1000428C */  lw         $v0, 0x10($v0)
     /* 34230 80043A30 00000000 */  nop
     /* 34234 80043A34 09F84000 */  jalr       $v0
     /* 34238 80043A38 00000000 */   nop
-    /* 3423C 80043A3C 0680033C */  lui        $v1, %hi(D_80062BB4)
-    /* 34240 80043A40 B42B6390 */  lbu        $v1, %lo(D_80062BB4)($v1)
+    /* 3423C 80043A3C 0680033C */  lui        $v1, %hi(GraphDebugType)
+    /* 34240 80043A40 B42B6390 */  lbu        $v1, %lo(GraphDebugType)($v1)
     /* 34244 80043A44 02000234 */  ori        $v0, $zero, 0x2
     /* 34248 80043A48 0F006214 */  bne        $v1, $v0, .L80043A88
     /* 3424C 80043A4C 21104002 */   addu      $v0, $s2, $zero
     /* 34250 80043A50 0020043C */  lui        $a0, (0x20000504 >> 16)
-    /* 34254 80043A54 0680023C */  lui        $v0, %hi(D_80062BB7)
-    /* 34258 80043A58 B72B4290 */  lbu        $v0, %lo(D_80062BB7)($v0)
-    /* 3425C 80043A5C 0680033C */  lui        $v1, %hi(D_80062BAC)
-    /* 34260 80043A60 AC2B638C */  lw         $v1, %lo(D_80062BAC)($v1)
+    /* 34254 80043A54 0680023C */  lui        $v0, %hi(GraphDebugReverse)
+    /* 34258 80043A58 B72B4290 */  lbu        $v0, %lo(GraphDebugReverse)($v0)
+    /* 3425C 80043A5C 0680033C */  lui        $v1, %hi(Gp1CommandHandlersPtr)
+    /* 34260 80043A60 AC2B638C */  lw         $v1, %lo(Gp1CommandHandlersPtr)($v1)
     /* 34264 80043A64 03004010 */  beqz       $v0, .L80043A74
     /* 34268 80043A68 04058434 */   ori       $a0, $a0, (0x20000504 & 0xFFFF)
     /* 3426C 80043A6C 0020043C */  lui        $a0, (0x20000501 >> 16)

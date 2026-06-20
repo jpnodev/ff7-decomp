@@ -61,6 +61,8 @@ segments:
       - [0x269B4, asm, after_SpuInit]
       - [0x2A5D8, asm, InitGeom]
       - [0x2A658, asm, after_InitGeom]
+      - [0x2E29C, c, SetVideoMode]
+      - [0x2E2B4, asm, after_SetVideoMode]
       - [0x34034, asm, FUN_80043834]
       - [0x34190, asm, after_FUN_80043834]
       - [0x342A4, c, SetGraphDebug]

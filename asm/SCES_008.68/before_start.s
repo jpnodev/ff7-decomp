@@ -1289,9 +1289,9 @@ dlabel D_80010D58
     /* 156C 80010D6C 78292E2E */ .word 0x2E2E2978
     /* 1570 80010D70 2E0A0000 */ .word 0x00000A2E /* invalid instruction */
 
-nonmatching D_80010D74
+nonmatching s_SetDispMask
 
-dlabel D_80010D74
+alabel s_SetDispMask
     /* 1574 80010D74 53657444 */ .word 0x44746553 /* invalid instruction */
     /* 1578 80010D78 6973704D */ .word 0x4D707369 /* invalid instruction */
     /* 157C 80010D7C 61736B28 */ .word 0x286B7361

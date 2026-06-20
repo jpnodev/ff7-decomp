@@ -31,6 +31,8 @@ SECTIONS
         build/asm/SCES_008.68/after_SpuInit.s.o(.text);
         build/asm/SCES_008.68/InitGeom.s.o(.text);
         build/asm/SCES_008.68/after_InitGeom.s.o(.text);
+        build/src/SCES_008.68/SetVideoMode.c.o(.text);
+        build/asm/SCES_008.68/after_SetVideoMode.s.o(.text);
         build/asm/SCES_008.68/FUN_80043834.s.o(.text);
         build/asm/SCES_008.68/after_FUN_80043834.s.o(.text);
         build/src/SCES_008.68/SetGraphDebug.c.o(.text);
@@ -57,6 +59,8 @@ SECTIONS
         build/asm/SCES_008.68/after_SpuInit.s.o(.data);
         build/asm/SCES_008.68/InitGeom.s.o(.data);
         build/asm/SCES_008.68/after_InitGeom.s.o(.data);
+        build/src/SCES_008.68/SetVideoMode.c.o(.data);
+        build/asm/SCES_008.68/after_SetVideoMode.s.o(.data);
         build/asm/SCES_008.68/FUN_80043834.s.o(.data);
         build/asm/SCES_008.68/after_FUN_80043834.s.o(.data);
         build/src/SCES_008.68/SetGraphDebug.c.o(.data);
@@ -84,6 +88,8 @@ SECTIONS
         build/asm/SCES_008.68/after_SpuInit.s.o(.rodata);
         build/asm/SCES_008.68/InitGeom.s.o(.rodata);
         build/asm/SCES_008.68/after_InitGeom.s.o(.rodata);
+        build/src/SCES_008.68/SetVideoMode.c.o(.rodata);
+        build/asm/SCES_008.68/after_SetVideoMode.s.o(.rodata);
         build/asm/SCES_008.68/FUN_80043834.s.o(.rodata);
         build/asm/SCES_008.68/after_FUN_80043834.s.o(.rodata);
         build/src/SCES_008.68/SetGraphDebug.c.o(.rodata);
@@ -110,6 +116,8 @@ SECTIONS
         build/asm/SCES_008.68/after_SpuInit.s.o(.bss);
         build/asm/SCES_008.68/InitGeom.s.o(.bss);
         build/asm/SCES_008.68/after_InitGeom.s.o(.bss);
+        build/src/SCES_008.68/SetVideoMode.c.o(.bss);
+        build/asm/SCES_008.68/after_SetVideoMode.s.o(.bss);
         build/asm/SCES_008.68/FUN_80043834.s.o(.bss);
         build/asm/SCES_008.68/after_FUN_80043834.s.o(.bss);
         build/src/SCES_008.68/SetGraphDebug.c.o(.bss);

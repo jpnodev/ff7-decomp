@@ -7,3 +7,4 @@ s_SetDispMask = 0x80010D74;
 ptr_GPU_GP1 = 0x80062C88;
 Gp1CommandArgsMirror = 0x800706BC;
 Gp1CommandHandlersPtr = 0x80062BAC;
+VideoMode = 0x8005154C;

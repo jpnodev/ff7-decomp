@@ -25,8 +25,8 @@ glabel func_80043834
     /* 34054 80043854 CC0C8424 */  addiu      $a0, $a0, %lo(D_80010CCC)
     /* 34058 80043858 0680053C */  lui        $a1, %hi(D_80062B6C)
     /* 3405C 8004385C 6C2BA524 */  addiu      $a1, $a1, %lo(D_80062B6C)
-    /* 34060 80043860 0680103C */  lui        $s0, %hi(D_80062BB4)
-    /* 34064 80043864 B42B1026 */  addiu      $s0, $s0, %lo(D_80062BB4)
+    /* 34060 80043860 0680103C */  lui        $s0, %hi(GraphDebugType)
+    /* 34064 80043864 B42B1026 */  addiu      $s0, $s0, %lo(GraphDebugType)
     /* 34068 80043868 3B0B010C */  jal        printf
     /* 3406C 8004386C 21300002 */   addu      $a2, $s0, $zero
     /* 34070 80043870 21200002 */  addu       $a0, $s0, $zero
@@ -36,8 +36,8 @@ glabel func_80043834
     /* 34080 80043880 EFF3000C */  jal        ResetCallback
     /* 34084 80043884 00000000 */   nop
     /* 34088 80043888 FF00023C */  lui        $v0, (0xFFFFFF >> 16)
-    /* 3408C 8004388C 0680043C */  lui        $a0, %hi(D_80062BAC)
-    /* 34090 80043890 AC2B848C */  lw         $a0, %lo(D_80062BAC)($a0)
+    /* 3408C 8004388C 0680043C */  lui        $a0, %hi(Gp1CommandHandlersPtr)
+    /* 34090 80043890 AC2B848C */  lw         $a0, %lo(Gp1CommandHandlersPtr)($a0)
     /* 34094 80043894 FFFF4234 */  ori        $v0, $v0, (0xFFFFFF & 0xFFFF)
     /* 34098 80043898 1619010C */  jal        GPU_cw
     /* 3409C 8004389C 24208200 */   and       $a0, $a0, $v0
@@ -76,8 +76,8 @@ glabel func_80043834
     /* 34120 80043920 5E0E0108 */  j          .L80043978
     /* 34124 80043924 00000000 */   nop
   .L80043928:
-    /* 34128 80043928 0680023C */  lui        $v0, %hi(D_80062BB6)
-    /* 3412C 8004392C B62B4290 */  lbu        $v0, %lo(D_80062BB6)($v0)
+    /* 34128 80043928 0680023C */  lui        $v0, %hi(GraphDebugLevel)
+    /* 3412C 8004392C B62B4290 */  lbu        $v0, %lo(GraphDebugLevel)($v0)
     /* 34130 80043930 00000000 */  nop
     /* 34134 80043934 0200422C */  sltiu      $v0, $v0, 0x2
     /* 34138 80043938 08004014 */  bnez       $v0, .L8004395C
@@ -90,8 +90,8 @@ glabel func_80043834
     /* 34154 80043954 09F84000 */  jalr       $v0
     /* 34158 80043958 21282002 */   addu      $a1, $s1, $zero
   .L8004395C:
-    /* 3415C 8004395C 0680023C */  lui        $v0, %hi(D_80062BAC)
-    /* 34160 80043960 AC2B428C */  lw         $v0, %lo(D_80062BAC)($v0)
+    /* 3415C 8004395C 0680023C */  lui        $v0, %hi(Gp1CommandHandlersPtr)
+    /* 34160 80043960 AC2B428C */  lw         $v0, %lo(Gp1CommandHandlersPtr)($v0)
     /* 34164 80043964 00000000 */  nop
     /* 34168 80043968 3400428C */  lw         $v0, 0x34($v0)
     /* 3416C 8004396C 00000000 */  nop

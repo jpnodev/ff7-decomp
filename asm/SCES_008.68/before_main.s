@@ -432,7 +432,7 @@ glabel func_8001171C
     /* 1F30 80011730 00000000 */   nop
     /* 1F34 80011734 0D0E010C */  jal        func_80043834
     /* 1F38 80011738 21200000 */   addu      $a0, $zero, $zero
-    /* 1F3C 8001173C 65D8000C */  jal        func_80036194
+    /* 1F3C 8001173C 65D8000C */  jal        SpuInit
     /* 1F40 80011740 00000000 */   nop
     /* 1F44 80011744 0180043C */  lui        $a0, %hi(func_8001155C)
     /* 1F48 80011748 5C158424 */  addiu      $a0, $a0, %lo(func_8001155C)
@@ -442,9 +442,9 @@ glabel func_8001171C
     /* 1F58 80011758 00000000 */   nop
     /* 1F5C 8001175C A90E010C */  jal        SetGraphDebug
     /* 1F60 80011760 21200000 */   addu      $a0, $zero, $zero
-    /* 1F64 80011764 0E0F010C */  jal        func_80043C38
+    /* 1F64 80011764 0E0F010C */  jal        SetDispMask
     /* 1F68 80011768 21200000 */   addu      $a0, $zero, $zero
-    /* 1F6C 8001176C 76E7000C */  jal        func_80039DD8
+    /* 1F6C 8001176C 76E7000C */  jal        InitGeom
     /* 1F70 80011770 00000000 */   nop
     /* 1F74 80011774 A7F6000C */  jal        func_8003DA9C
     /* 1F78 80011778 01000434 */   ori       $a0, $zero, 0x1
