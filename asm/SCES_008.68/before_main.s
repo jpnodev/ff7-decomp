@@ -440,7 +440,7 @@ glabel func_8001171C
     /* 1F50 80011750 F05E20A4 */  sh         $zero, %lo(D_80095EF0)($at)
     /* 1F54 80011754 13F4000C */  jal        VSyncCallback
     /* 1F58 80011758 00000000 */   nop
-    /* 1F5C 8001175C A90E010C */  jal        func_80043AA4
+    /* 1F5C 8001175C A90E010C */  jal        SetGraphDebug
     /* 1F60 80011760 21200000 */   addu      $a0, $zero, $zero
     /* 1F64 80011764 0E0F010C */  jal        func_80043C38
     /* 1F68 80011768 21200000 */   addu      $a0, $zero, $zero

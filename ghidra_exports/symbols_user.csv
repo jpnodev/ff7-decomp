@@ -1,4 +1,6 @@
 Name,Address,Type
+printf_ptr,0x80010D18,label
+s_SetGraphDebug,0x80010D18,label
 start,0x800110C0,func
 stup1,0x800110E4,func
 stup0,0x80011160,func
@@ -314,6 +316,7 @@ SPRINTF_OBJ_758,0x80043454,func
 SPRINTF_OBJ_770,0x8004346C,func
 SPRINTF_OBJ_804,0x80043500,func
 MEMMOVE_OBJ_64,0x800435DC,func
+SetGraphDebug,0x80043AA4,func
 ff7_memset,0x8004642C,func
 memset,0x80048394,func
 _card_info,0x80048864,func
@@ -330,3 +333,6 @@ _patch_card,0x80048A30,func
 PATCH_OBJ_E0,0x80048AB8,func
 PATCH_OBJ_F4,0x80048ACC,func
 _patch_card2,0x80048AE8,func
+GraphDebugType,0x80062BB4,label
+GraphDebugLevel,0x80062BB6,label
+GraphDebugReverse,0x80062BB7,label

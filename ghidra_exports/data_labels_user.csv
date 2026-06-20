@@ -1,1 +1,6 @@
 Name,Address
+printf_ptr,0x80010D18
+s_SetGraphDebug,0x80010D18
+GraphDebugType,0x80062BB4
+GraphDebugLevel,0x80062BB6
+GraphDebugReverse,0x80062BB7
