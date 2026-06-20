@@ -917,6 +917,7 @@ MEMMOVE_OBJ_1C = 0x80043594; // type:label
 MEMMOVE_OBJ_40 = 0x800435B8; // type:label
 MEMMOVE_OBJ_48 = 0x800435C0; // type:label
 MEMMOVE_OBJ_64 = 0x800435DC; // type:func
+SetGraphDebug = 0x80043AA4; // type:func
 ff7_memset = 0x8004642C; // type:func
 GPU_cw = 0x80046458; // type:func
 memset = 0x80048394; // type:func
@@ -941,3 +942,4 @@ PATCH_OBJ_FC = 0x80048AD4; // type:label
 _patch_card2 = 0x80048AE8; // type:func
 PATCH_OBJ_144 = 0x80048B1C; // type:label
 PATCH_OBJ_184 = 0x80048B5C; // type:label
+

@@ -2,6 +2,6 @@
 
 extern void _SpuInit(int);
 
-void FUN_80036194(void) {
+void SpuInit(void) {
     _SpuInit(0);
 }

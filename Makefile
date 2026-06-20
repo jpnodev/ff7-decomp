@@ -5,7 +5,7 @@ AS := $(CROSS)as
 LD := $(CROSS)ld
 OBJCOPY := $(CROSS)objcopy
 
-LDFLAGS = -T config/symbols/$(TARGET).garbage_syms.txt -T config/symbols/$(TARGET).undefined_funcs_auto.txt -T config/symbols/$(TARGET).undefined_syms_auto.txt -T $(LD_SCRIPT) -Map $(BUILD_DIR)/$(TARGET).map
+LDFLAGS = -T config/symbols/$(TARGET).garbage_syms.txt -T config/symbols/$(TARGET).undefined_funcs_auto.txt -T config/symbols/$(TARGET).undefined_syms_auto.txt -T config/symbols/$(TARGET).user_syms.txt -T $(LD_SCRIPT) -Map $(BUILD_DIR)/$(TARGET).map
 
 ASFLAGS := -I include -march=mips2 -mabi=32 -O0 -G0 -no-pad-sections
 
