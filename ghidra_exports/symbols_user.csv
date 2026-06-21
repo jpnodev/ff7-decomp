@@ -347,8 +347,13 @@ VideoMode,0x8005154C,label
 Gp1CommandHandlersPtr,0x80062BAC,label
 printf_ptr,0x80062BB0,label
 GraphDebugType,0x80062BB4,label
+IsGraphInitialized,0x80062BB5,label
 GraphDebugLevel,0x80062BB6,label
 GraphDebugReverse,0x80062BB7,label
+ActiveBufferWidth,0x80062BB8,label
+ActiveBufferHeight,0x80062BBA,label
+ResolutionWidthArray,0x80062C34,label
+ResolutionHeightArray,0x80062C48,label
 ptr_GPU_GP0,0x80062C84,label
 ptr_GPU_GP1,0x80062C88,label
 ptr_DPCR,0x80062C94,label

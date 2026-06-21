@@ -6,8 +6,13 @@ VideoMode,0x8005154C
 Gp1CommandHandlersPtr,0x80062BAC
 printf_ptr,0x80062BB0
 GraphDebugType,0x80062BB4
+IsGraphInitialized,0x80062BB5
 GraphDebugLevel,0x80062BB6
 GraphDebugReverse,0x80062BB7
+ActiveBufferWidth,0x80062BB8
+ActiveBufferHeight,0x80062BBA
+ResolutionWidthArray,0x80062C34
+ResolutionHeightArray,0x80062C48
 ptr_GPU_GP0,0x80062C84
 ptr_GPU_GP1,0x80062C88
 ptr_DPCR,0x80062C94
