@@ -4,8 +4,8 @@ s_SetDispMask,0x80010D74,label
 start,0x800110C0,func
 stup1,0x800110E4,func
 stup0,0x80011160,func
-2MBYTE_OBJ_B4,0x8001116C,func
-VsyncHandler,0x8001155C,label
+D_8001116C,0x8001116C,label
+VsyncHandler,0x8001155C,func
 SysInit,0x8001171C,func
 main,0x80011C38,func
 SpuInit,0x80036194,func
@@ -353,6 +353,9 @@ ptr_GPU_GP0,0x80062C84,label
 ptr_GPU_GP1,0x80062C88,label
 ptr_DPCR,0x80062C94,label
 ptr_DICR,0x80062CA4,label
+ResetGraph_D_80062CB8,0x80062CB8,label
+ResetGraph_D_80062CBC,0x80062CBC,label
+ResetGraph_D_80062CC8,0x80062CC8,label
 Gp1CommandArgsMirror,0x800706BC,label
 VsyncCounter,0x80095EF0,label
 GraphEnvironmentBuffer,0x8009AE54,label

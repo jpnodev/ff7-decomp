@@ -1,7 +1,7 @@
 Name,Address
 s_SetGraphDebug,0x80010D18
 s_SetDispMask,0x80010D74
-VsyncHandler,0x8001155C
+D_8001116C,0x8001116C
 VideoMode,0x8005154C
 Gp1CommandHandlersPtr,0x80062BAC
 printf_ptr,0x80062BB0
@@ -12,6 +12,9 @@ ptr_GPU_GP0,0x80062C84
 ptr_GPU_GP1,0x80062C88
 ptr_DPCR,0x80062C94
 ptr_DICR,0x80062CA4
+ResetGraph_D_80062CB8,0x80062CB8
+ResetGraph_D_80062CBC,0x80062CBC
+ResetGraph_D_80062CC8,0x80062CC8
 Gp1CommandArgsMirror,0x800706BC
 VsyncCounter,0x80095EF0
 GraphEnvironmentBuffer,0x8009AE54

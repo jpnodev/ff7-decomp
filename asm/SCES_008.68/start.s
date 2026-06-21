@@ -72,7 +72,7 @@ glabel stup0
 
 nonmatching D_8001116C
 
-dlabel D_8001116C
+alabel D_8001116C
     /* 196C 8001116C 00002000 */ .word 0x00200000 /* invalid instruction */
     /* 1970 80011170 00002000 */ .word 0x00200000 /* invalid instruction */
     /* 1974 80011174 00002000 */ .word 0x00200000 /* invalid instruction */
