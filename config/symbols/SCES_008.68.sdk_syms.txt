@@ -61,3 +61,7 @@ CdRead2 = 0x800404B8; // libcd
 CdSearchFile = 0x8003FAB0; // libcd
 CdRead = 0x80041C4C; // libcd
 CdReadSync = 0x80041D54; // libcd
+CdReset = 0x8003DC3C; // libcd
+CdSyncCallback = 0x8003DD90; // libcd
+CdReadyCallback = 0x8003DDA8; // libcd
+CdReadCallback = 0x80041E20; // libcd

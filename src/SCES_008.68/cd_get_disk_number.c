@@ -1,35 +1,35 @@
-extern int func_80034B50(void);
+extern int cd_process_task(void);
 extern int CdSearchFile(char*, const char*);
 extern void CdControlB(int, char*, int);
 extern void CdRead(int, void*, int);
 extern int CdReadSync(int, int);
 
-extern char D_80069A3C;
-extern unsigned char D_80069A43;
+extern char g_cd_diskinfo_buffer;
+extern unsigned char g_cd_diskinfo_number_char;
 
-extern const char D_80010438[];
+extern const char s_cd_diskinfo_path[];
 
-int ff7_unknown_80034384(void) {
+int cd_get_disk_number(void) {
     int iVar1;
     char auStack_20[24];
     
     do {
-        iVar1 = func_80034B50();
+        iVar1 = cd_process_task();
     } while (iVar1 != 0);
 
     do {
-        iVar1 = CdSearchFile(auStack_20, D_80010438);
+        iVar1 = CdSearchFile(auStack_20, s_cd_diskinfo_path);
         if (iVar1 <= 0) {
             if (iVar1 >= -1) {
                 return -1;
             }
         }
         CdControlB(2, auStack_20, 0);
-        CdRead(1, &D_80069A3C, 0x80);
+        CdRead(1, &g_cd_diskinfo_buffer, 0x80);
         do {
             iVar1 = CdReadSync(1, 0);
         } while (0 < iVar1);
     } while (iVar1 != 0);
 
-    return D_80069A43 - 0x30;
+    return g_cd_diskinfo_number_char - '0';
 }

@@ -5146,9 +5146,9 @@ alabel D_8004A5C0
     /* 3ADE0 8004A5E0 50821380 */ .word 0x80138250
     /* 3ADE4 8004A5E4 01000000 */ .word 0x00000001 /* invalid instruction */
 
-nonmatching D_8004A5E8
+nonmatching g_cd_task_callbacks
 
-alabel D_8004A5E8
+dlabel g_cd_task_callbacks
     /* 3ADE8 8004A5E8 54440380 */ .word 0x80034454
     /* 3ADEC 8004A5EC B0440380 */ .word 0x800344B0
     /* 3ADF0 8004A5F0 F0440380 */ .word 0x800344F0

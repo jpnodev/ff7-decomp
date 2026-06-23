@@ -1,23 +1,28 @@
 #include "common.h"
 
 extern int CdInit(void);
-extern void GsSetWorkBase(void*);
+extern void GsSetWorkBase(int);
 extern void movie_sys_init_mdec(void);
 extern void CdControlB(int, int, int);
-extern int VSync(int);
-extern int ff7_unknown_80034384(void);
-extern void ff7_unknown_80034F68(void);
+extern void VSync(int);
 
-extern int g_cd_unknown_80071B8C;
-extern int g_cd_unknown_80071B90;
+extern int cd_get_disk_number(void);
+extern void cd_load_movie_id(void);
+
+extern int g_cd_task_index;
+extern int g_cd_current_disk;
 
 void cd_init_drive(void) {
-    while (CdInit() == 0);
-    g_cd_unknown_80071B8C = 0;
+    int iVar1;
+    
+    do {
+        iVar1 = CdInit();
+    } while (iVar1 == 0);
+    g_cd_task_index = 0;
     GsSetWorkBase(0);
     movie_sys_init_mdec();
-    CdControlB(0xe, 0x80, 0);
+    CdControlB(14, 128, 0);
     VSync(3);
-    g_cd_unknown_80071B90 = ff7_unknown_80034384();
-    ff7_unknown_80034F68();
+    g_cd_current_disk = cd_get_disk_number();
+    cd_load_movie_id();
 }

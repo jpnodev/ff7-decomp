@@ -28,7 +28,10 @@ This document contains notes and reverse engineering progress for the main game 
 | 0x8001155C | ff7_vsync_handler | ff7/sys | identified | VSync interrupt handler |
 | 0x8001171C | ff7_sys_init | ff7/sys | matched | High-level system initialization |
 | 0x80033BC8 | cd_init_drive | ff7/cd | matched | CD drive initialization |
+| 0x80034384 | cd_get_disk_number | ff7/cd | matched | Reads DISKINFO.CNF to get disk number |
+| 0x80034B50 | cd_process_task | ff7/cd | matched | Processes CD tasks from array |
 | 0x80034F48 | movie_sys_init_mdec | movie | matched | High-level system init for MDEC |
+| 0x80034F68 | cd_load_movie_id | ff7/cd | matched | Loads MOVIEID.CNF |
 
 | 0x8003E024 | ff7_unknown_8003E024 | ff7 | unknown | Unknown |
 | 0x8003E29C | SetVideoMode | sdk | matched | GPU Video Mode setup |
@@ -59,18 +62,24 @@ This document contains notes and reverse engineering progress for the main game 
 | 0x80062BB7 | g_graph_debug_reverse | gpu | byte | PsyQ Graph Debug reverse |
 | 0x80062BB8 | g_active_buffer_width | gpu | short | Current draw buffer width |
 | 0x80062BBA | g_active_buffer_height | gpu | short | Current draw buffer height |
+| 0x8004A5E8 | g_cd_task_callbacks | cd | void*[] | Array of CD task callbacks |
 | 0x80062C34 | g_resolution_width_array | gpu | short[] | Look-up table for resolutions |
 | 0x80062C48 | g_resolution_height_array | gpu | short[] | Look-up table for resolutions |
+| 0x80069A3C | g_cd_diskinfo_buffer | cd | char[] | Buffer for DISKINFO.CNF |
+| 0x80069A43 | g_cd_diskinfo_number_char | cd | unsigned char | Char holding the disk number |
 | 0x800706BC | g_gpu_gp1_command_args_mirror | gpu | int[] | Mirror of sent GP1 commands |
-| 0x80071B8C | g_cd_unknown_80071B8C | cd | int | Unknown CD flag |
-| 0x80071B90 | g_cd_unknown_80071B90 | cd | int | Unknown CD flag |
+| 0x80071B8C | g_cd_task_index | cd | int | Current CD task index |
+| 0x80071B90 | g_cd_current_disk | cd | int | Current disk number |
 | 0x80095EF0 | g_vsync_counter | sys | int | VSync frame counter |
+| 0x8009A308 | g_cd_movie_id_buffer | cd | char[] | Buffer for MOVIEID.CNF |
 | 0x8009AE54 | g_gpu_graph_env_buffer | gpu | DRAWENV | Double buffered DRAWENV |
 
 ### Static/Internal Variables (s_)
 
 | Address | Name | Module | Notes |
 |---|---|---|---|
+| 0x80010438 | s_cd_diskinfo_path | cd | "\\MINT\\DISKINFO.CNF;1" |
+| 0x8001049C | s_cd_movie_id_path | cd | "\\MINT\\MOVIEID.CNF;1" |
 | 0x80010B2C | s_mdec_rest_timeout | mdec | Used in wait loops |
 | 0x80010B4C | s_dma_status | mdec | Formatting string |
 | 0x80010B74 | s_fifo_status | mdec | Formatting string |

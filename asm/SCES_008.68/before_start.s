@@ -394,10 +394,11 @@ alabel switchdataD_80010394
     /* C2C 8001042C 5C1A0380 */ .word 0x80031A5C
     /* C30 80010430 F8190380 */ .word 0x800319F8
     /* C34 80010434 F8190380 */ .word 0x800319F8
+enddlabel D_8001010E
 
-nonmatching D_80010438
+nonmatching s_cd_diskinfo_path
 
-alabel D_80010438
+dlabel s_cd_diskinfo_path
     /* C38 80010438 5C4D494E */ .word 0x4E494D5C /* invalid instruction */
     /* C3C 8001043C 545C4449 */ .word 0x49445C54 /* invalid instruction */
     /* C40 80010440 534B494E */ .word 0x4E494B53 /* invalid instruction */
@@ -427,10 +428,11 @@ alabel switchdataD_80010450
     /* C90 80010490 20410380 */ .word 0x80034120
     /* C94 80010494 20410380 */ .word 0x80034120
     /* C98 80010498 20410380 */ .word 0x80034120
+enddlabel s_cd_diskinfo_path
 
-nonmatching D_8001049C
+nonmatching s_cd_movie_id_path
 
-alabel D_8001049C
+dlabel s_cd_movie_id_path
     /* C9C 8001049C 5C4D494E */ .word 0x4E494D5C /* invalid instruction */
     /* CA0 800104A0 545C4D4F */ .word 0x4F4D5C54 /* invalid instruction */
     /* CA4 800104A4 5649455F */ .word 0x5F454956 /* invalid instruction */
@@ -1000,7 +1002,7 @@ nonmatching D_80010A68
 alabel D_80010A68
     /* 1268 80010A68 2E000000 */ .word 0x0000002E
     /* 126C 80010A6C */ .short 0x2E2E
-enddlabel D_8001010E
+enddlabel s_cd_movie_id_path
 
 nonmatching D_80010A6E
 
