@@ -274,9 +274,9 @@ glabel func_8003DEF8
     /* 2E820 8003E020 00000000 */   nop
 endlabel func_8003DEF8
 
-nonmatching ff7_unknown_8003E024, 0x144
+nonmatching CdControlB, 0x144
 
-glabel ff7_unknown_8003E024
+glabel CdControlB
     /* 2E824 8003E024 D0FFBD27 */  addiu      $sp, $sp, -0x30
     /* 2E828 8003E028 1400B1AF */  sw         $s1, 0x14($sp)
     /* 2E82C 8003E02C 2188A000 */  addu       $s1, $a1, $zero
@@ -365,7 +365,7 @@ glabel ff7_unknown_8003E024
     /* 2E95C 8003E15C 3000BD27 */  addiu      $sp, $sp, 0x30
     /* 2E960 8003E160 0800E003 */  jr         $ra
     /* 2E964 8003E164 00000000 */   nop
-endlabel ff7_unknown_8003E024
+endlabel CdControlB
 
 nonmatching func_8003E168, 0x24
 
@@ -2496,7 +2496,7 @@ glabel func_8003FDBC
     /* 306FC 8003FEFC 00000000 */   nop
   .L8003FF00:
     /* 30700 8003FF00 01000234 */  ori        $v0, $zero, 0x1
-    /* 30704 8003FF04 49004010 */  beqz       $v0, .L8004002C
+    /* 30704 8003FF04 49004010 */  beqz       $v0, func_8004002C
     /* 30708 8003FF08 21380000 */   addu      $a3, $zero, $zero
     /* 3070C 8003FF0C 0780143C */  lui        $s4, %hi(D_8006E878)
     /* 30710 8003FF10 78E89426 */  addiu      $s4, $s4, %lo(D_8006E878)
@@ -2504,7 +2504,7 @@ glabel func_8003FDBC
   .L8003FF18:
     /* 30718 8003FF18 00002292 */  lbu        $v0, 0x0($s1)
     /* 3071C 8003FF1C 00000000 */  nop
-    /* 30720 8003FF20 42004010 */  beqz       $v0, .L8004002C
+    /* 30720 8003FF20 42004010 */  beqz       $v0, func_8004002C
     /* 30724 8003FF24 40100700 */   sll       $v0, $a3, 1
     /* 30728 8003FF28 21104700 */  addu       $v0, $v0, $a3
     /* 3072C 8003FF2C 80100200 */  sll        $v0, $v0, 2
@@ -2561,20 +2561,27 @@ glabel func_8003FDBC
     /* 307F8 8003FFF8 0180043C */  lui        $a0, %hi(D_800109F4)
     /* 307FC 8003FFFC F4098424 */  addiu      $a0, $a0, %lo(D_800109F4)
     /* 30800 80040000 3B0B010C */  jal        printf
+  func_80040004:
     /* 30804 80040004 1000B2AF */   sw        $s2, 0x10($sp)
   .L80040008:
     /* 30808 80040008 21386002 */  addu       $a3, $s3, $zero
     /* 3080C 8004000C 8000E228 */  slti       $v0, $a3, 0x80
     /* 30810 80040010 11004010 */  beqz       $v0, .L80040058
     /* 30814 80040014 00000000 */   nop
+  func_80040018:
     /* 30818 80040018 0780023C */  lui        $v0, %hi(D_80070670)
     /* 3081C 8004001C 70064224 */  addiu      $v0, $v0, %lo(D_80070670)
+  func_80040020:
     /* 30820 80040020 2B102202 */  sltu       $v0, $s1, $v0
+  func_80040024:
     /* 30824 80040024 BCFF4014 */  bnez       $v0, .L8003FF18
+  func_80040028:
     /* 30828 80040028 00000000 */   nop
-  .L8004002C:
+  func_8004002C:
     /* 3082C 8004002C 8000E228 */  slti       $v0, $a3, 0x80
+  func_80040030:
     /* 30830 80040030 09004010 */  beqz       $v0, .L80040058
+  func_80040034:
     /* 30834 80040034 40100700 */   sll       $v0, $a3, 1
     /* 30838 80040038 21104700 */  addu       $v0, $v0, $a3
     /* 3083C 8004003C 80100200 */  sll        $v0, $v0, 2
@@ -2979,7 +2986,7 @@ glabel func_8004056C
     /* 30D7C 8004057C 21280000 */  addu       $a1, $zero, $zero
     /* 30D80 80040580 1000A627 */  addiu      $a2, $sp, 0x10
     /* 30D84 80040584 2000BFAF */  sw         $ra, 0x20($sp)
-    /* 30D88 80040588 09F8000C */  jal        ff7_unknown_8003E024
+    /* 30D88 80040588 09F8000C */  jal        CdControlB
     /* 30D8C 8004058C 1C00B1AF */   sw        $s1, 0x1C($sp)
     /* 30D90 80040590 1000A293 */  lbu        $v0, 0x10($sp)
     /* 30D94 80040594 00000000 */  nop
@@ -2988,7 +2995,7 @@ glabel func_8004056C
     /* 30DA0 800405A0 10000234 */   ori       $v0, $zero, 0x10
     /* 30DA4 800405A4 13000434 */  ori        $a0, $zero, 0x13
     /* 30DA8 800405A8 21280000 */  addu       $a1, $zero, $zero
-    /* 30DAC 800405AC 09F8000C */  jal        ff7_unknown_8003E024
+    /* 30DAC 800405AC 09F8000C */  jal        CdControlB
     /* 30DB0 800405B0 1000A627 */   addiu     $a2, $sp, 0x10
     /* 30DB4 800405B4 21284000 */  addu       $a1, $v0, $zero
     /* 30DB8 800405B8 01000234 */  ori        $v0, $zero, 0x1
@@ -3021,7 +3028,7 @@ glabel func_8004056C
     /* 30E18 80040618 1E000434 */   ori       $a0, $zero, 0x1E
     /* 30E1C 8004061C 13000434 */  ori        $a0, $zero, 0x13
     /* 30E20 80040620 21280000 */  addu       $a1, $zero, $zero
-    /* 30E24 80040624 09F8000C */  jal        ff7_unknown_8003E024
+    /* 30E24 80040624 09F8000C */  jal        CdControlB
     /* 30E28 80040628 1000A627 */   addiu     $a2, $sp, 0x10
     /* 30E2C 8004062C 1000A393 */  lbu        $v1, 0x10($sp)
     /* 30E30 80040630 00000000 */  nop
@@ -3036,7 +3043,7 @@ glabel func_8004056C
     /* 30E50 80040650 1E000434 */   ori       $a0, $zero, 0x1E
     /* 30E54 80040654 13000434 */  ori        $a0, $zero, 0x13
     /* 30E58 80040658 21280000 */  addu       $a1, $zero, $zero
-    /* 30E5C 8004065C 09F8000C */  jal        ff7_unknown_8003E024
+    /* 30E5C 8004065C 09F8000C */  jal        CdControlB
     /* 30E60 80040660 1000A627 */   addiu     $a2, $sp, 0x10
     /* 30E64 80040664 21284000 */  addu       $a1, $v0, $zero
     /* 30E68 80040668 01001026 */  addiu      $s0, $s0, 0x1
@@ -3752,8 +3759,10 @@ glabel func_80040BCC
     /* 317F4 80040FF4 00000000 */   nop
   .L80040FF8:
     /* 317F8 80040FF8 0A80043C */  lui        $a0, %hi(D_8009C660)
+  func_80040FFC:
     /* 317FC 80040FFC 60C6848C */  lw         $a0, %lo(D_8009C660)($a0)
     /* 31800 80041000 0A80053C */  lui        $a1, %hi(D_8009C65C)
+  func_80041004:
     /* 31804 80041004 5CC6A58C */  lw         $a1, %lo(D_8009C65C)($a1)
     /* 31808 80041008 0780013C */  lui        $at, %hi(D_8007186C)
     /* 3180C 8004100C 6C1820AC */  sw         $zero, %lo(D_8007186C)($at)
@@ -4689,7 +4698,7 @@ glabel func_80041C4C
     /* 32524 80041D24 04004010 */  beqz       $v0, .L80041D38
     /* 32528 80041D28 09000434 */   ori       $a0, $zero, 0x9
     /* 3252C 80041D2C 21280000 */  addu       $a1, $zero, $zero
-    /* 32530 80041D30 09F8000C */  jal        ff7_unknown_8003E024
+    /* 32530 80041D30 09F8000C */  jal        CdControlB
     /* 32534 80041D34 21300000 */   addu      $a2, $zero, $zero
   .L80041D38:
     /* 32538 80041D38 8806010C */  jal        func_80041A20

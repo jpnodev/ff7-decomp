@@ -5,11 +5,28 @@ AS := $(CROSS)as
 LD := $(CROSS)ld
 OBJCOPY := $(CROSS)objcopy
 
-LDFLAGS = -T config/symbols/$(TARGET).garbage_syms.txt -T config/symbols/$(TARGET).undefined_funcs_auto.txt -T config/symbols/$(TARGET).undefined_syms_auto.txt -T config/symbols/$(TARGET).manual_syms.txt -T $(LD_SCRIPT) -Map $(BUILD_DIR)/$(TARGET).map
 
 ASFLAGS := -I include -march=mips2 -mabi=32 -O0 -G0 -no-pad-sections
 
 BUILD_DIR := build
+
+SYMBOL_LD_FILES := $(BUILD_DIR)/$(TARGET).garbage_syms.txt.ld \
+                   $(BUILD_DIR)/$(TARGET).undefined_funcs_auto.txt.ld \
+                   $(BUILD_DIR)/$(TARGET).undefined_syms_auto.txt.ld \
+                   $(BUILD_DIR)/$(TARGET).manual_syms.txt.ld \
+                   $(BUILD_DIR)/$(TARGET).sys_syms.txt.ld \
+                   $(BUILD_DIR)/$(TARGET).sdk_syms.txt.ld \
+                   $(BUILD_DIR)/$(TARGET).symbols.from_ghidra.txt.ld
+
+LDFLAGS = $(foreach f,$(SYMBOL_LD_FILES),-T $(f)) -T $(LD_SCRIPT) -Map $(BUILD_DIR)/$(TARGET).map
+
+$(BUILD_DIR)/%.txt.ld: config/symbols/%.txt
+	@mkdir -p $(dir $@)
+	sed 's/\/\/.*//g; s/#.*//g' $< > $@
+
+$(BUILD_DIR)/%.txt.ld: ghidra_exports/splat/%.txt
+	@mkdir -p $(dir $@)
+	sed 's/\/\/.*//g; s/#.*//g' $< > $@
 ASM_DIR := asm
 LD_SCRIPT := ld/$(TARGET).ld
 
@@ -43,7 +60,7 @@ all: $(BIN)
 $(BIN): $(ELF)
 	$(OBJCOPY) -O binary $< $@
 
-$(ELF): $(OBJ_FILES) $(SRC_OBJ_FILES) $(BIN_OBJ_FILES) $(LD_SCRIPT)
+$(ELF): $(OBJ_FILES) $(SRC_OBJ_FILES) $(BIN_OBJ_FILES) $(LD_SCRIPT) $(SYMBOL_LD_FILES)
 	$(LD) $(LDFLAGS) -o $@
 
 $(BUILD_DIR)/$(ASM_DIR)/%.s.o:

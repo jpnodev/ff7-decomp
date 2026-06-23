@@ -38,7 +38,7 @@ s_unknown_80010B28 = 0x80010B28;
 s_unknown_80010B3C = 0x80010B3C;
 g_cd_unknown_80071B8C = 0x80071B8C;
 g_cd_unknown_80071B90 = 0x80071B90;
-ff7_unknown_8003E024 = 0x8003E024;
+
 ff7_unknown_80034384 = 0x80034384;
 ff7_unknown_80034F68 = 0x80034F68;
 s_gs_work_base = 0x800515EC;
@@ -57,3 +57,4 @@ ptr_MDEC_REG1 = 0x80051B40;
 ptr_DMA_DPCR = 0x80051B44;
 
 movie_unknown_800422B8 = 0x800422B8;
+CdControlB = 0x8003E024;

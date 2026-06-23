@@ -1405,8 +1405,8 @@ nonmatching func_80013CB8, 0x408
 
 glabel func_80013CB8
     /* 44B8 80013CB8 C0FFBD27 */  addiu      $sp, $sp, -0x40
-    /* 44BC 80013CBC 0680043C */  lui        $a0, %hi(D_80062CF8)
-    /* 44C0 80013CC0 F82C8424 */  addiu      $a0, $a0, %lo(D_80062CF8)
+    /* 44BC 80013CBC 0680043C */  lui        $a0, %hi(_gp)
+    /* 44C0 80013CC0 F82C8424 */  addiu      $a0, $a0, %lo(_gp)
     /* 44C4 80013CC4 21280000 */  addu       $a1, $zero, $zero
     /* 44C8 80013CC8 08000634 */  ori        $a2, $zero, 0x8
     /* 44CC 80013CCC 3C00BFAF */  sw         $ra, 0x3C($sp)

@@ -51,7 +51,7 @@ glabel main
     /* 24C0 80011CC0 08000434 */   ori       $a0, $zero, 0x8
     /* 24C4 80011CC4 C745000C */  jal        ff7_sys_init
     /* 24C8 80011CC8 01001134 */   ori       $s1, $zero, 0x1
-    /* 24CC 80011CCC F2CE000C */  jal        func_80033BC8
+    /* 24CC 80011CCC F2CE000C */  jal        cd_init_drive
     /* 24D0 80011CD0 0020173C */   lui       $s7, (0x20000000 >> 16)
     /* 24D4 80011CD4 0A80063C */  lui        $a2, (0x800A0000 >> 16)
     /* 24D8 80011CD8 21380000 */  addu       $a3, $zero, $zero

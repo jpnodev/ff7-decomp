@@ -13,7 +13,7 @@
 
 nonmatching D_8004251C
 
-dlabel D_8004251C
+glabel D_8004251C
     /* 32D1C 8004251C FFFFFF00 */ .word 0x00FFFFFF /* invalid instruction */
     /* 32D20 80042520 0480083C */ .word 0x3C088004
     /* 32D24 80042524 1C250825 */ .word 0x2508251C
@@ -264,8 +264,12 @@ glabel func_80042550
     /* 33088 80042888 0800E003 */  jr         $ra
     /* 3308C 8004288C 01000220 */   addi      $v0, $zero, 0x1 /* handwritten instruction */
 endlabel func_80042550
-  alabel D_80042890
+
+nonmatching D_80042890, 0x4
+
+glabel D_80042890
     /* 33090 80042890 00000000 */  nop
+endlabel D_80042890
     /* 33094 80042894 00000000 */  nop
     /* 33098 80042898 00000000 */  nop
     /* 3309C 8004289C 00000000 */  nop
@@ -500,7 +504,12 @@ glabel func_80042A34
     /* 33238 80042A38 0800E003 */  jr         $ra
     /* 3323C 80042A3C 21E88000 */   addu      $sp, $a0, $zero
 endlabel func_80042A34
+
+nonmatching func_80042A40, 0x4
+
+glabel func_80042A40
     /* 33240 80042A40 00000000 */  nop
+endlabel func_80042A40
 
 nonmatching open, 0xC
 
@@ -1072,6 +1081,7 @@ nonmatching SPRINTF_OBJ_2EC, 0x20
 glabel SPRINTF_OBJ_2EC
     /* 337E8 80042FE8 1002A2AF */  sw         $v0, 0x210($sp)
     /* 337EC 80042FEC 4C02A38F */  lw         $v1, 0x24C($sp)
+  func_80042FF0:
     /* 337F0 80042FF0 00000000 */  nop
     /* 337F4 80042FF4 01006224 */  addiu      $v0, $v1, 0x1
     /* 337F8 80042FF8 4C02A2AF */  sw         $v0, 0x24C($sp)

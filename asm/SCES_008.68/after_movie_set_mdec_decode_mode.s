@@ -20,6 +20,7 @@ glabel func_80041FE4
     /* 327F0 80041FF0 00000000 */   nop
     /* 327F4 80041FF4 1000BF8F */  lw         $ra, 0x10($sp)
     /* 327F8 80041FF8 1800BD27 */  addiu      $sp, $sp, 0x18
+  func_80041FFC:
     /* 327FC 80041FFC 0800E003 */  jr         $ra
     /* 32800 80042000 00000000 */   nop
 endlabel func_80041FE4

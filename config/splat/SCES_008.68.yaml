@@ -69,8 +69,11 @@ segments:
       # === CD & Movie (MDEC) ===
       - [0x243C8, c, cd_init_drive]          # Init lecteur CD - décompilé ✓
       - [0x24438, asm, after_cd_init_drive]  # Contient func_80034B50
+      - [0x24B84, c, ff7_unknown_80034384]
+      - [0x24C24, asm, after_ff7_unknown_80034384]
       - [0x25748, c, movie/movie_sys_init_mdec]    # Init MDEC - décompilé ✓
-      - [0x25768, asm, after_movie_sys_init_mdec]
+      - [0x25768, c, ff7_unknown_80034F68]
+      - [0x257D4, asm, after_ff7_unknown_80034F68]
 
       # === SDK: SPU / Son (libspu) ===
       - [0x26994, c, sdk/SpuInit]                # Wrapper FF7 autour de _SpuInit - décompilé ✓

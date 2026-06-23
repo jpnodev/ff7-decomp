@@ -93,3 +93,15 @@ Ces fonctions ne doivent **pas** être décompilées en C. Elles sont conservée
 | Fonction | VRAM | Description |
 |---|---|---|
 | `SUB_000000b0` | — | Appel BIOS B(0) |
+
+## Lecteur CD (`libcd`)
+
+| Fonction | VRAM | Description |
+|---|---|---|
+| `CdInit` | `0x8003DAF4` | Initialise le lecteur CD |
+| `CdRead2` | `0x800404B8` | Lit des secteurs CD (variante) |
+| `CdControlB` | `0x8003E024` | Envoie une commande au lecteur CD (bloquant) |
+| `CheckCallback` | `0x8003D110` | Vérifie les callbacks du CD |
+| `def_cbsync` | `0x8003DB84` | Callback CD sync par défaut |
+| `def_cbready` | `0x8003DBAC` | Callback CD ready par défaut |
+| `def_cbread` | `0x8003DBD4` | Callback CD read par défaut |
