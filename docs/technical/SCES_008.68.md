@@ -28,6 +28,11 @@ This document contains notes and reverse engineering progress for the main game 
 | 0x8001155C | ff7_vsync_handler | ff7/sys | identified | VSync interrupt handler |
 | 0x8001171C | ff7_sys_init | ff7/sys | matched | High-level system initialization |
 | 0x80033BC8 | cd_init_drive | ff7/cd | matched | CD drive initialization |
+| 0x8003DAF4 | CdInit | libcd | matched | Init lecteur CD |
+| 0x8003DC3C | CdReset | libcd | matched | Reset CD |
+| 0x8003DD90 | CdSyncCallback | libcd | matched | Sync Callback |
+| 0x8003DDA8 | CdReadyCallback | libcd | matched | Ready Callback |
+| 0x80041E20 | CdReadCallback | libcd | matched | Read Callback |
 | 0x80034384 | cd_get_disk_number | ff7/cd | matched | Reads DISKINFO.CNF to get disk number |
 | 0x80034B50 | cd_process_task | ff7/cd | matched | Processes CD tasks from array |
 | 0x80034F48 | movie_sys_init_mdec | movie | matched | High-level system init for MDEC |

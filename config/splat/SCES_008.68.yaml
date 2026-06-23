@@ -67,15 +67,15 @@ segments:
       - [0x305C, asm, after_main]            # Bloc massif : contient la majorité de la logique jeu
 
       # === CD & Movie (MDEC) ===
-      - [0x243C8, c, cd_init_drive]          # Init lecteur CD - décompilé ✓
-      - [0x24438, asm, after_cd_init_drive]
-      - [0x24B84, c, cd_get_disk_number]
-      - [0x24C24, asm, after_cd_get_disk_number]
-      - [0x25350, c, cd_process_task]
-      - [0x253BC, asm, after_cd_process_task]
+      - [0x243C8, c, cd/cd_init_drive]          # Init lecteur CD - décompilé ✓
+      - [0x24438, asm, cd/after_cd_init_drive]
+      - [0x24B84, c, cd/cd_get_disk_number]
+      - [0x24C24, asm, cd/after_cd_get_disk_number]
+      - [0x25350, c, cd/cd_process_task]
+      - [0x253BC, asm, cd/after_cd_process_task]
       - [0x25748, c, movie/movie_sys_init_mdec]    # Init MDEC - décompilé ✓
-      - [0x25768, c, cd_load_movie_id]
-      - [0x257D4, asm, after_cd_load_movie_id]
+      - [0x25768, c, cd/cd_load_movie_id]
+      - [0x257D4, asm, cd/after_cd_load_movie_id]
 
       # === SDK: SPU / Son (libspu) ===
       - [0x26994, c, sdk/SpuInit]                # Wrapper FF7 autour de _SpuInit - décompilé ✓
