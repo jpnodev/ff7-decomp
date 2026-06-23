@@ -57,3 +57,7 @@ def_cbready = 0x8003DBAC; // libcd
 def_cbread = 0x8003DBD4; // libcd
 CdControlB = 0x8003E024; // libcd
 CdRead2 = 0x800404B8; // libcd
+
+CdSearchFile = 0x8003FAB0; // libcd
+CdRead = 0x80041C4C; // libcd
+CdReadSync = 0x80041D54; // libcd
