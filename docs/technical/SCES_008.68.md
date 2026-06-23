@@ -38,7 +38,7 @@ This document contains notes and reverse engineering progress for the main game 
 | 0x80034F48 | movie_sys_init_mdec | movie | matched | High-level system init for MDEC |
 | 0x80034F68 | cd_load_movie_id | ff7/cd | matched | Loads MOVIEID.CNF |
 
-| 0x8003E024 | ff7_unknown_8003E024 | ff7 | unknown | Unknown |
+| 0x8003E024 | CdControlB | libcd | matched | Envoie une commande au lecteur CD (bloquant) |
 | 0x8003E29C | SetVideoMode | sdk | matched | GPU Video Mode setup |
 | 0x8003E4C8 | GsSetWorkBase | sdk | matched | Sets active workbase for GS |
 | 0x80041E38 | movie_init_mdec | movie | matched | Conditionally calls ResetCallback, resets MDEC |
