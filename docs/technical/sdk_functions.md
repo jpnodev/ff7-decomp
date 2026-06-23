@@ -105,3 +105,6 @@ Ces fonctions ne doivent **pas** être décompilées en C. Elles sont conservée
 | `def_cbsync` | `0x8003DB84` | Callback CD sync par défaut |
 | `def_cbready` | `0x8003DBAC` | Callback CD ready par défaut |
 | `def_cbread` | `0x8003DBD4` | Callback CD read par défaut |
+| `CdSearchFile` | `0x8003FAB0` | Recherche un fichier sur le CD |
+| `CdRead` | `0x80041C4C` | Lit des secteurs depuis le CD |
+| `CdReadSync` | `0x80041D54` | Vérifie/attend la fin d'une lecture CD |
