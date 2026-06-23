@@ -25,7 +25,8 @@ def load_addrs(filename):
 
 # Load manually-defined / custom symbols to filter them out of Ghidra exports
 load_addrs("config/symbols/SCES_008.68.manual_syms.txt")
-load_addrs("config/symbols/SCES_008.68.user_syms.txt")
+load_addrs("config/symbols/SCES_008.68.sys_syms.txt")
+
 
 with open(input_file, 'r') as f:
     lines = f.readlines()

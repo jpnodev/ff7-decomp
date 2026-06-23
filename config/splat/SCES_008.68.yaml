@@ -21,8 +21,9 @@ options:
 
   symbol_addrs_path:
     - config/symbols/SCES_008.68.manual_syms.txt
-    - config/symbols/SCES_008.68.symbols.txt
+    - config/symbols/SCES_008.68.sys_syms.txt
     - ghidra_exports/splat/SCES_008.68.symbols.from_ghidra.txt
+
 
   undefined_funcs_auto_path: config/symbols/SCES_008.68.undefined_funcs_auto.txt
   undefined_syms_auto_path: config/symbols/SCES_008.68.undefined_syms_auto.txt

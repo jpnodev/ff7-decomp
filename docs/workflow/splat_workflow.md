@@ -1,87 +1,108 @@
-# Workflow de Décompilation avec Splat
+# Workflow de Décompilation (C-First / Local-First)
 
-Ce document synthétise la boucle de travail itérative pour décompiler le jeu bit à bit. L'objectif est de partir d'un exécutable binaire (ROM) et de retrouver un code source C équivalent qui, une fois compilé, génère un binaire identique à 100%.
+Ce document synthétise la boucle de travail itérative du projet. 
+La règle d'or est que **le code source local (les fichiers C, la configuration Splat, et les fichiers de symboles locaux) est l'unique source de vérité**. Ghidra sert d'outil d'analyse interactif et est mis à jour depuis le code local.
 
-## Phase A : Analyse Ghidra
-**Objectif :** Comprendre, nommer, typer et documenter.
-1. Ouvre Ghidra, repère une fonction ou une donnée non documentée dans `SCES_008.68`.
-2. Renomme la fonction et identifie son rôle.
-3. Exécute le script `ExportSplatSymbols.java` via le *Script Manager*.
-   - Cela génère un fichier `SCES_008.68.symbols.from_ghidra.txt` dans `ghidra_exports/splat/` que Splat utilisera pour nommer les fonctions lors du découpage.
-4. Nettoie et filtre les symboles Ghidra exportés pour éviter les doublons et les conflits avec nos définitions personnalisées (`manual_syms.txt` / `user_syms.txt`) :
-   ```bash
-   ff7-clean-syms
-   ```
+> [!IMPORTANT]
+> **Sécurité de `manual_syms.txt`**
+> Le fichier `config/symbols/SCES_008.68.manual_syms.txt` est votre registre de symboles personnalisés (variables globales, fonctions validées, registres, etc.). **Aucun script ni commande de build ne modifiera ou n'écrasera jamais ce fichier automatiquement.** Il est exclusivement géré par vous. Veillez à le maintenir rigoureusement à jour lors de vos renommages.
 
 
-## Phase B : Découpage (Splat Split)
-**Objectif :** Transformer le binaire en fichiers assembleurs (asm) organisés.
-1. Le fichier YAML (`config/splat/SCES_008.68.yaml`) dicte à quels offsets on découpe le fichier. (Sers-toi de `./tools/vram_to_fileoff.py` pour convertir une adresse mémoire en offset fichier).
-2. Pour isoler une fonction ou un groupe de données, déclare-les sous `subsegments` dans le YAML.
-3. Exécute le split (assure-toi d'avoir sourcé `aliases.zsh`) :
+---
+
+## Le Workflow Général (Boucle de Décompilation)
+
+```mermaid
+graph TD
+    A[Identifier une fonction dans Ghidra] --> B[Modifier le YAML & Splat Split]
+    B --> C[Écrire et Matcher le code C localement]
+    C --> D[Compiler & Valider 100% Match]
+    D --> E[Réimporter les symboles/signatures dans Ghidra]
+    E --> A
+```
+
+---
+
+## Phase A : Configuration & Découpage (Splat Split)
+
+**Objectif :** Isoler une fonction assembleur non-décompilée pour commencer à travailler dessus.
+
+1. Identifie l'offset ou l'adresse de la fonction cible dans Ghidra.
+   *(Utilise `./tools/vram_to_fileoff.py <adresse>` pour trouver le bon offset de fichier).*
+2. Dans le YAML (`config/splat/SCES_008.68.yaml`), déclare la fonction sous `subsegments` en changeant son type de `asm` vers `c`.
+3. Lance le split pour générer le fichier C vide dans `src/` :
    ```bash
    ff7-split
    ```
-   Splat découpera le binaire et générera un script de lien (`ld/SCES_008.68.ld`).
 
-## Phase C : Rebuild Assembleur-Only
-**Objectif :** Valider que le code assembleur généré compile et produit le binaire exact.
-1. **Étape cruciale** à faire *avant* d'écrire la moindre ligne de code C.
-2. Compile le projet :
-   ```bash
-   ff7-build
-   ```
-3. Compare le binaire reconstruit avec la ROM d'origine :
-   ```bash
-   ff7-check
-   ```
-4. Si le code assembleur diffère de la ROM originale (erreurs de macro-expansion, mauvais type de segment, etc.), corrige le YAML.
+---
 
-## Phase D : Découpage fin et C-ification (C Matching)
-**Objectif :** Remplacer une fonction assembleur par son équivalent C.
+## Phase B : Décompilation & C-Matching
+
+**Objectif :** Écrire le code C et obtenir une équivalence stricte au niveau des instructions compilées (byte-to-byte parity).
 
 > [!WARNING]
 > **Règle d'Or : Bottom-Up (Leaf Functions First)**
-> Ne jamais utiliser `ff7-check` de manière globale si les fonctions "feuilles" (leaf functions) ne sont pas parfaitement matchées (0 différences et taille identique). Une seule fonction dont la taille générée diffère de l'originale décalera **toutes les adresses suivantes** dans le binaire, corrompant les tables de saut et faisant échouer `ff7-check` en cascade.
-> Travaille toujours de bas en haut : commence par les fonctions qui n'en appellent aucune autre, valide-les, puis remonte d'un niveau.
+> Travaille toujours de bas en haut : commence par décompiler les fonctions feuilles (qui n'appellent aucune autre fonction), valide-les, puis remonte d'un niveau. Une seule fonction dont la taille générée diffère de l'originale décalera toutes les adresses suivantes dans le binaire.
 
-1. Choisis une "leaf function" bien isolée (ex: `func_80034F48`).
-2. Dans le YAML, change son type de `asm` vers `c`.
-3. Re-split : un fichier `.c` vide (ou contenant le désassemblage en commentaire) sera créé dans `src/`.
-4. Écris le code C.
-5. Lance la vérification ciblée et itérative avec `asm-differ` :
+1. Rédige le code C dans le fichier généré sous `src/SCES_008.68/`.
+2. Renomme les variables locales, globales et pointeurs avec des noms descriptifs directement dans le fichier C.
+3. Si la fonction utilise des variables globales, des constantes, ou des adresses de pointeurs non-déclarées dans les fichiers C, ajoutez-les immédiatement dans `config/symbols/SCES_008.68.manual_syms.txt`. **Il est crucial de maintenir ce fichier à jour rigoureusement à chaque fois qu'un nouveau symbole global est identifié ou renommé**, car c'est lui qui sert de base de référence pour le linker et pour la synchronisation automatique vers Ghidra.
+
+4. Lance la vérification interactive avec `asm-differ` :
    ```bash
    ff7-diff <nom_de_la_fonction>
    ```
-   *(Cet alias recompile automatiquement et se met à jour à chaque sauvegarde de fichier).*
-   
-   > [!IMPORTANT]
-   > Vérifie toujours la taille ! Si ton code C génère moins d'octets que prévu, `ff7-diff` peut afficher un score de `0` parce qu'il ne compare que ce qui a été généré, ignorant les instructions manquantes à la fin de la fonction d'origine. Si tu as un décalage de taille dans `.map` par rapport au YAML, c'est que ton code est incomplet.
+   *(Ce script recompile et compare automatiquement à chaque fois que tu sauvegardes ton fichier C).*
+5. **Permuteur (Optionnel) :** Si tu es bloqué sur les dernières instructions ou l'optimisation des registres :
+   - Importe la fonction : `ff7-perm-import <nom_fonction>`.
+   - Modifie uniquement `nonmatchings/<nom_fonction>/base.c` avec les macros de permutation.
+   - Lance le permuteur : `ff7-perm <nom_fonction> --stop-on-zero`.
+   - Copie la solution trouvée dans ton fichier `src/` d'origine.
+6. Une fois que la fonction matche à 100%, passe à la fonction supérieure dans la hiérarchie.
 
-6. Si tu bloques sur les derniers registres ou instructions, utilise le **decomp-permuter** :
-   - Assure-toi que ton code dans `src/` est propre, sans macros de permuteur.
-   - Lance l'import : `ff7-perm-import <nom_de_la_fonction>`. (Cela va configurer le dossier `nonmatchings/<nom_de_la_fonction>`).
-   - Édite **uniquement** `nonmatchings/<nom_de_la_fonction>/base.c` pour ajouter tes macros (`PERM_RANDOMIZE`, `PERM_LINESWAP`) et renommer la fonction avec un `func_` au lieu de `FUN_` pour correspondre à l'assembleur extrait.
-   - Lance le permuteur : `ff7-perm <nom_de_la_fonction> --stop-on-zero`.
-   - Copie la solution trouvée (dans `output/.../source.c`) vers ton vrai fichier dans `src/`, nettoie les macros et remets son nom d'origine.
-7. Remonte d'un niveau dans la hiérarchie d'appels uniquement quand la fonction actuelle matche parfaitement avec `ff7-diff`.
-8. Une fois toutes tes fonctions matchées, lance une vérification globale :
+---
+
+## Phase C : Rebuild & Synchronisation Ghidra
+
+**Objectif :** Recompiler le projet globalement et mettre à jour la base de données Ghidra pour que l'analyse interactive reste alignée.
+
+1. Recompile le projet complet et vérifie que tout est vert :
    ```bash
-   ff7-check
+   ff7-build && ff7-check
    ```
-
-## Phase E : Test de non-régression en émulateur
-**Objectif :** vérifier qu'une ISO reconstruite à partir du binaire matching démarre et se comporte comme l'original.
-
-Cette phase ne remplace pas le matching byte-to-byte. Elle sert seulement à détecter des problèmes de packaging ISO, de header PS-X EXE, de reconstruction de disque ou de chargement runtime.
-
-1. Reconstruis l'ISO complète :
+   *(Le résultat final doit être un **100% byte-for-byte match** avec le binaire d'origine).*
+2. **Suivi de la progression (Optionnel) :** Pour afficher le pourcentage exact du binaire réécrit en C et en HASM :
    ```bash
-   ./tools/iso/build_iso.zsh
+   ff7-progress
    ```
-2. Charge le fichier `.cue` généré dans `DuckStation` et teste que le jeu tourne.
+3. **Synchronisation vers Ghidra :** Une fois le binaire compilé et validé, ouvre Ghidra et exécute le script :
 
+   **`ImportSplatSymbols.java`** (via le *Script Manager* de Ghidra).
+   - Ce script va lire tes fichiers locaux `manual_syms.txt`, `sys_syms.txt`, et le fichier de mapping compilé `build/SCES_008.68.map`.
+   - Il va renommer automatiquement toutes les fonctions et variables sous Ghidra, et **appliquer automatiquement les vraies signatures C** (arguments et types de retour) extraites de tes fichiers `.c` locaux.
+   - Ton environnement Ghidra est maintenant parfaitement propre et à jour !
 
-## Phase F : Overlays
-**Objectif :** Reproduire le processus pour les autres exécutables.
-Une fois le binaire principal maîtrisé, crée de nouveaux profils YAML (ex: `config/splat/BATTLE.X.yaml`) pour décompiler les overlays.
+---
+
+## Phase D : Intégration Ghidra-First (Cas particulier)
+
+**Objectif :** Si tu as fait un gros travail de renommage directement dans Ghidra (sur des fonctions non encore décompilées) et que tu veux en extraire les symboles :
+
+1. Dans Ghidra, exécute le script `ExportSplatSymbols.java` depuis le *Script Manager*.
+   - Cela va mettre à jour le fichier `SCES_008.68.symbols.from_ghidra.txt`.
+2. Lance le nettoyage pour filtrer les symboles et éviter les doublons avec tes définitions manuelles :
+   ```bash
+   ff7-clean-syms
+   ```
+3. Fais ton split `ff7-split` pour que Splat applique ces nouveaux noms lors du découpage assembleur.
+
+---
+
+## Phase E : Tests de non-régression & Overlays
+
+1. **duckstation / ISO :** Pour construire une ISO modifiée et tester en émulateur :
+   ```bash
+   ff7-pack
+   ```
+2. **Overlays :** Une fois le binaire principal maîtrisé, applique la même logique en créant des profils YAML spécifiques (ex: `BATTLE.X.yaml`) pour décompiler les overlays.

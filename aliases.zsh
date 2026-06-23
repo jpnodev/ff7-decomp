@@ -47,8 +47,12 @@ alias ff7-build-all='ff7-sync && ff7-pack'
 # Outils & Helpers (Préfixe: ff7-tool-)
 # ==========================================
 
+# Affiche le pourcentage de décompilation en C / HASM
+alias ff7-progress='py tools/calc_decomp_progress.py'
+
 # Vérifie le header d'un exécutable PSX
 alias ff7-tool-check-header='py tools/check_header.py'
+
 
 # Lit et parse le header d'un overlay
 alias ff7-tool-read-overlay='py tools/read_overlay_header.py'

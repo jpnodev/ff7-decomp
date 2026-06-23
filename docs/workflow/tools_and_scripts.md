@@ -35,6 +35,15 @@ Toutes ces commandes sont encapsulées dans des raccourcis ZSH pratiques. (Voir 
 - **Fonctionnement :** Exporte toutes les fonctions et étiquettes depuis Ghidra vers un format texte lisible par `splat`.
 - **Utilisation :** Exécutable depuis le Script Manager de Ghidra.
 
+### `ImportSplatSymbols.java`
+- **Rôle :** Réimporter les symboles locaux renommés et les signatures de fonctions dans Ghidra.
+- **Fonctionnement :** Lit les fichiers de symboles personnalisés `manual_syms.txt` et `sys_syms.txt`, ainsi que le fichier de mapping compilé `build/SCES_008.68.map`. Il met à jour automatiquement la base de données de Ghidra en renommant les fonctions (y compris celles issues de nos fichiers C compilés comme `ff7_sys_init`) et en créant les étiquettes correspondantes aux adresses mémoire définies. De plus, il scanne nos fichiers C sources pour extraire et appliquer automatiquement les vraies signatures de fonctions (types de retour et arguments) dans Ghidra.
+- **Utilisation :** Exécutable depuis le Script Manager de Ghidra (demande à l'utilisateur de sélectionner le répertoire racine du projet).
+
+
+
+
+
 ### `clean_ghidra_exports.py`
 - **Rôle :** Nettoyer l'export des symboles de Ghidra.
 - **Fonctionnement :** Ghidra exporte souvent du bruit (ex: labels générés automatiquement comme `switchD`, `caseD_1`, `default`). Ce script purge ces labels pour éviter les collisions de symboles dans Splat.
@@ -42,7 +51,13 @@ Toutes ces commandes sont encapsulées dans des raccourcis ZSH pratiques. (Voir 
 
 ## Outils d'Analyse et Binaire (`tools/`)
 
+### `calc_decomp_progress.py`
+- **Rôle :** Calculer et afficher le pourcentage de progression de la décompilation.
+- **Fonctionnement :** Parse la configuration de découpage YAML de Splat pour calculer la proportion d'octets de code traduits en C (`c`), écrits en assembleur manuel (`hasm`), ou restants en assembleur brut (`asm`) au sein de la section de code executable.
+- **Utilisation :** Alias `ff7-progress`.
+
 ### `compare_binaries.py`
+
 - **Rôle :** Vérifier que le binaire recompilé match le binaire d'origine.
 - **Utilisation :** Alias `ff7-check`.
 

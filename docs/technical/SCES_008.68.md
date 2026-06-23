@@ -26,9 +26,10 @@ This document contains notes and reverse engineering progress for the main game 
 | 0x800110C0 | start | crt/psyq | identified | PsyQ startup / 2MBYTE.OBJ |
 | TBD | main | ff7 | pending | Main entry after runtime startup |
 | 0x8001155C | ff7_vsync_handler | ff7/sys | identified | VSync interrupt handler |
-| 0x80011F1C | ff7_sys_init | ff7/sys | matched | High-level system initialization |
-| 0x800343C8 | cd_init_drive | ff7/cd | matched | CD drive initialization |
+| 0x8001171C | ff7_sys_init | ff7/sys | matched | High-level system initialization |
+| 0x80033BC8 | cd_init_drive | ff7/cd | matched | CD drive initialization |
 | 0x80034F48 | movie_sys_init_mdec | ff7/mdec | matched | High-level system init for MDEC |
+
 | 0x8003E024 | ff7_unknown_8003E024 | ff7 | unknown | Unknown |
 | 0x8003E29C | SetVideoMode | ff7/gpu | matched | GPU Video Mode setup |
 | 0x8003E4C8 | GsSetWorkBase | ff7/gpu | matched | Sets active workbase for GS |
