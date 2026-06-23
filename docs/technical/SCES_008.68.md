@@ -28,23 +28,23 @@ This document contains notes and reverse engineering progress for the main game 
 | 0x8001155C | ff7_vsync_handler | ff7/sys | identified | VSync interrupt handler |
 | 0x8001171C | ff7_sys_init | ff7/sys | matched | High-level system initialization |
 | 0x80033BC8 | cd_init_drive | ff7/cd | matched | CD drive initialization |
-| 0x80034F48 | movie_sys_init_mdec | ff7/mdec | matched | High-level system init for MDEC |
+| 0x80034F48 | movie_sys_init_mdec | movie | matched | High-level system init for MDEC |
 
 | 0x8003E024 | ff7_unknown_8003E024 | ff7 | unknown | Unknown |
-| 0x8003E29C | SetVideoMode | ff7/gpu | matched | GPU Video Mode setup |
-| 0x8003E4C8 | GsSetWorkBase | ff7/gpu | matched | Sets active workbase for GS |
-| 0x80041E38 | movie_init_mdec | ff7/mdec | matched | Conditionally calls ResetCallback, resets MDEC |
-| 0x80041F68 | movie_set_mdec_decode_mode | ff7/mdec | matched | Modifies MDEC command word and starts DMA |
-| 0x8004208C | movie_reset_mdec | ff7/mdec | matched | Resets DMA channels, sends soft reset, loads tables |
-| 0x80042194 | movie_start_mdec_dma_in | ff7/mdec | matched | Hardware config to start incoming DMA to MDEC |
-| 0x800422B8 | movie_unknown_800422B8 | ff7/mdec | unknown | Called from movie loop |
-| 0x80042BE8 | movie_print_mdec_timeout | ff7/mdec | matched | Error handling/logging for MDEC timeout |
-| 0x80042AB8 | movie_wait_mdec_dma_ready | ff7/mdec | matched | Wait loop for DMA completion |
+| 0x8003E29C | SetVideoMode | sdk | matched | GPU Video Mode setup |
+| 0x8003E4C8 | GsSetWorkBase | sdk | matched | Sets active workbase for GS |
+| 0x80041E38 | movie_init_mdec | movie | matched | Conditionally calls ResetCallback, resets MDEC |
+| 0x80041F68 | movie_set_mdec_decode_mode | movie | matched | Modifies MDEC command word and starts DMA |
+| 0x8004208C | movie_reset_mdec | movie | matched | Resets DMA channels, sends soft reset, loads tables |
+| 0x80042194 | movie_start_mdec_dma_in | movie | matched | Hardware config to start incoming DMA to MDEC |
+| 0x800422B8 | movie_unknown_800422B8 | movie | unknown | Called from movie loop |
+| 0x80042BE8 | movie_print_mdec_timeout | movie | matched | Error handling/logging for MDEC timeout |
+| 0x80042AB8 | movie_wait_mdec_dma_ready | movie | matched | Wait loop for DMA completion |
 | 0x80043834 | ff7_init_graphics | ff7/gpu | identified | Graphics initialization logic |
-| 0x800442A4 | SetGraphDebug | ff7/gpu | matched | GPU Graph Debug setup |
-| 0x80044438 | SetDispMask | ff7/gpu | matched | Display Mask configuration |
+| 0x800442A4 | SetGraphDebug | sdk | matched | GPU Graph Debug setup |
+| 0x80044438 | SetDispMask | sdk | matched | Display Mask configuration |
 | 0x80045FEC | gpu_send_gp1_command | ff7/gpu | matched | Wrapper to send GP1 commands to GPU and mirror |
-| 0x80046728 | ResetGraph | ff7/gpu | matched | GPU reset logic |
+| 0x80046728 | ResetGraph | sdk | matched | GPU reset logic |
 
 ### Global Variables (g_)
 

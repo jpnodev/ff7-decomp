@@ -45,7 +45,7 @@ graph TD
 > **Règle d'Or : Bottom-Up (Leaf Functions First)**
 > Travaille toujours de bas en haut : commence par décompiler les fonctions feuilles (qui n'appellent aucune autre fonction), valide-les, puis remonte d'un niveau. Une seule fonction dont la taille générée diffère de l'originale décalera toutes les adresses suivantes dans le binaire.
 
-1. Rédige le code C dans le fichier généré sous `src/SCES_008.68/`.
+1. Rédige le code C dans le fichier généré sous `src/SCES_008.68/` (ou l'un de ses sous-dossiers pertinents comme `sdk/` ou `movie/`).
 2. Renomme les variables locales, globales et pointeurs avec des noms descriptifs directement dans le fichier C.
 3. Si la fonction utilise des variables globales, des constantes, ou des adresses de pointeurs non-déclarées dans les fichiers C, ajoutez-les immédiatement dans `config/symbols/SCES_008.68.manual_syms.txt`. **Il est crucial de maintenir ce fichier à jour rigoureusement à chaque fois qu'un nouveau symbole global est identifié ou renommé**, car c'est lui qui sert de base de référence pour le linker et pour la synchronisation automatique vers Ghidra.
 

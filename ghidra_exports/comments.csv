@@ -1,21 +1,178 @@
 Address,Comment
 0x800110C0,"Possible 2MBYTE.OBJ/stup2
 Possible 2MBYTE.OBJ/__SN_ENTRY_POINT"
+0x80014624,"Possible VM_VIB.OBJ/SsUtVibrateOff"
 0x800149FC,"Possible S_I.OBJ/SpuInit"
-0x80036194,"Possible UT_ROFF.OBJ/SsUtReverbOff
+0x8001C3E0,"Possible VM_VIB.OBJ/SsUtVibrateOff"
+0x8001F6C8,"Possible VM_VIB.OBJ/SsUtVibrateOff"
+0x8001FB0C,"Possible VM_VIB.OBJ/SsUtVibrateOff"
+0x800256A0,"Possible VM_VIB.OBJ/SsUtVibrateOff
+Possible VM_VIB.OBJ/SsUtVibrateOn"
+0x800256A8,"Possible VM_VIB.OBJ/SsUtVibrateOff"
+0x8002581C,"Possible VM_VIB.OBJ/SsUtVibrateOff"
+0x80025BD4,"Possible GS_125.OBJ/GsGetWorkBase"
+0x8002608C,"Possible VM_VIB.OBJ/SsUtVibrateOff"
+0x80026A18,"Possible GS_101.OBJ/GsSetNearClip
+Possible GS_102.OBJ/GsSetFarClip
+Possible GS_124.OBJ/GsSetWorkBase"
+0x80026BB4,"Possible VM_VIB.OBJ/SsUtVibrateOff"
+0x8002C800,"Possible GS_106.OBJ/GsSetProjection
+Possible _OP_VDEL.OBJ/__builtin_vec_delete
+Possible _OP_VNEW.OBJ/__builtin_vec_new
+Possible SSNOFF.OBJ/SsSetNoiseOff
+Possible SSQUIT.OBJ/SsQuit"
+0x8002C820,"Possible GS_106.OBJ/GsSetProjection
+Possible _OP_VDEL.OBJ/__builtin_vec_delete
+Possible _OP_VNEW.OBJ/__builtin_vec_new
+Possible SSNOFF.OBJ/SsSetNoiseOff
+Possible SSQUIT.OBJ/SsQuit"
+0x8002CD14,"Possible VM_DOFF.OBJ/SpuVmDamperOff"
+0x8002CD24,"Possible VM_DOFF.OBJ/SpuVmDamperOff"
+0x8002CFD0,"Possible GS_106.OBJ/GsSetProjection
+Possible _OP_VDEL.OBJ/__builtin_vec_delete
+Possible _OP_VNEW.OBJ/__builtin_vec_new
+Possible SSNOFF.OBJ/SsSetNoiseOff
+Possible SSQUIT.OBJ/SsQuit"
+0x8002CFF0,"Possible VM_VIB.OBJ/SsUtVibrateOff"
+0x8002CFF8,"Possible UT_ROFF.OBJ/SsUtReverbOff
 Possible S_I.OBJ/SpuInit"
+0x80033AC8,"Possible GS_106.OBJ/GsSetProjection
+Possible _OP_VDEL.OBJ/__builtin_vec_delete
+Possible _OP_VNEW.OBJ/__builtin_vec_new
+Possible SSNOFF.OBJ/SsSetNoiseOff
+Possible SSQUIT.OBJ/SsQuit"
+0x80034424,"Possible GS_106.OBJ/GsSetProjection
+Possible _OP_VDEL.OBJ/__builtin_vec_delete
+Possible _OP_VNEW.OBJ/__builtin_vec_new
+Possible SSNOFF.OBJ/SsSetNoiseOff
+Possible SSQUIT.OBJ/SsQuit"
+0x80034444,"Possible GS_125.OBJ/GsGetWorkBase"
+0x80034454,"Possible VM_VIB.OBJ/SsUtVibrateOff
+Possible VM_VIB.OBJ/SsUtVibrateOn"
+0x8003445C,"Possible VM_VIB.OBJ/SsUtVibrateOff"
+0x80034F48,"Possible UT_ROFF.OBJ/SsUtReverbOff
+Possible S_I.OBJ/SpuInit"
+0x80036194,"[SDK: libspu] Ne pas décompiler - PsyQ/libapi"
+0x800361B4,"[SDK: libspu] Ne pas décompiler - PsyQ/libapi"
+0x800362AC,"[SDK: libspu] Ne pas décompiler - PsyQ/libapi"
+0x80036328,"[SDK: libspu] Ne pas décompiler - PsyQ/libapi"
+0x800365BC,"[SDK: libspu] Ne pas décompiler - PsyQ/libapi"
+0x80036788,"[SDK: libspu] Ne pas décompiler - PsyQ/libapi"
+0x80036C94,"[SDK: libspu] Ne pas décompiler - PsyQ/libapi"
+0x80036E74,"[SDK: libspu] Ne pas décompiler - PsyQ/libapi"
+0x80036ED4,"[SDK: libspu] Ne pas décompiler - PsyQ/libapi"
 0x80037ADC,"Possible S_W.OBJ/SpuWrite"
 0x80037B04,"Possible S_W.OBJ/S_W_OBJ_28"
 0x80037B28,"Possible S_W.OBJ/S_W_OBJ_4C"
+0x800386F8,"Possible S_GRMP.OBJ/SpuGetReverbModeParam"
+0x80038E00,"Possible S_R.OBJ/SpuRead
+Possible S_W.OBJ/SpuWrite"
+0x80038EE8,"Possible S_STC.OBJ/SpuSetTransferCallback"
+0x80039DD8,"[SDK: libgte] Ne pas décompiler - PsyQ/libapi"
+0x8003B228,"Possible MTX_07.OBJ/TransMatrix"
+0x8003B258,"[SDK: libgte] Ne pas décompiler - PsyQ/libapi"
+0x8003B388,"[SDK: libgte] Ne pas décompiler - PsyQ/libapi"
+0x8003B418,"[SDK: libgte] Ne pas décompiler - PsyQ/libapi"
+0x8003B568,"Possible REG09.OBJ/ReadGeomScreen"
+0x8003B5B8,"Possible REG12.OBJ/SetGeomOffset"
+0x8003B5D8,"Possible REG13.OBJ/SetGeomScreen"
+0x8003BAD8,"[SDK: libgte] Ne pas décompiler - PsyQ/libapi"
+0x8003BE88,"[SDK: libgte] Ne pas décompiler - PsyQ/libapi"
+0x8003CC98,"[SDK: libgte] Ne pas décompiler - PsyQ/libapi"
 0x8003CDB8,"Possible GS_106.OBJ/GsSetProjection
 Possible _OP_VDEL.OBJ/__builtin_vec_delete
 Possible _OP_VNEW.OBJ/__builtin_vec_new
 Possible SSNOFF.OBJ/SsSetNoiseOff
 Possible SSQUIT.OBJ/SsQuit"
+0x8003CDD8,"[SDK: libgpu] Ne pas décompiler - PsyQ/libapi"
+0x8003CF20,"[SDK: libgpu] Ne pas décompiler - PsyQ/libapi"
+0x8003CFBC,"[SDK: libapi] Ne pas décompiler - PsyQ/libapi"
+0x8003CFEC,"[SDK: libapi] Ne pas décompiler - PsyQ/libapi"
+0x8003D01C,"[SDK: libapi] Ne pas décompiler - PsyQ/libapi"
+0x8003D04C,"[SDK: libapi] Ne pas décompiler - PsyQ/libapi"
+0x8003D0B0,"[SDK: libapi] Ne pas décompiler - PsyQ/libapi"
+0x8003D138,"[SDK: libapi] Ne pas décompiler - PsyQ/libapi"
+0x8003D154,"[SDK: libapi] Ne pas décompiler - PsyQ/libapi"
+0x8003D230,"[SDK: libapi] Ne pas décompiler - PsyQ/libapi"
+0x8003D418,"[SDK: libapi] Ne pas décompiler - PsyQ/libapi"
+0x8003D56C,"[SDK: libapi] Ne pas décompiler - PsyQ/libapi"
+0x8003D618,"[SDK: libapi] Ne pas décompiler - PsyQ/libapi"
+0x8003D6A0,"[SDK: libc] Ne pas décompiler - PsyQ/libapi"
+0x8003D6CC,"[SDK: libapi] Ne pas décompiler - PsyQ/libapi"
+0x8003D724,"[SDK: libapi] Ne pas décompiler - PsyQ/libapi"
+0x8003D79C,"[SDK: libapi] Ne pas décompiler - PsyQ/libapi"
+0x8003D7F4,"[SDK: libapi] Ne pas décompiler - PsyQ/libapi"
+0x8003D844,"[SDK: libapi] Ne pas décompiler - PsyQ/libapi"
+0x8003D9C8,"[SDK: libapi] Ne pas décompiler - PsyQ/libapi"
 0x8003DA9C,"Possible VMODE.OBJ/SetVideoMode"
+0x8003DAB4,"Possible VMODE.OBJ/GetVideoMode
+Possible GS_125.OBJ/GsGetWorkBase"
+0x8003DCA8,"Possible GS_106.OBJ/GsSetProjection
+Possible _OP_VDEL.OBJ/__builtin_vec_delete
+Possible _OP_VNEW.OBJ/__builtin_vec_new
+Possible SSNOFF.OBJ/SsSetNoiseOff
+Possible SSQUIT.OBJ/SsQuit"
+0x8003DD50,"Possible GS_106.OBJ/GsSetProjection
+Possible _OP_VDEL.OBJ/__builtin_vec_delete
+Possible _OP_VNEW.OBJ/__builtin_vec_new
+Possible SSNOFF.OBJ/SsSetNoiseOff
+Possible SSQUIT.OBJ/SsQuit"
+0x8003DD70,"Possible GS_106.OBJ/GsSetProjection
+Possible _OP_VDEL.OBJ/__builtin_vec_delete
+Possible _OP_VNEW.OBJ/__builtin_vec_new
+Possible SSNOFF.OBJ/SsSetNoiseOff
+Possible SSQUIT.OBJ/SsQuit"
+0x8003E1D4,"Possible GS_106.OBJ/GsSetProjection
+Possible _OP_VDEL.OBJ/__builtin_vec_delete
+Possible _OP_VNEW.OBJ/__builtin_vec_new
+Possible SSNOFF.OBJ/SsSetNoiseOff
+Possible SSQUIT.OBJ/SsQuit"
+0x8003F9C0,"Possible GS_101.OBJ/GsSetNearClip
+Possible GS_102.OBJ/GsSetFarClip
+Possible GS_124.OBJ/GsSetWorkBase"
 0x8004054C,"Possible GS_106.OBJ/GsSetProjection
 Possible _OP_VDEL.OBJ/__builtin_vec_delete
 Possible _OP_VNEW.OBJ/__builtin_vec_new
 Possible SSNOFF.OBJ/SsSetNoiseOff
 Possible SSQUIT.OBJ/SsQuit"
+0x8004081C,"Possible C_003.OBJ/StUnSetRing"
+0x80040BAC,"Possible C_010.OBJ/StSetMask"
+0x80041FE4,"Possible GS_106.OBJ/GsSetProjection
+Possible _OP_VDEL.OBJ/__builtin_vec_delete
+Possible _OP_VNEW.OBJ/__builtin_vec_new
+Possible SSNOFF.OBJ/SsSetNoiseOff
+Possible SSQUIT.OBJ/SsQuit"
+0x80042004,"Possible GS_106.OBJ/GsSetProjection
+Possible _OP_VDEL.OBJ/__builtin_vec_delete
+Possible _OP_VNEW.OBJ/__builtin_vec_new
+Possible SSNOFF.OBJ/SsSetNoiseOff
+Possible SSQUIT.OBJ/SsQuit"
+0x80042024,"Possible GS_106.OBJ/GsSetProjection
+Possible _OP_VDEL.OBJ/__builtin_vec_delete
+Possible _OP_VNEW.OBJ/__builtin_vec_new
+Possible SSNOFF.OBJ/SsSetNoiseOff
+Possible SSQUIT.OBJ/SsQuit"
+0x800428C4,"[SDK: libc] Ne pas décompiler - PsyQ/libapi"
+0x80042914,"[SDK: libapi] Ne pas décompiler - PsyQ/libapi"
+0x80042924,"[SDK: libapi] Ne pas décompiler - PsyQ/libapi"
+0x80042964,"[SDK: libapi] Ne pas décompiler - PsyQ/libapi"
+0x800429D4,"[SDK: libapi] Ne pas décompiler - PsyQ/libapi"
+0x800429E4,"[SDK: libapi] Ne pas décompiler - PsyQ/libapi"
+0x800429F4,"[SDK: libapi] Ne pas décompiler - PsyQ/libapi"
+0x80042A14,"Possible A36.OBJ/EnterCriticalSection"
+0x80042A24,"Possible A37.OBJ/ExitCriticalSection"
+0x80042A34,"Possible A39.OBJ/SetSp"
+0x80042AC4,"[SDK: libapi] Ne pas décompiler - PsyQ/libapi"
+0x80042AD4,"[SDK: libapi] Ne pas décompiler - PsyQ/libapi"
+0x80042C7C,"[SDK: libc] Ne pas décompiler - PsyQ/libapi"
+0x80042CBC,"[SDK: libc] Ne pas décompiler - PsyQ/libapi"
+0x80042CEC,"[SDK: libc] Ne pas décompiler - PsyQ/libapi"
 0x8004642C,"{@address 0x00}"
+0x80046458,"[SDK: libgpu] Ne pas décompiler - PsyQ/libapi"
+0x80048940,"Possible INIT.OBJ/StartCARD"
+0x80048978,"Possible INIT.OBJ/StopCARD
+Possible SSINIT_C.OBJ/SsInit
+Possible SSINIT_H.OBJ/SsInitHot"
+0x80048B78,"Possible END.OBJ/_ExitCard"
+0x80048BE0,"Possible END.OBJ/END_OBJ_68"
+0x80048BEC,"Possible END.OBJ/END_OBJ_74"

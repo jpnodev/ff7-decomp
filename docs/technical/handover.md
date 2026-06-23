@@ -13,7 +13,7 @@ The repository is organized to separate the decompilation workflow from game ass
 - **`baserom/`**: Contains the original, unmodified binaries (e.g., `SCES_008.68`).
 - **`config/splat/`**: Contains the YAML configuration files dictating how `splat` should split the binaries.
 - **`asm/` & `assets/`**: Auto-generated directories where `splat` extracts assembly code (`.s`) and raw data (`.bin`).
-- **`src/`**: Destination for the decompiled C code (`.c`).
+- **`src/`**: Destination for the decompiled C code (`.c`). Features subdirectories like `sdk/` and `movie/` to organize logic.
 - **`tools/`**: Project-specific automation scripts and generic utilities (e.g., `tools/iso/build_iso.zsh`, `tools/asm-differ/`, `compare_binaries.py`).
 - **`docs/`**: Comprehensive guides detailing the methodology (`docs/workflow/`) and technical details (`docs/technical/`).
 

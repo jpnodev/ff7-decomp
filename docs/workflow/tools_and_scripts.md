@@ -37,7 +37,7 @@ Toutes ces commandes sont encapsulées dans des raccourcis ZSH pratiques. (Voir 
 
 ### `ImportSplatSymbols.java`
 - **Rôle :** Réimporter les symboles locaux renommés et les signatures de fonctions dans Ghidra.
-- **Fonctionnement :** Lit les fichiers de symboles personnalisés `manual_syms.txt` et `sys_syms.txt`, ainsi que le fichier de mapping compilé `build/SCES_008.68.map`. Il met à jour automatiquement la base de données de Ghidra en renommant les fonctions (y compris celles issues de nos fichiers C compilés comme `ff7_sys_init`) et en créant les étiquettes correspondantes aux adresses mémoire définies. De plus, il scanne nos fichiers C sources pour extraire et appliquer automatiquement les vraies signatures de fonctions (types de retour et arguments) dans Ghidra.
+- **Fonctionnement :** Lit les fichiers de symboles personnalisés `manual_syms.txt` et `sys_syms.txt`, ainsi que le fichier de mapping compilé `build/SCES_008.68.map`. Il met à jour automatiquement la base de données de Ghidra en renommant les fonctions (y compris celles issues de nos fichiers C compilés comme `ff7_sys_init`) et en créant les étiquettes correspondantes aux adresses mémoire définies. De plus, il scanne nos fichiers C sources pour extraire et appliquer automatiquement les vraies signatures de fonctions (types de retour et arguments) dans Ghidra. Enfin, il lit `sdk_syms.txt` pour **tagger les fonctions SDK** : elles sont déplacées dans le namespace `SDK`, annotées d'un commentaire plate `[SDK]`, et marquées d'un bookmark. Cela permet de repérer visuellement dans l'arbre d'appels Ghidra les fonctions à ne pas explorer.
 - **Utilisation :** Exécutable depuis le Script Manager de Ghidra (demande à l'utilisateur de sélectionner le répertoire racine du projet).
 
 

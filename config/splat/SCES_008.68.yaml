@@ -54,48 +54,72 @@ segments:
     vram: 0x80010000
     subalign: 4
     subsegments:
+      # === Boot & Entrypoint ===
       - [0x800, asm, before_start]
-      - [0x18C0, hasm, start]
-      - [0x197C, asm, before_main]
-      - [0x1F1C, c, ff7_sys_init]
+      - [0x18C0, hasm, start]               # Point d'entrée PS-X EXE
+      - [0x197C, asm, before_main]           # Contient func_8001146C (leaf de ff7_vsync_handler)
+
+      # === Initialisation du jeu (ff7_sys_init et appelants) ===
+      - [0x1D5C, c, ff7_vsync_handler]       # Callback VSync du jeu - à décompiler
+      - [0x1F1C, c, ff7_sys_init]            # Initialisation système FF7 - décompilé ✓
       - [0x1F8C, asm, after_ff7_sys_init]
-      - [0x2438, asm, main]
-      - [0x305C, asm, after_main]
-      - [0x243C8, c, cd_init_drive]
-      - [0x24438, asm, after_cd_init_drive]
-      - [0x25748, c, movie_sys_init_mdec]
+      - [0x2438, asm, main]                  # Fonction main - à décompiler
+      - [0x305C, asm, after_main]            # Bloc massif : contient la majorité de la logique jeu
+
+      # === CD & Movie (MDEC) ===
+      - [0x243C8, c, cd_init_drive]          # Init lecteur CD - décompilé ✓
+      - [0x24438, asm, after_cd_init_drive]  # Contient func_80034B50
+      - [0x25748, c, movie/movie_sys_init_mdec]    # Init MDEC - décompilé ✓
       - [0x25768, asm, after_movie_sys_init_mdec]
-      - [0x26994, c, SpuInit]
-      - [0x269B4, asm, after_SpuInit]
-      - [0x2A5D8, hasm, InitGeom] # SDK
-      - [0x2A658, asm, after_InitGeom]
-      - [0x2E29C, c, SetVideoMode]
+
+      # === SDK: SPU / Son (libspu) ===
+      - [0x26994, c, sdk/SpuInit]                # Wrapper FF7 autour de _SpuInit - décompilé ✓
+      - [0x269B4, asm, after_SpuInit]        # SDK SPU interne (_SpuInit, _spu_init, SpuStart, etc.)
+
+      # === SDK: GTE / Géométrie (libgte) ===
+      - [0x2A5D8, hasm, sdk/InitGeom]            # SDK libgte - ne pas décompiler
+      - [0x2A658, asm, after_InitGeom]       # SDK: RotMatrix, ScaleMatrix, _patch_gte, etc.
+
+      # === SDK: VSync & Interrupts (libapi) ===
+      - [0x2D5D8, hasm, VSync]              # SDK libapi - ne pas décompiler
+      - [0x2D7BC, hasm, ResetCallback]       # SDK libapi
+      - [0x2D84C, hasm, VSyncCallback]       # SDK libapi
+      - [0x2D8B0, hasm, StopCallback]        # SDK libapi (contient aussi startIntr, trapIntr, etc.)
+
+      # === Graphiques FF7 ===
+      - [0x2E29C, c, sdk/SetVideoMode]           # Config mode vidéo - décompilé ✓
       - [0x2E2B4, asm, after_SetVideoMode]
-      - [0x2E4C8, c, GsSetWorkBase]
+      - [0x2E4C8, c, sdk/GsSetWorkBase]          # Base mémoire GS - décompilé ✓
       - [0x2E4E0, asm, after_GsSetWorkBase]
-      - [0x32638, c, movie_init_mdec]
+
+      # === Movie / MDEC (fonctions internes) ===
+      - [0x32638, c, movie/movie_init_mdec]        # décompilé ✓
       - [0x32670, asm, after_movie_init_mdec]
-      - [0x32768, c, movie_set_mdec_decode_mode]
+      - [0x32768, c, movie/movie_set_mdec_decode_mode] # décompilé ✓
       - [0x327E4, asm, after_movie_set_mdec_decode_mode]
-      - [0x3288C, c, movie_reset_mdec]
-      - [0x32994, c, movie_start_mdec_dma_in]
+      - [0x3288C, c, movie/movie_reset_mdec]       # décompilé ✓
+      - [0x32994, c, movie/movie_start_mdec_dma_in] # décompilé ✓
       - [0x32A28, asm, after_movie_start_mdec_dma_in]
-      - [0x32AB8, c, movie_wait_mdec_dma_ready]
+      - [0x32AB8, c, movie/movie_wait_mdec_dma_ready] # décompilé ✓
       - [0x32B50, asm, after_movie_wait_mdec_dma_ready]
-      - [0x32BE8, c, movie_print_mdec_timeout]
-      - [0x32D1C, asm, after_func_800423E8]
-      - [0x34034, hasm, ff7_init_graphics] # à corriger
+      - [0x32BE8, c, movie/movie_print_mdec_timeout] # décompilé ✓
+      - [0x32D1C, asm, after_func_800423E8]  # SDK: OpenEvent, EnableEvent, printf, memcpy, etc.
+
+      # === GPU / Graphiques (libgpu) ===
+      - [0x34034, hasm, ff7_init_graphics]   # Wrapper init GPU FF7 - à corriger (non-matching)
       - [0x34190, asm, after_ff7_init_graphics]
-      - [0x342A4, c, SetGraphDebug]
-      - [0x34310, asm, after_SetGraphDebug]
-      - [0x34438, c, SetDispMask]
-      - [0x344D4, asm, after_SetDispMask]
-      - [0x35FEC, c, gpu_send_gp1_command]
-      - [0x36018, asm, after_gpu_send_gp1_command]
-      - [0x36728, c, ResetGraph]
-      - [0x36864, asm, after_ResetGraph]
-      - [0x36B4C, c, GetGraphType]
-      - [0x36C2C, c, ff7_memset]
-      - [0x36C58, asm, after_ff7_memset]
+      - [0x342A4, c, sdk/SetGraphDebug]          # décompilé ✓
+      - [0x34310, asm, after_SetGraphDebug]  # Contient func_80043BBC
+      - [0x34438, c, sdk/SetDispMask]            # décompilé ✓
+      - [0x344D4, asm, after_SetDispMask]    # Gros bloc GPU: DrawSync, PutDrawEnv, etc.
+      - [0x35FEC, c, gpu_send_gp1_command]   # Envoi commande GP1 - décompilé ✓
+      - [0x36018, asm, after_gpu_send_gp1_command] # Contient func_80045880, func_80045920, etc.
+      - [0x36728, c, sdk/ResetGraph]             # Reset GPU - décompilé ✓
+      - [0x36864, asm, after_ResetGraph]     # Contient func_80046064, func_800461AC, etc.
+      - [0x36B4C, c, sdk/GetGraphType]           # décompilé ✓
+      - [0x36C2C, c, ff7_memset]             # décompilé ✓
+      - [0x36C58, asm, after_ff7_memset]     # Contient func_80046468, func_80046690, GPU_cw
+
+      # === Données ===
       - [0x3B890, bin, main_data]
   - [0x61000]

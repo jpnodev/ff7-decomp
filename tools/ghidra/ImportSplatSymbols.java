@@ -110,6 +110,14 @@ public class ImportSplatSymbols extends GhidraScript {
         Function func = currentProgram.getFunctionManager().getFunctionAt(addr);
         if (func != null) {
             String oldName = func.getName();
+            
+            // Do not overwrite a better name with a generic one
+            if (name.startsWith("func_") || name.startsWith("FUN_")) {
+                if (!oldName.startsWith("func_") && !oldName.startsWith("FUN_") && !oldName.equals("undefined")) {
+                    return false; // Keep the existing, better name
+                }
+            }
+            
             if (!oldName.equals(name)) {
                 func.setName(name, SourceType.USER_DEFINED);
                 println("Renamed function at " + addr + ": " + oldName + " -> " + name);
@@ -121,6 +129,14 @@ public class ImportSplatSymbols extends GhidraScript {
             boolean done = false;
             for (Symbol s : existingSyms) {
                 String oldName = s.getName();
+                
+                // Do not overwrite a better name with a generic one
+                if (name.startsWith("D_") || name.startsWith("DAT_") || name.startsWith("func_") || name.startsWith("FUN_") || name.startsWith("lbl_") || name.startsWith("jpt_")) {
+                    if (!oldName.startsWith("D_") && !oldName.startsWith("DAT_") && !oldName.startsWith("func_") && !oldName.startsWith("FUN_") && !oldName.startsWith("lbl_") && !oldName.startsWith("jpt_") && !oldName.equals("undefined")) {
+                        return false; // Keep the existing, better name
+                    }
+                }
+                
                 if (!oldName.equals(name)) {
                     s.setName(name, SourceType.USER_DEFINED);
                     println("Renamed symbol at " + addr + ": " + oldName + " -> " + name);
@@ -174,8 +190,8 @@ public class ImportSplatSymbols extends GhidraScript {
         }
 
         // 2. Scan all C source files
-        File[] files = srcDir.listFiles();
-        if (files == null) return;
+        List<File> files = new ArrayList<>();
+        collectCFiles(srcDir, files);
         
         ghidra.app.util.parser.FunctionSignatureParser sigParser = 
             new ghidra.app.util.parser.FunctionSignatureParser(currentProgram.getDataTypeManager(), service);
@@ -230,6 +246,19 @@ public class ImportSplatSymbols extends GhidraScript {
         println("Done applying signatures: " + sigCount + " signatures updated.");
     }
 
+    private void collectCFiles(File dir, List<File> files) {
+        if (dir == null || !dir.exists() || !dir.isDirectory()) return;
+        File[] children = dir.listFiles();
+        if (children == null) return;
+        for (File child : children) {
+            if (child.isDirectory()) {
+                collectCFiles(child, files);
+            } else if (child.getName().endsWith(".c")) {
+                files.add(child);
+            }
+        }
+    }
+
     private String findSignatureInCFile(File f, String funcName) throws Exception {
         // Pattern: [return_type] funcName([args])
         Pattern p = Pattern.compile(
@@ -279,5 +308,95 @@ public class ImportSplatSymbols extends GhidraScript {
         // 4. Scan C files and apply function signatures
         File srcDir = new File(baseDir, "src/SCES_008.68");
         importSignatures(srcDir, mapFile);
+
+        // 5. Tag SDK functions (namespace + plate comment + bookmark)
+        File sdkSyms = new File(baseDir, "config/symbols/SCES_008.68.sdk_syms.txt");
+        importSdkTags(sdkSyms);
+    }
+
+    /**
+     * Reads sdk_syms.txt and for each SDK function found in Ghidra:
+     * - Moves it to the "SDK" namespace
+     * - Adds a plate comment "[SDK - Ne pas décompiler]"
+     * - Adds a "SDK" bookmark
+     * This makes SDK functions visually distinct in the call tree.
+     */
+    private void importSdkTags(File file) throws Exception {
+        if (!file.exists()) {
+            println("SDK symbols file not found: " + file.getAbsolutePath());
+            return;
+        }
+
+        println("Tagging SDK functions from: " + file.getAbsolutePath());
+        SymbolTable symbolTable = currentProgram.getSymbolTable();
+        ghidra.program.model.listing.BookmarkManager bmMgr = currentProgram.getBookmarkManager();
+
+        // Get or create the "SDK" namespace
+        Namespace sdkNamespace = symbolTable.getNamespace("SDK", currentProgram.getGlobalNamespace());
+        if (sdkNamespace == null) {
+            sdkNamespace = symbolTable.createNameSpace(
+                currentProgram.getGlobalNamespace(), "SDK", SourceType.USER_DEFINED);
+            println("Created 'SDK' namespace.");
+        }
+
+        int count = 0;
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                line = line.trim();
+                if (line.isEmpty() || line.startsWith("#") || line.startsWith("//")) {
+                    continue;
+                }
+                if (line.contains("=")) {
+                    String[] parts = line.split("=");
+                    String name = parts[0].trim();
+                    String rest = parts[1].trim();
+                    String addrStr = rest.split(";")[0].trim();
+
+                    // Extract module from comment (e.g. "// libapi")
+                    String module = "";
+                    int commentIdx = rest.indexOf("//");
+                    if (commentIdx >= 0) {
+                        module = rest.substring(commentIdx + 2).trim();
+                    }
+
+                    try {
+                        long addrVal = Long.decode(addrStr);
+                        Address addr = toAddr(addrVal);
+
+                        Function func = currentProgram.getFunctionManager().getFunctionAt(addr);
+                        if (func != null) {
+                            // Move to SDK namespace
+                            Namespace currentNs = func.getParentNamespace();
+                            if (!currentNs.getName().equals("SDK")) {
+                                func.setParentNamespace(sdkNamespace);
+                            }
+
+                            // Set plate comment
+                            String plateComment = "[SDK: " + module + "] Ne pas décompiler - PsyQ/libapi";
+                            String existing = currentProgram.getListing().getComment(
+                                ghidra.program.model.listing.CodeUnit.PLATE_COMMENT, addr);
+                            if (existing == null || !existing.contains("[SDK")) {
+                                currentProgram.getListing().setComment(
+                                    addr,
+                                    ghidra.program.model.listing.CodeUnit.PLATE_COMMENT,
+                                    plateComment);
+                            }
+
+                            // Add bookmark
+                            bmMgr.setBookmark(addr, "Analysis", "SDK",
+                                "SDK function (" + module + ") - do not decompile");
+
+                            count++;
+                        } else {
+                            // Not a function yet, just skip
+                        }
+                    } catch (Exception e) {
+                        println("Error tagging SDK function '" + name + "': " + e.getMessage());
+                    }
+                }
+            }
+        }
+        println("Done tagging SDK functions: " + count + " functions tagged in 'SDK' namespace.");
     }
 }
