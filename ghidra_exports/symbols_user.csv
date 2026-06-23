@@ -1,4 +1,8 @@
 Name,Address,Type
+s_mdec_rest_timeout,0x80010B2C,label
+s_dma_status,0x80010B4C,label
+s_fifo_status,0x80010B74,label
+s_timeout,0x80010BAC,label
 s_SetGraphDebug,0x80010D18,label
 s_SetDispMask,0x80010D74,label
 start,0x800110C0,func
@@ -275,6 +279,7 @@ C_004_OBJ_DC,0x80040950,func
 StSetStream,0x80040964,func
 C_007_OBJ_B0,0x80040A9C,func
 C_015_OBJ_B4,0x800417E8,func
+PrintMdecTimeout,0x800423E8,func
 _bu_init,0x800428D4,func
 SystemError,0x80042904,func
 TestEvent,0x80042954,func

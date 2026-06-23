@@ -1,4 +1,8 @@
 Name,Address
+s_mdec_rest_timeout,0x80010B2C
+s_dma_status,0x80010B4C
+s_fifo_status,0x80010B74
+s_timeout,0x80010BAC
 s_SetGraphDebug,0x80010D18
 s_SetDispMask,0x80010D74
 D_8001116C,0x8001116C

@@ -1,9 +1,9 @@
 #include "common.h"
 
-extern int VideoMode;
+extern int g_video_mode;
 
 int SetVideoMode(int mode) {
-    int previous_mode = VideoMode;
-    VideoMode = mode;
-    return previous_mode;
+	int previous_mode = g_video_mode;
+	g_video_mode = mode;
+	return previous_mode;
 }

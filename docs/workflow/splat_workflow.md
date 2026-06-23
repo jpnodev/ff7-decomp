@@ -8,6 +8,11 @@ Ce document synthétise la boucle de travail itérative pour décompiler le jeu 
 2. Renomme la fonction et identifie son rôle.
 3. Exécute le script `ExportSplatSymbols.java` via le *Script Manager*.
    - Cela génère un fichier `SCES_008.68.symbols.from_ghidra.txt` dans `ghidra_exports/splat/` que Splat utilisera pour nommer les fonctions lors du découpage.
+4. Nettoie et filtre les symboles Ghidra exportés pour éviter les doublons et les conflits avec nos définitions personnalisées (`manual_syms.txt` / `user_syms.txt`) :
+   ```bash
+   ff7-clean-syms
+   ```
+
 
 ## Phase B : Découpage (Splat Split)
 **Objectif :** Transformer le binaire en fichiers assembleurs (asm) organisés.
@@ -34,7 +39,13 @@ Ce document synthétise la boucle de travail itérative pour décompiler le jeu 
 
 ## Phase D : Découpage fin et C-ification (C Matching)
 **Objectif :** Remplacer une fonction assembleur par son équivalent C.
-1. Choisis une "leaf function" bien isolée.
+
+> [!WARNING]
+> **Règle d'Or : Bottom-Up (Leaf Functions First)**
+> Ne jamais utiliser `ff7-check` de manière globale si les fonctions "feuilles" (leaf functions) ne sont pas parfaitement matchées (0 différences et taille identique). Une seule fonction dont la taille générée diffère de l'originale décalera **toutes les adresses suivantes** dans le binaire, corrompant les tables de saut et faisant échouer `ff7-check` en cascade.
+> Travaille toujours de bas en haut : commence par les fonctions qui n'en appellent aucune autre, valide-les, puis remonte d'un niveau.
+
+1. Choisis une "leaf function" bien isolée (ex: `func_80034F48`).
 2. Dans le YAML, change son type de `asm` vers `c`.
 3. Re-split : un fichier `.c` vide (ou contenant le désassemblage en commentaire) sera créé dans `src/`.
 4. Écris le code C.
@@ -43,14 +54,18 @@ Ce document synthétise la boucle de travail itérative pour décompiler le jeu 
    ff7-diff <nom_de_la_fonction>
    ```
    *(Cet alias recompile automatiquement et se met à jour à chaque sauvegarde de fichier).*
-   Ajuste ton code C, les types, et les variables globales jusqu'à ce que les instructions CPU affichées soient 100% identiques à celles de gauche (0 différences).
+   
+   > [!IMPORTANT]
+   > Vérifie toujours la taille ! Si ton code C génère moins d'octets que prévu, `ff7-diff` peut afficher un score de `0` parce qu'il ne compare que ce qui a été généré, ignorant les instructions manquantes à la fin de la fonction d'origine. Si tu as un décalage de taille dans `.map` par rapport au YAML, c'est que ton code est incomplet.
+
 6. Si tu bloques sur les derniers registres ou instructions, utilise le **decomp-permuter** :
    - Assure-toi que ton code dans `src/` est propre, sans macros de permuteur.
    - Lance l'import : `ff7-perm-import <nom_de_la_fonction>`. (Cela va configurer le dossier `nonmatchings/<nom_de_la_fonction>`).
    - Édite **uniquement** `nonmatchings/<nom_de_la_fonction>/base.c` pour ajouter tes macros (`PERM_RANDOMIZE`, `PERM_LINESWAP`) et renommer la fonction avec un `func_` au lieu de `FUN_` pour correspondre à l'assembleur extrait.
    - Lance le permuteur : `ff7-perm <nom_de_la_fonction> --stop-on-zero`.
    - Copie la solution trouvée (dans `output/.../source.c`) vers ton vrai fichier dans `src/`, nettoie les macros et remets son nom d'origine.
-7. Une fois la fonction parfaitement "matchée", lance une vérification globale pour confirmer que le binaire final complet n'est pas altéré :
+7. Remonte d'un niveau dans la hiérarchie d'appels uniquement quand la fonction actuelle matche parfaitement avec `ff7-diff`.
+8. Une fois toutes tes fonctions matchées, lance une vérification globale :
    ```bash
    ff7-check
    ```

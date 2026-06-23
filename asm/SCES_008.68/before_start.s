@@ -1075,37 +1075,46 @@ dlabel D_80010AFC
     /* 1304 80010B04 72657472 */ .word 0x72746572 /* invalid instruction */
     /* 1308 80010B08 792E2E2E */ .word 0x2E2E2E79
     /* 130C 80010B0C 0A000000 */ .word 0x0000000A
+enddlabel D_80010A6E
 
-nonmatching D_80010B10
+nonmatching s_unknown_80010B10
 
-dlabel D_80010B10
+dlabel s_unknown_80010B10
     /* 1310 80010B10 4D444543 */ .word 0x4345444D /* invalid instruction */
     /* 1314 80010B14 5F726573 */ .word 0x7365725F /* invalid instruction */
     /* 1318 80010B18 743A6261 */ .word 0x61623A74
     /* 131C 80010B1C 64206F70 */ .word 0x706F2064 /* invalid instruction */
     /* 1320 80010B20 74696F6E */ .word 0x6E6F6974
     /* 1324 80010B24 28256429 */ .word 0x29642528
+enddlabel s_unknown_80010B10
+
+nonmatching s_unknown_80010B28
+
+dlabel s_unknown_80010B28
     /* 1328 80010B28 0A000000 */ .word 0x0000000A
+enddlabel s_unknown_80010B28
 
-nonmatching D_80010B2C
+nonmatching s_mdec_rest_timeout
 
-dlabel D_80010B2C
+dlabel s_mdec_rest_timeout
     /* 132C 80010B2C 4D444543 */ .word 0x4345444D /* invalid instruction */
     /* 1330 80010B30 5F696E5F */ .word 0x5F6E695F /* invalid instruction */
     /* 1334 80010B34 73796E63 */ .word 0x636E7973
     /* 1338 80010B38 00000000 */ .word 0x00000000
+enddlabel s_mdec_rest_timeout
 
-nonmatching D_80010B3C
+nonmatching s_unknown_80010B3C
 
-dlabel D_80010B3C
+dlabel s_unknown_80010B3C
     /* 133C 80010B3C 4D444543 */ .word 0x4345444D /* invalid instruction */
     /* 1340 80010B40 5F6F7574 */ .word 0x74756F5F /* invalid instruction */
     /* 1344 80010B44 5F73796E */ .word 0x6E79735F
     /* 1348 80010B48 63000000 */ .word 0x00000063 /* invalid instruction */
+enddlabel s_unknown_80010B3C
 
-nonmatching D_80010B4C
+nonmatching s_dma_status
 
-dlabel D_80010B4C
+dlabel s_dma_status
     /* 134C 80010B4C 0920444D */ .word 0x4D442009 /* invalid instruction */
     /* 1350 80010B50 413D2825 */ .word 0x25283D41
     /* 1354 80010B54 642C2564 */ .word 0x64252C64
@@ -1116,10 +1125,11 @@ dlabel D_80010B4C
     /* 1368 80010B68 3E307825 */ .word 0x2578303E
     /* 136C 80010B6C 30387829 */ .word 0x29783830
     /* 1370 80010B70 0A000000 */ .word 0x0000000A
+enddlabel s_dma_status
 
-nonmatching D_80010B74
+nonmatching s_fifo_status
 
-dlabel D_80010B74
+dlabel s_fifo_status
     /* 1374 80010B74 09204649 */ .word 0x49462009 /* invalid instruction */
     /* 1378 80010B78 464F3D28 */ .word 0x283D4F46
     /* 137C 80010B7C 25642C25 */ .word 0x252C6425
@@ -1134,10 +1144,11 @@ dlabel D_80010B74
     /* 13A0 80010BA0 2C535450 */ .word 0x5054532C
     /* 13A4 80010BA4 3D25640A */ .word 0x0A64253D
     /* 13A8 80010BA8 00000000 */ .word 0x00000000
+enddlabel s_fifo_status
 
-nonmatching D_80010BAC
+nonmatching s_timeout
 
-dlabel D_80010BAC
+dlabel s_timeout
     /* 13AC 80010BAC 25732074 */ .word 0x74207325 /* invalid instruction */
     /* 13B0 80010BB0 696D656F */ .word 0x6F656D69
     /* 13B4 80010BB4 75743A0A */ .word 0x0A3A7475
@@ -1253,10 +1264,11 @@ dlabel D_80010D00
     /* 150C 80010D0C 72736528 */ .word 0x28657372
     /* 1510 80010D10 2564292E */ .word 0x2E296425
     /* 1514 80010D14 2E2E0A00 */ .word 0x000A2E2E /* invalid instruction */
+enddlabel s_timeout
 
 nonmatching s_SetGraphDebug
 
-alabel s_SetGraphDebug
+dlabel s_SetGraphDebug
     /* 1518 80010D18 53657447 */ .word 0x47746553 /* invalid instruction */
     /* 151C 80010D1C 72617068 */ .word 0x68706172
     /* 1520 80010D20 44656275 */ .word 0x75626544 /* invalid instruction */
@@ -1288,10 +1300,11 @@ dlabel D_80010D58
     /* 1568 80010D68 28253038 */ .word 0x38302528
     /* 156C 80010D6C 78292E2E */ .word 0x2E2E2978
     /* 1570 80010D70 2E0A0000 */ .word 0x00000A2E /* invalid instruction */
+enddlabel s_SetGraphDebug
 
 nonmatching s_SetDispMask
 
-alabel s_SetDispMask
+dlabel s_SetDispMask
     /* 1574 80010D74 53657444 */ .word 0x44746553 /* invalid instruction */
     /* 1578 80010D78 6973704D */ .word 0x4D707369 /* invalid instruction */
     /* 157C 80010D7C 61736B28 */ .word 0x286B7361
@@ -1705,7 +1718,7 @@ dlabel D_8001109C
     /* 18AC 800110AC 20282530 */ .word 0x30252820
     /* 18B0 800110B0 3878290A */ .word 0x0A297838
     /* 18B4 800110B4 00000000 */ .word 0x00000000
-enddlabel D_80010A6E
+enddlabel s_SetDispMask
 
 nonmatching __main, 0x8
 

@@ -20,6 +20,7 @@ options:
   ld_dependencies: True
 
   symbol_addrs_path:
+    - config/symbols/SCES_008.68.manual_syms.txt
     - config/symbols/SCES_008.68.symbols.txt
     - ghidra_exports/splat/SCES_008.68.symbols.from_ghidra.txt
 
@@ -55,24 +56,41 @@ segments:
       - [0x800, asm, before_start]
       - [0x18C0, hasm, start]
       - [0x197C, asm, before_main]
-      - [0x1F1C, c, SysInit]
-      - [0x1F8C, asm, after_SysInit]
+      - [0x1F1C, c, ff7_sys_init]
+      - [0x1F8C, asm, after_ff7_sys_init]
       - [0x2438, asm, main]
       - [0x305C, asm, after_main]
+      - [0x243C8, c, cd_init_drive]
+      - [0x24438, asm, after_cd_init_drive]
+      - [0x25748, c, movie_sys_init_mdec]
+      - [0x25768, asm, after_movie_sys_init_mdec]
       - [0x26994, c, SpuInit]
       - [0x269B4, asm, after_SpuInit]
-      - [0x2A5D8, hasm, InitGeom]
+      - [0x2A5D8, hasm, InitGeom] # SDK
       - [0x2A658, asm, after_InitGeom]
       - [0x2E29C, c, SetVideoMode]
       - [0x2E2B4, asm, after_SetVideoMode]
-      - [0x34034, hasm, InitGraphics]
-      - [0x34190, asm, after_InitGraphics]
+      - [0x2E4C8, c, GsSetWorkBase]
+      - [0x2E4E0, asm, after_GsSetWorkBase]
+      - [0x32638, c, movie_init_mdec]
+      - [0x32670, asm, after_movie_init_mdec]
+      - [0x32768, c, movie_set_mdec_decode_mode]
+      - [0x327E4, asm, after_movie_set_mdec_decode_mode]
+      - [0x3288C, c, movie_reset_mdec]
+      - [0x32994, c, movie_start_mdec_dma_in]
+      - [0x32A28, asm, after_movie_start_mdec_dma_in]
+      - [0x32AB8, c, movie_wait_mdec_dma_ready]
+      - [0x32B50, asm, after_movie_wait_mdec_dma_ready]
+      - [0x32BE8, c, movie_print_mdec_timeout]
+      - [0x32D1C, asm, after_func_800423E8]
+      - [0x34034, hasm, ff7_init_graphics] # à corriger
+      - [0x34190, asm, after_ff7_init_graphics]
       - [0x342A4, c, SetGraphDebug]
       - [0x34310, asm, after_SetGraphDebug]
       - [0x34438, c, SetDispMask]
       - [0x344D4, asm, after_SetDispMask]
-      - [0x35FEC, c, SendGp1Command]
-      - [0x36018, asm, after_SendGp1Command]
+      - [0x35FEC, c, gpu_send_gp1_command]
+      - [0x36018, asm, after_gpu_send_gp1_command]
       - [0x36728, c, ResetGraph]
       - [0x36864, asm, after_ResetGraph]
       - [0x36B4C, c, GetGraphType]

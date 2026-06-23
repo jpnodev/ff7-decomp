@@ -1,0 +1,59 @@
+g_graph_debug_type = 0x80062BB4;
+g_graph_debug_level = 0x80062BB6;
+g_graph_debug_reverse = 0x80062BB7;
+g_printf_ptr = 0x80062BB0;
+
+s_SetGraphDebug = 0x80010D18;
+s_SetDispMask = 0x80010D74;
+
+g_gpu_gp1_command_args_mirror = 0x800706BC;
+g_gp1_command_handlers_ptr = 0x80062BAC;
+g_video_mode = 0x8005154C;
+
+g_active_buffer_width = 0x80062BB8;
+g_is_graph_initialized = 0x80062BB5;
+g_active_buffer_height = 0x80062BBA;
+g_resolution_width_array = 0x80062C34;
+g_resolution_height_array = 0x80062C48;
+
+s_resetgraph_unknown_80062CBC = 0x80062CBC;
+s_resetgraph_intr_mask = 0x80062CC8;
+s_resetgraph_temp = 0x80062CB8;
+
+g_gpu_graph_env_buffer = 0x8009AE54;
+
+ff7_vsync_handler = 0x8001155C;
+g_vsync_counter = 0x80095EF0;
+ff7_init_graphics = 0x80043834;
+
+s_mdec_quantization_table_1 = 0x80051A04;
+s_mdec_quantization_table_2 = 0x80051A88;
+s_mdec_rest_timeout = 0x80010B2C;
+s_dma_status = 0x80010B4C;
+s_fifo_status = 0x80010B74;
+s_timeout = 0x80010BAC;
+
+s_unknown_80010B10 = 0x80010B10;
+s_unknown_80010B28 = 0x80010B28;
+s_unknown_80010B3C = 0x80010B3C;
+g_cd_unknown_80071B8C = 0x80071B8C;
+g_cd_unknown_80071B90 = 0x80071B90;
+ff7_unknown_8003E024 = 0x8003E024;
+ff7_unknown_80034384 = 0x80034384;
+ff7_unknown_80034F68 = 0x80034F68;
+s_gs_work_base = 0x800515EC;
+ptr_GPU_GP1 = 0x80062C88;
+ptr_DPCR = 0x80062C94;
+ptr_DICR = 0x80062CA4;
+ptr_GPU_GP0 = 0x80062C84;
+
+ptr_DMA_MDEC_IN_MADR = 0x80051B0C;
+ptr_DMA_MDEC_IN_BCR = 0x80051B10;
+ptr_DMA_MDEC_IN_CHCR = 0x80051B14;
+ptr_DMA_MDEC_OUT_MADR = 0x80051B18;
+ptr_DMA_MDEC_OUT_CHCR = 0x80051B20;
+ptr_MDEC_REG0 = 0x80051B3C;
+ptr_MDEC_REG1 = 0x80051B40;
+ptr_DMA_DPCR = 0x80051B44;
+
+movie_unknown_800422B8 = 0x800422B8;

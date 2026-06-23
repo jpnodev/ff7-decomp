@@ -2,6 +2,4 @@
 
 extern void _SpuInit(int);
 
-void SpuInit(void) {
-    _SpuInit(0);
-}
+void SpuInit(void) { _SpuInit(0); }

@@ -14,7 +14,7 @@
  *   {
  *     undefined4 *puVar1;
  *     undefined4 unaff_retaddr;
- * 
+ *
  *     // Clear BSS memory region
  *     puVar1 = &DAT_80062dc0; // _bss
  *     do {
@@ -60,20 +60,20 @@ glabel stup1
     subu       $a1, $v0, $v1
     subu       $a1, $a1, $a0
     or         $a0, $a0, $t0
-    
+
     /* DAT_80062dc0 = unaff_retaddr; (Save Return Address to BSS start) */
     lui        $at, %hi(_bss)
     sw         $ra, %lo(_bss)($at)
-    
+
     /* Set Global Pointer (gp) and Frame Pointer (fp) */
     lui        $gp, %hi(_gp)
     addiu      $gp, $gp, %lo(_gp)
     addu       $fp, $sp, $zero
-    
+
     /* InitHeap((ulong *)&DAT_8009ffac, 0x158058); */
     jal        InitHeap
      addi      $a0, $a0, %lo(D_80000004) # Delay slot handwritten instruction
-    
+
     /* Restore Return Address from BSS start */
     lui        $ra, %hi(_bss)
     lw         $ra, %lo(_bss)($ra)
