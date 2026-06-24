@@ -132,7 +132,9 @@ SECTIONS
         build/src/SCES_008.68/sdk/GetGraphType.c.o(.data);
         build/src/SCES_008.68/ff7_memset.c.o(.data);
         build/asm/SCES_008.68/after_ff7_memset.s.o(.data);
-        build/assets/SCES_008.68/main_data.bin.o(.data);
+        build/assets/SCES_008.68/main_data_part1.bin.o(.data);
+        build/assets/SCES_008.68/movie_data_tables.bin.o(.data);
+        build/assets/SCES_008.68/main_data_part2.bin.o(.data);
         . = ALIGN(., 16);
         main_DATA_END = .;
         main_DATA_SIZE = ABSOLUTE(main_DATA_END - main_DATA_START);

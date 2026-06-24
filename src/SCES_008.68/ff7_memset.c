@@ -1,6 +1,6 @@
 #include "common.h"
 
-void ff7_memset(unsigned char *dst, unsigned char val, int count) {
+void ff7_memset(unsigned char *dst, int val, int count) {
     volatile char dummy[8]; // @todo: only to match binary, useless
     int i = count - 1;
     if (count != 0) {

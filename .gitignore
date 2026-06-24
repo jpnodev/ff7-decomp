@@ -75,7 +75,7 @@ ghidra_projects/
 psyq/
 PsyQ/
 PSYQ/
-sdk/
+/sdk/
 toolchain/
 toolchains/
 

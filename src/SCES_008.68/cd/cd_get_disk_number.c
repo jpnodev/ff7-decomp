@@ -1,13 +1,6 @@
-extern int cd_process_task(void);
-extern int CdSearchFile(char*, const char*);
-extern void CdControlB(int, char*, int);
-extern void CdRead(int, void*, int);
-extern int CdReadSync(int, int);
+#include "common.h"
 
-extern char g_cd_diskinfo_buffer;
-extern unsigned char g_cd_diskinfo_number_char;
 
-extern const char s_cd_diskinfo_path[];
 
 int cd_get_disk_number(void) {
     int iVar1;

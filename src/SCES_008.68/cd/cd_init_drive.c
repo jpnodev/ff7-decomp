@@ -1,16 +1,7 @@
 #include "common.h"
 
-extern int CdInit(void);
-extern void GsSetWorkBase(int);
-extern void movie_sys_init_mdec(void);
-extern void CdControlB(int, int, int);
-extern void VSync(int);
 
-extern int cd_get_disk_number(void);
-extern void cd_load_movie_id(void);
 
-extern int g_cd_task_index;
-extern int g_cd_current_disk;
 
 void cd_init_drive(void) {
     int iVar1;

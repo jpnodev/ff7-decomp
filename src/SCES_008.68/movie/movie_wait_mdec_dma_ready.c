@@ -1,10 +1,7 @@
 #include "common.h"
 
-extern int movie_print_mdec_timeout(const char*);
 
-extern volatile unsigned int* volatile ptr_MDEC_REG1;
 
-extern const char s_mdec_rest_timeout[];
 
 int movie_wait_mdec_dma_ready(void) {
     register volatile unsigned int* p asm("v1") = ptr_MDEC_REG1;

@@ -126,5 +126,7 @@ segments:
       - [0x36C58, asm, after_ff7_memset]     # Contient func_80046468, func_80046690, GPU_cw
 
       # === Données ===
-      - [0x3B890, bin, main_data]
+      - [0x3B890, bin, main_data_part1]
+      - [0x42204, c, movie/movie_data]
+      - [0x42308, bin, main_data_part2]
   - [0x61000]

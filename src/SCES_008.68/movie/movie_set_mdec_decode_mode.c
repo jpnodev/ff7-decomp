@@ -1,6 +1,5 @@
 #include "common.h"
 
-extern void movie_start_mdec_dma_in(unsigned int *mdec_cmd, unsigned int flags);
 
 void movie_set_mdec_decode_mode(unsigned int *mdec_cmd, unsigned int flags) {
     if (flags & 1) {

@@ -1,10 +1,5 @@
-extern int CdSearchFile(char*, const char*);
-extern void CdControlB(int, char*, int);
-extern void CdRead(int, void*, int);
-extern int CdReadSync(int, int);
+#include "common.h"
 
-extern const char s_cd_movie_id_path[];
-extern char g_cd_movie_id_buffer;
 
 void cd_load_movie_id(void) {
     int iVar1;

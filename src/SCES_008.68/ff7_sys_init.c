@@ -1,16 +1,5 @@
 #include "common.h"
 
-extern int StopCallback(void);
-extern int ResetCallback(void);
-extern void ff7_init_graphics(int);
-extern void SpuInit(void);
-extern volatile short g_vsync_counter;
-extern int VSyncCallback(void (*f)(void));
-extern void ff7_vsync_handler(void);
-extern void SetGraphDebug(int);
-extern void SetDispMask(int);
-extern void InitGeom(void);
-extern int SetVideoMode(int);
 
 void ff7_sys_init(void) {
     StopCallback();
